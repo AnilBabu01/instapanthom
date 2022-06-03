@@ -1,15 +1,12 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import SettingsIcon from "@mui/icons-material/Settings";
 import PermDataSettingIcon from "@mui/icons-material/PermDataSetting";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Badge from "@mui/material/Badge";
-import style from "./Steps.module.css";
+import "./Steps.css";
 
 const Steps = () => {
   return (
@@ -37,39 +34,11 @@ const Steps = () => {
           or free Instagram likes from <br /> our network! The process takes
           only 2 minutes to activate a plan and here are the steps:
         </Typography>
-        <div
-          style={{
-            margin: "auto",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            padding: "6px",
-          }}
-        >
-          <Box
-            pl={3}
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              margin: "auto",
-              "& > :not(style)": {
-                m: 1,
-
-                width: 300,
-                height: 300,
-              },
-            }}
-          >
-            <Paper elevation={3}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "30%",
-                  cursor: "pointer",
-                }}
-              >
+        <div>
+          <div className="centerallSteps">
+            <div className="maindiv maindivmobile">
+              <div className="iconmaindiv iconmaindivmobile">
+                {" "}
                 <div>
                   <div
                     style={{
@@ -77,12 +46,9 @@ const Steps = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <Paper
-                      elevation={3}
-                      style={{ padding: "20px", marginBottom: "10px" }}
-                    >
+                    <span className="icondiv">
                       <GroupAddIcon />
-                    </Paper>
+                    </span>
                   </div>
 
                   <Typography align="center" variant="h5">
@@ -91,16 +57,9 @@ const Steps = () => {
                   <Typography align="center">Register & Login</Typography>
                 </div>
               </div>
-            </Paper>
-            <Paper elevation={3}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "30%",
-                  cursor: "pointer",
-                }}
-              >
+
+              <div className="iconmaindiv iconmaindivmobile">
+                {" "}
                 <div>
                   <div
                     style={{
@@ -108,12 +67,9 @@ const Steps = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <Paper
-                      elevation={3}
-                      style={{ padding: "20px", marginBottom: "10px" }}
-                    >
+                    <span className="icondiv">
                       <ArrowRightAltIcon />
-                    </Paper>
+                    </span>
                   </div>
 
                   <Typography align="center" variant="h5">
@@ -122,16 +78,8 @@ const Steps = () => {
                   <Typography align="center">Active the Free Plan</Typography>
                 </div>
               </div>
-            </Paper>
-            <Paper elevation={3}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "30%",
-                  cursor: "pointer",
-                }}
-              >
+              <div className="iconmaindiv iconmaindivmobile ">
+                {" "}
                 <div>
                   <div
                     style={{
@@ -139,12 +87,9 @@ const Steps = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <Paper
-                      elevation={3}
-                      style={{ padding: "20px", marginBottom: "10px" }}
-                    >
+                    <span className="icondiv">
                       <SettingsIcon />
-                    </Paper>
+                    </span>
                   </div>
 
                   <Typography align="center" variant="h5">
@@ -156,16 +101,8 @@ const Steps = () => {
                   </Typography>
                 </div>
               </div>
-            </Paper>
-            <Paper elevation={3}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "30%",
-                  cursor: "pointer",
-                }}
-              >
+              <div className="iconmaindiv iconmaindivmobile">
+                {" "}
                 <div>
                   <div
                     style={{
@@ -173,12 +110,9 @@ const Steps = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <Paper
-                      elevation={3}
-                      style={{ padding: "20px", marginBottom: "10px" }}
-                    >
+                    <span className="icondiv">
                       <PermDataSettingIcon />
-                    </Paper>
+                    </span>
                   </div>
 
                   <Typography align="center" variant="h5">
@@ -190,16 +124,8 @@ const Steps = () => {
                   </Typography>
                 </div>
               </div>
-            </Paper>
-            <Paper elevation={3}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "30%",
-                  cursor: "pointer",
-                }}
-              >
+              <div className="iconmaindiv iconmaindivmobile">
+                {" "}
                 <div>
                   <div
                     style={{
@@ -207,14 +133,11 @@ const Steps = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <Paper
-                      elevation={3}
-                      style={{ padding: "20px", marginBottom: "10px" }}
-                    >
+                    <span className="icondiv">
                       <Badge badgeContent={8} color="primary">
                         <InstagramIcon />
                       </Badge>
-                    </Paper>
+                    </span>
                   </div>
 
                   <Typography align="center" variant="h5">
@@ -223,15 +146,13 @@ const Steps = () => {
                   <Typography align="center">Get Free Fan's</Typography>
                 </div>
               </div>
-            </Paper>
-          </Box>
-          <Button
-            className={style.buttonfree}
-            variant="contained"
-            style={{ height: "45px", marginTop: "60px" }}
-          >
-            Register Your Free Account Now
-          </Button>
+            </div>
+          </div>
+        </div>
+        <div className="btndiv">
+          <button className="btn btn2">
+            <InstagramIcon /> <span style={{paddingLeft:"10px"}}>Register Your Free Acount Now </span>{" "}
+          </button>
         </div>
       </div>
     </>
