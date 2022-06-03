@@ -49,13 +49,7 @@ const style = {
     display: "flex",
     flexDirection: "column",
   },
-  input: {
-    height: "28px",
-    borderRadius: "4px",
-    padding: "6px",
-    marginTop: "8px",
-    border: "1px solid gray"
-  },
+  
   btn: {
     backgroundColor: "purple",
     border: "none",
@@ -145,7 +139,7 @@ const Signup = () => {
                     <label>Your name</label>
                     <input
                       className="input"
-                      style={style.input}
+                      
                       type="text"
                       name="name"
                       value={credentials.name}
@@ -156,7 +150,7 @@ const Signup = () => {
                   <div style={style.inputdiv}>
                     <label Htmlfor="email">Your email</label>
                     <input
-                      style={style.input}
+                      className="input"
                       type="email"
                       name="email"
                       value={credentials.email}
@@ -167,7 +161,7 @@ const Signup = () => {
                   <div style={style.inputdiv}>
                     <label Htmlfor="number">Mobile number</label>
                     <input
-                      style={style.input}
+                      className="input"
                       type="text"
                       name="number"
                       value={credentials.number}
@@ -178,7 +172,7 @@ const Signup = () => {
                   <div style={style.inputdiv}>
                     <label htmlFor="password">Password</label>
                     <input
-                      style={style.input}
+                      className="input"
                       type="password"
                       value={credentials.password}
                       onChange={onChange}

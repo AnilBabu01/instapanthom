@@ -1,0 +1,48 @@
+.maindiv1 {
+    display: flex;
+    justify-content: center;
+   
+  }
+  .aligndiv{
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 15%;
+    margin-bottom: 23%;
+  }
+  .headertext1 {
+    width: 500px;
+   
+    background-color: white;
+    padding: 20px;
+   
+    font-size: 20px;
+    border-radius: 5px;
+    
+  }
+  .input2{
+    width: 100%;
+     
+      border-radius: 4px;
+      padding: 6px;
+      margin-top: 20px;
+      border: 1px solid gray;
+      font-size: 20px;
+  }
+  
+  .input2:hover{
+     
+      border: 1px solid blue;
+  }
+  
+  .input2:focus{
+  
+      border:none;
+      outline: 1px solid blue;
+  }
+
+  @media screen and (max-width: 780px) {
+    .headertext1 {
+
+        width: 340px;
+    }
+   }
