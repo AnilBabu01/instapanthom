@@ -6,7 +6,7 @@
   .aligndiv{
     margin-left: 50%;
     margin-right: 50%;
-    margin-top: 15%;
+    margin-top: 9%;
     margin-bottom: 23%;
   }
   .headertext1 {
@@ -28,6 +28,15 @@
       border: 1px solid gray;
       font-size: 20px;
   }
+  .input22{
+    width: 100%;
+     
+      border-radius: 4px;
+      padding: 6px;
+      margin-top: 20px;
+      border: 1px solid red;
+      font-size: 20px;
+  }
   
   .input2:hover{
      
@@ -40,6 +49,25 @@
       outline: 1px solid blue;
   }
 
+  .resetbtn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  .btn01{
+    background: #3b53d8;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+   
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
   @media screen and (max-width: 780px) {
     .headertext1 {
 

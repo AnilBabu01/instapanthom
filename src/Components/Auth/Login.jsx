@@ -100,9 +100,9 @@ const navigate =useNavigate();
                     placeholder="Password"
                   ></input>
                 </div>
-                <div style={style.rem}>
+                <div>
                   <input type="checkbox" />
-                  <p style={style.reminputtext}>Remember me</p>
+                  <p >Remember me</p>
                 </div>
                 <div style={style.loginbtn}>
                   <Button style={style.btn} type="submit">

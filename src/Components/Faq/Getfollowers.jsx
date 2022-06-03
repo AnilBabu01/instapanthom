@@ -29,7 +29,7 @@ const Getfollowers = () => {
                   flexWrap: "wrap",
                   paddingTop: "12px",
                   justifyContent: "center",
-                  fontSize: "40px",
+                 
                   fontWeight: "600",
                 }}
               >

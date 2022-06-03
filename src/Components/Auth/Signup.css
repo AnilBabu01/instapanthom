@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     background-color: aliceblue;
-    padding: 2% 2%;
+    padding: 1% 1%;
   
 }
 .input:focus{
@@ -11,11 +11,27 @@
     border:none;
     outline: 1px solid blue;
 }
+.input3{
+     border: 1px solid red;
+     height: 30px;
+     border-radius: 4px;
+     padding: 6px;
+    
+}
+.errorcolor{
+    color:red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.errordiv{
+    height: 25px;
+}
 .input {
     height: 30px;
     border-radius: 4px;
     padding: 6px;
-    margin-top: 8px;
+   
     border: 1px solid gray;
   }
 .mainfirst{

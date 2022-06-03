@@ -42,7 +42,7 @@ const Home = () => {
             flexWrap: "wrap",
             paddingTop: "12px",
             justifyContent: "center",
-            fontSize:'40px',
+           
             fontWeight: "600" 
           }}
         >

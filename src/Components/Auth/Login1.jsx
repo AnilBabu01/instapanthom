@@ -3,7 +3,9 @@ import user from "../Images/user.jpg";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+
 import "./Signup.css";
+import "./Login.css";
 const style = {
   main: {
     display: "flex",
@@ -59,24 +61,46 @@ const style = {
     borderRadius: "5px",
     color: "white",
   },
-  
+  btn2: {
+    backgroundColor: "purple",
+    border: "none",
+    width: "100%",
+    height: "28px",
+    color: "white",
+    borderRadius: "5px",
+  },
   logo: {
     width: "300px",
     height: "300px",
   },
+
+  rem: {
+    display: "flex",
+    justifyContent: "center",
+    height: "30px",
+  },
+  reminputtext: {
+    paddingLeft: "10px",
+    fontWeight: "600",
+    fontSize: "20px",
+    paddingBottom: "5px",
+  },
+  loginbtn: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "25px",
+  },
 };
-const Signup = () => {
+const Login1 = () => {
   const [credentials, setCredentials] = useState({
     name: "",
-    email: "",
-    number: "",
+
     password: "",
   });
   const [formerror, setFormerror] = useState({});
   const [issubmit, setIssubmit] = useState(false);
+
   const onChange = (e) => {
-    const { name, email, number, password } = e.target;
-    console.log("Registration data is ", name, email, number, password);
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
@@ -84,8 +108,8 @@ const Signup = () => {
     e.preventDefault();
     setFormerror(validate(credentials));
     setIssubmit(true);
-    const { name, number, email, password } = credentials;
-    console.log("Registration data is ", name, email, number, password);
+    const { name, password } = credentials;
+    console.log("Registration data is ", name, password);
   };
   useEffect(() => {
     console.log(formerror);
@@ -101,12 +125,7 @@ const Signup = () => {
     if (!values.name) {
       errors.name = "Username is required";
     }
-    if (!values.email) {
-      errors.email = "Email is required";
-    }
-    if (!values.number) {
-      errors.number = "Mobile number is required";
-    }
+
     if (!values.password) {
       errors.password = "Password is required";
     } else if (values.password.length < 4) {
@@ -127,7 +146,8 @@ const Signup = () => {
             </div>
             <div style={{ marginTop: "21%" }}>
               <Typography variant="h4">
-                Create a account <br />
+                Login
+                <br />
                 To get followers
               </Typography>
             </div>
@@ -145,12 +165,11 @@ const Signup = () => {
                 <img src={user} style={style.img} alt="user"></img>
               </div>
               <div>
-                <h3>Create An Account</h3>
+                <h3>Login</h3>
               </div>
             </div>
             <div style={style.formcontainer}>
-              <div className="mobileform lapform">
-               
+              <div className="formdiv">
                 <form onSubmit={handleSubmit}>
                   <div style={style.inputdiv} Htmlfor="name">
                     <label>Your name</label>
@@ -163,61 +182,46 @@ const Signup = () => {
                       value={credentials.name}
                       onChange={onChange}
                       id="name"
+                      placeholder="Your instagram username "
                     />
                   </div>
-
                   <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
-
-                  <div style={style.inputdiv}>
-                    <label Htmlfor="email">Your email</label>
-                    <input
-                      className={
-                        formerror.email && issubmit ? "input3" : "input"
-                      }
-                      type="email"
-                      name="email"
-                      value={credentials.email}
-                      onChange={onChange}
-                      id="email"
-                    ></input>
-                  </div>
-                  <p className="errorcolor">{formerror.email}</p>
-                  <div style={style.inputdiv}>
-                    <label Htmlfor="number">Mobile number</label>
-                    <input
-                      className={
-                        formerror.number && issubmit ? "input3" : "input"
-                      }
-                      type="text"
-                      name="number"
-                      value={credentials.number}
-                      onChange={onChange}
-                      id="number"
-                    ></input>
-                  </div>
-                  <p className="errorcolor">{formerror.number}</p>
                   <div style={style.inputdiv}>
                     <label htmlFor="password">Password</label>
                     <input
                       className={
                         formerror.password && issubmit ? "input3" : "input"
                       }
+                      style={style.input}
                       type="password"
                       value={credentials.password}
                       onChange={onChange}
                       name="password"
                       id="password"
+                      placeholder="Password"
                     ></input>
                   </div>
-                  <p className="errorcolor">{formerror.password}</p>
-                  <Button style={style.btn} type="submit">
-                    Signup
-                  </Button>
+                  <p className="errorcolor">
+                    {issubmit ? formerror.password : ""}
+                  </p>
+                  <div style={style.rem}>
+                    <input type="checkbox" />
+                    <p style={style.reminputtext}>Remember me</p>
+                  </div>
+                  <div style={style.loginbtn}>
+                    <Button style={style.btn} type="submit">
+                      Login
+                    </Button>
+                  </div>
                 </form>
-
-                <Typography style={{ marginTop: "15px" }} align="center">
-                  Already have an account?<Link to="/login">log in </Link>
-                </Typography>
+                <div style={style.loginbtn}>
+                  <Link to="/reset">Forget Your Password</Link>
+                </div>
+                <div style={style.loginbtn}>
+                  <Typography style={{ marginTop: "15px" }} align="center">
+                    Already have an account?<Link to="/signup">Signup </Link>
+                  </Typography>
+                </div>
               </div>
             </div>
           </div>
@@ -227,4 +231,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login1;
