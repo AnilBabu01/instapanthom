@@ -6,13 +6,13 @@ import Navbar from "./Components/Header/Navbar";
 import Signup from "./Components/Auth/Signup";
 import Login1 from "./Components/Auth/Login1";
 import Reset from "./Components/Auth/Forgetpassword/Reset";
-import AlertContext from "./Components/Context/Alertcontext";
+
 import Verify from "./Components/Auth/Forgetpassword/Verify";
 const Main = () => {
   return (
     <>
       <Router>
-        <AlertContext>
+       
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,7 +22,7 @@ const Main = () => {
           <Route path="/reset" element={<Reset/>} />
           <Route path="/verify" element={<Verify/>} />
         </Routes>
-        </AlertContext>
+       
       </Router>
     </>
   );
