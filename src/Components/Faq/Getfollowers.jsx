@@ -16,7 +16,7 @@ const Getfollowers = () => {
           >
             <div className="maindivgetfollowers">
               <Typography
-                variant="h3"
+               
                 align="center"
                 className="maindivgetfolltext"
               >
