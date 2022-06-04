@@ -45,25 +45,6 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-
-<<<<<<< HEAD
-        <button
-          style={{ margin: "20px" }}
-          onClick={() => setisMobile(!isMobile)}
-          className={style.mobileMenuIcon}
-        >
-          {isMobile ? (
-            <i>
-              <CloseIcon />
-            </i>
-          ) : (
-            <i>
-              <MenuIcon />
-            </i>
-          )}
-        </button>
-=======
-        
           <button
           style={{ marginRight: "20px" }}
             onClick={() => setisMobile(!isMobile)}
@@ -80,7 +61,6 @@ const Navbar = () => {
             )}
           </button>
        
->>>>>>> page/04/06/2022/login-sigup-reset-verfypassword
       </nav>
     </>
   );
