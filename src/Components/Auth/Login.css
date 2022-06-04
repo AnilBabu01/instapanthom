@@ -1,0 +1,68 @@
+.maindiv {
+  display: flex;
+  justify-content: center;
+}
+
+.headertext {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex: flex;
+  text-align: center;
+  background-color: #75ca87;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+.input1 {
+  height: 35px;
+  border-radius: 4px;
+  padding: 6px;
+  margin-top: 8px;
+  border: 1px solid gray;
+}
+
+.input1:hover {
+  border: 1px solid blue;
+}
+
+.input1:focus {
+  border: none;
+  outline: 1px solid blue;
+}
+
+.createactbtn {
+  height: 25px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: "#294acf";
+  background: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.createactbtn:hover {
+  background-color: #294acf;
+  color: white;
+  border: 1px solid #294acf;
+}
+.formdiv {
+  padding: 4%;
+  width: 50%;
+  background-color: white; 
+
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 780px) {
+  .headertext {
+    width: 340px;
+  }
+  .formdiv {
+    padding: 4%;
+    width: 85%;
+  }
+}

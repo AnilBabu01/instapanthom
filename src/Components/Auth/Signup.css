@@ -1,0 +1,71 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    padding: 1% 1%;
+  
+}
+.input:focus{
+
+    border:none;
+    outline: 1px solid blue;
+}
+.input3{
+     border: 1px solid red;
+     height: 30px;
+     border-radius: 4px;
+     padding: 6px;
+    
+}
+.errorcolor{
+    color:red;
+   
+}
+.errordiv{
+    height: 25px;
+}
+.input {
+    height: 36px;
+    border-radius: 4px;
+    padding: 6px;
+   
+    border: 1px solid #dbcece;
+  }
+.mainfirst{
+    display: flex;
+    
+}
+.leftpart{
+    background-color: purple;
+    padding-top: 10%;
+    padding-left: 4%;
+    padding-right: 4%;
+    color: white;
+   
+}
+.lapform{
+    padding: 4%;
+    width: 50%;
+}
+@media screen and (max-width: 780px) {
+   .mobileview{
+           display: block;
+   }
+
+   .mobileviewrleftpart{
+   
+    margin-bottom: -35%;
+    padding-bottom: 25px;
+    
+   }
+   .mobileviewmainfirst{
+    display: block;   
+   }
+   .mobileform{
+    padding: 4%;
+    width:85%;
+    
+   }
+  }
+  

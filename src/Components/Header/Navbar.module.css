@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 70px;
   background-color: white;
   color: black;
   box-shadow: 1px 1px 1px 1px #e2d9d9;
@@ -16,13 +16,17 @@
 
 .logo {
   font-size: 30px;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .navlinks {
   display: flex;
   justify-content: flex-end;
   list-style: none;
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> page/04/06/2022/login-sigup-reset-verfypassword
 }
 
 
