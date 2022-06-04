@@ -17,11 +17,7 @@ const Navbar = () => {
           className={isMobile ? style.mobilelinks : style.navlinks}
           onClick={() => setisMobile(false)}
         >
-          <li>
-            <Link to="/faq" className={style.home}>
-              Faq
-            </Link>
-          </li>
+          
           <li>
             <Link to="/" className={style.home}>
               Home
@@ -30,6 +26,11 @@ const Navbar = () => {
           <li>
             <Link to="/about" className={style.about}>
               About us
+            </Link>
+          </li>
+          <li>
+            <Link to="/faq" className={style.home}>
+              Faq
             </Link>
           </li>
           <li>

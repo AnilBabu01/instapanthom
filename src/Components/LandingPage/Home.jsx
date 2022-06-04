@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import style from "./Home.module.css";
 import Steps from "./Steps";
 const st = {
@@ -21,7 +20,7 @@ const Home = () => {
           <span
             style={{
               backgroundColor: "#9e9191",
-              padding: "4px",
+              padding: "2px",
               color: "white",
               fontSize:"15px"
             }}
@@ -71,24 +70,25 @@ const Home = () => {
             display: "flex",
             justifyContent: "center",
             flexWrap: "wrap",
+            marginBottom: "15px",
           }}
           className={style.buttonfree}
         >
-          <Button
-            className={style.buttonfree}
-            variant="contained"
-            style={{ height: "45px" }}
-          >
+          <button className="btn1 btn" style={{ height: "45px" }}>
             Get free Instagram Follwers & likes
-          </Button>
-          <p style={{ margin: "20px", color: "gray" }}>or</p>
-          <Button
-            className={style.buttonfree}
-            variant="contained"
-            style={{ height: "45px" }}
-          >
+          </button>
+          <div style={{ padding: "10px" }}>
+            <Typography
+              align="center"
+              style={{ color: "gray", fontSize: "40" }}
+            >
+              or
+            </Typography>
+          </div>
+
+          <button className="btn btn1 " style={{ height: "45px" }}>
             Buy Instagram Followers
-          </Button>
+          </button>
         </div>
       </div>
       <Steps />

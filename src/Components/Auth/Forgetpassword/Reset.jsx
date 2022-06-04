@@ -47,7 +47,7 @@ const Reset = () => {
       setshowalert(true);
       setTimeout(() => {
         nevigate("/verify");
-      }, 2000);
+      }, 1000);
     }
     return errors;
   };

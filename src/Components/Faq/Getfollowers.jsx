@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import "./Getfollowers.css";
 const Getfollowers = () => {
   return (
     <>
@@ -13,33 +14,20 @@ const Getfollowers = () => {
               alignItems: "center",
             }}
           >
-            <div
-              style={{
-                backgroundColor: " #adc0d1",
-
-                padding: "5%",
-              }}
-            >
+            <div className="maindivgetfollowers">
               <Typography
-                variant="h3"
+               
                 align="center"
-                style={{
-                  fontSize: "150%",
-                  display: "flex",
-                  flexWrap: "wrap",
-                  paddingTop: "12px",
-                  justifyContent: "center",
-                 
-                  fontWeight: "600",
-                }}
+                className="maindivgetfolltext"
               >
-                Do you want free, high quality and targeted <br />
-                Instagram followers daily?
+                Do you want free, high quality and targeted Instagram followers
+                daily?
               </Typography>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button variant="contained" style={{ height: "45px",marginTop:"12px" }}>
-                  free Instagram Follwers
-                </Button>
+                <button className="grtbtn">
+                  <GroupAddIcon />
+                  <span style={{padding: "10px"}}>free Instagram Follwers</span>
+                </button>
               </div>
             </div>
           </div>
