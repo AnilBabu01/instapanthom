@@ -6,13 +6,12 @@
 
 .navbar {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   height: 60px;
   background-color: white;
   color: black;
   box-shadow: 1px 1px 1px 1px #e2d9d9;
- 
 }
 
 .logo {
@@ -33,15 +32,13 @@
 .login,
 .singup {
   text-decoration: none;
- 
+
   font-size: 20px;
   padding: 10px 20px;
   margin: 0 10px;
   cursor: pointer;
   color: black;
 }
-
-
 
 .mobileMenuIcon {
   display: none;
@@ -62,7 +59,7 @@
     position: absolute;
     display: block;
     list-style: none;
-    background-color:white;
+    background-color: white;
     left: 0;
     top: 60px;
     transition: all 0.5s ease-out;
@@ -75,15 +72,13 @@
   .about,
   .login,
   .singup {
-    color:black;
+    color: black;
     text-align: center;
     padding: 10px;
     width: 100%;
     transition: all 0.5s ease-out;
     display: grid;
   }
-
-  
 
   .mobileMenuIcon {
     display: block;
@@ -94,7 +89,6 @@
     top: 15px;
     right: 25px;
   }
-  .mobilestyle{
-
+  .mobilestyle {
   }
 }
