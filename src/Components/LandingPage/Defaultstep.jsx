@@ -30,10 +30,6 @@ const Defaultstep = ({GroupAddIcon }) => {
   </div>
 </Paper>
     
-    
-    
-    
-    
     </>
   )
 }

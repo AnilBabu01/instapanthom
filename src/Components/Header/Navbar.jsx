@@ -19,6 +19,11 @@ const Navbar = () => {
           onClick={() => setisMobile(false)}
         >
           <li>
+            <Link to="/faq" className={style.home}>
+              Faq
+            </Link>
+          </li>
+          <li>
             <Link to="/" className={style.home}>
               Home
             </Link>

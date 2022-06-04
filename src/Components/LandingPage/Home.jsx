@@ -22,21 +22,36 @@ const Home = () => {
               backgroundColor: "#9e9191",
               padding: "2px",
               color: "white",
+              fontSize:"15px"
             }}
           >
             Free Instagram Followers | Free Instagram Likes
           </span>
         </Typography>
+        <div style={{display: "flex",
+    justifyContent: "center",
+    alignItems: "center"}}>
+        <div>
         <Typography
-          className={style.Headingsize}
-          align="center"
-          variant="h3"
-          style={{ fontWeight: "600" }}
+        variant="h3"
+        align="center"
+          style={{
+            fontSize: "150%",
+            display: "flex",
+            flexWrap: "wrap",
+            paddingTop: "12px",
+            justifyContent: "center",
+            fontSize:'40px',
+            fontWeight: "600" 
+          }}
         >
-          Get Fast & Targeted Growth
-          <br /> with Free Instagram Followers & <br /> Likes Today!
+          Get Fast & Targeted Growth <br/>
+          with Free Instagram Followers & Likes Today!
         </Typography>
-
+      
+        </div>
+        </div>
+        
         <Typography
           className={style.textpara}
           align="center"
