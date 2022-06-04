@@ -46,8 +46,9 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div style={{ margin: "20px" }}>
+      
           <button
+          style={{ margin: "20px" }}
             onClick={() => setisMobile(!isMobile)}
             className={style.mobileMenuIcon}
           >
@@ -61,7 +62,7 @@ const Navbar = () => {
               </i>
             )}
           </button>
-        </div>
+      
       </nav>
     </>
   );
