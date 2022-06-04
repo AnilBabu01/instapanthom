@@ -70,7 +70,7 @@ const navigate =useNavigate();
             </div>
             <div className="formdiv">
               <Typography variant="h4" align="center">
-                Login
+                Account Details
               </Typography>
               <form onSubmit={handleSubmit} >
                 <div style={style.inputdiv} Htmlfor="name">

@@ -146,7 +146,7 @@ const Signup = () => {
                 <img src={user} style={style.img} alt="user"></img>
               </div>
               <div>
-                <h3>Create An Account</h3>
+                <h3>Account Details</h3>
               </div>
             </div>
             <div style={style.formcontainer}>

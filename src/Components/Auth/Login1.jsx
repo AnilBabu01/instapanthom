@@ -148,7 +148,7 @@ const Login1 = () => {
             </div>
             <div style={{ marginTop: "21%" }}>
               <Typography variant="h4">
-                Login
+                Account Details
                 <br />
                 To get followers
               </Typography>

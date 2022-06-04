@@ -38,7 +38,7 @@ const Steps = () => {
           <div className="centerallSteps">
             <div className="maindiv maindivmobile">
               <div className="iconmaindiv iconmaindivmobile">
-                {" "}
+               
                 <div>
                   <div
                     style={{

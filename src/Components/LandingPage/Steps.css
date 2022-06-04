@@ -54,7 +54,7 @@
 
 @media screen and (max-width: 780px) {
   .maindivmobile {
-    display: block;
+    display: block!important;
   }
   .iconmaindivmobile {
     margin-bottom: 10px;
