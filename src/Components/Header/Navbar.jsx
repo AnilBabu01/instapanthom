@@ -19,6 +19,11 @@ const Navbar = () => {
           onClick={() => setisMobile(false)}
         >
           <li>
+            <Link to="/faq" className={style.home}>
+              Faq
+            </Link>
+          </li>
+          <li>
             <Link to="/" className={style.home}>
               Home
             </Link>
@@ -41,21 +46,23 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <button
+      
+          <button
           style={{ margin: "20px" }}
-          onClick={() => setisMobile(!isMobile)}
-          className={style.mobileMenuIcon}
-        >
-          {isMobile ? (
-            <i>
-              <CloseIcon />
-            </i>
-          ) : (
-            <i>
-              <MenuIcon />
-            </i>
-          )}
-        </button>
+            onClick={() => setisMobile(!isMobile)}
+            className={style.mobileMenuIcon}
+          >
+            {isMobile ? (
+              <i>
+                <CloseIcon />
+              </i>
+            ) : (
+              <i>
+                <MenuIcon />
+              </i>
+            )}
+          </button>
+      
       </nav>
     </>
   );

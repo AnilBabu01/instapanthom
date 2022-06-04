@@ -23,7 +23,9 @@
   display: flex;
   justify-content: flex-end;
   list-style: none;
+ 
 }
+
 
 .home,
 .about,
@@ -72,7 +74,7 @@
   .singup {
     color: black;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
     transition: all 0.5s ease-out;
     display: grid;
