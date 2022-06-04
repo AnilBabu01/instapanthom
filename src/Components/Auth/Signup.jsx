@@ -3,6 +3,7 @@ import user from "../Images/user.jpg";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import Btn from "./Forgetpassword/Btn";
 import "./Signup.css";
 const style = {
   main: {
@@ -210,13 +211,12 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.password}</p>
-                  <Button style={style.btn} type="submit">
-                    Signup
-                  </Button>
+                  
+                  <Btn value={" Signup"}/>
                 </form>
 
                 <Typography style={{ marginTop: "15px" }} align="center">
-                  Already have an account?<Link to="/login">log in </Link>
+                  Already have an account?<Link style={{textDecoration:"none"}} to="/login"><span style={{color:"red",paddingLeft:"5px"}}>Please login</span>  </Link>
                 </Typography>
               </div>
             </div>

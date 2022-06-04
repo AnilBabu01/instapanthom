@@ -19,7 +19,7 @@ const Main = () => {
           <Route path="/faq" element={<Faq/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/login" element={<Login1/>} />
-          <Route path="/reset" element={<Reset/>} />
+          <Route path="/forgetpassword" element={<Reset/>} />
           <Route path="/verify" element={<Verify/>} />
         </Routes>
        

@@ -20,19 +20,17 @@
 }
 .errorcolor{
     color:red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
 }
 .errordiv{
     height: 25px;
 }
 .input {
-    height: 30px;
+    height: 36px;
     border-radius: 4px;
     padding: 6px;
    
-    border: 1px solid gray;
+    border: 1px solid #dbcece;
   }
 .mainfirst{
     display: flex;

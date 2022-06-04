@@ -3,7 +3,7 @@ import user from "../Images/user.jpg";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-
+import Btn from "./Forgetpassword/Btn";
 import "./Signup.css";
 import "./Login.css";
 const style = {
@@ -78,11 +78,13 @@ const style = {
     display: "flex",
     justifyContent: "center",
     height: "30px",
+    alignItems: "baseline",
+    marginBottom: "10px"
   },
   reminputtext: {
     paddingLeft: "10px",
     fontWeight: "600",
-    fontSize: "20px",
+    fontSize: "18px",
     paddingBottom: "5px",
   },
   loginbtn: {
@@ -209,17 +211,16 @@ const Login1 = () => {
                     <p style={style.reminputtext}>Remember me</p>
                   </div>
                   <div style={style.loginbtn}>
-                    <Button style={style.btn} type="submit">
-                      Login
-                    </Button>
+                  <Btn value={"Login"}/>
                   </div>
+                 
                 </form>
                 <div style={style.loginbtn}>
-                  <Link to="/reset">Forget Your Password</Link>
+                  <Link to="/forgetpassword">Forget Your Password</Link>
                 </div>
                 <div style={style.loginbtn}>
-                  <Typography style={{ marginTop: "15px" }} align="center">
-                    Already have an account?<Link to="/signup">Signup </Link>
+                  <Typography style={{ marginTop: "15px",fontSize:"15px" }} align="center">
+                    Already have an account?<Link style={{textDecoration:"none"}} to="/signup"><span style={{color:"red",paddingLeft:"5px"}}>Please Signup</span> </Link>
                   </Typography>
                 </div>
               </div>

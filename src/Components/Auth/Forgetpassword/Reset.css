@@ -7,7 +7,7 @@
     margin-left: 50%;
     margin-right: 50%;
     margin-top: 9%;
-    margin-bottom: 23%;
+    margin-bottom: 15%;
   }
   .headertext1 {
     width: 500px;
@@ -52,15 +52,13 @@
   .resetbtn{
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
+  
   }
   .btn01{
     background: #3b53d8;
     border: none;
     padding-left: 15px;
     padding-right: 15px;
-   
-    margin-top: 30px;
     border-radius: 5px;
     color: white;
     display: flex;

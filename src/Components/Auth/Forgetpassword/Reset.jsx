@@ -3,20 +3,19 @@ import React, { useState, useEffect, useContext } from "react";
 import Typography from "@mui/material/Typography";
 import Alert from "../../Context/Alert";
 import { useNavigate } from "react-router-dom";
-
+import Btn from "./Btn";
 
 const id = "anilb99";
 
 const Reset = () => {
-  
   const nevigate = useNavigate();
- 
+
   const [credentials, setCredentials] = useState({
     name: "",
   });
   const [formerror, setFormerror] = useState({});
   const [issubmit, setIssubmit] = useState(false);
-const [showalert, setshowalert] = useState(false)
+  const [showalert, setshowalert] = useState(false);
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -45,7 +44,7 @@ const [showalert, setshowalert] = useState(false)
       errors.name =
         "We cannot find a registered account with that Instagram username.";
     } else if (value.name === id) {
-      setshowalert(true)
+      setshowalert(true);
       setTimeout(() => {
         nevigate("/verify");
       }, 2000);
@@ -61,7 +60,13 @@ const [showalert, setshowalert] = useState(false)
               <Typography variant="h4" align="center">
                 Forget Password
               </Typography>
-             {showalert&& <Alert alert={alert} type={"success"}  msg={"We have e-mailed your password reset link"}/>}
+              {showalert && (
+                <Alert
+                  alert={alert}
+                  type={"success"}
+                  msg={"We have e-mailed your password reset link"}
+                />
+              )}
               <form onSubmit={handleSubmit}>
                 <div Htmlfor="name">
                   <input
@@ -77,11 +82,8 @@ const [showalert, setshowalert] = useState(false)
                   />
                 </div>
                 <p className="errorcolor">{formerror.name}</p>
-                <div className="resetbtn">
-                  <button className="btn01" type="submit">
-                    Reset Password
-                  </button>
-                </div>
+
+                <Btn value={"Reset Password"} />
               </form>
             </div>
           </div>

@@ -16,7 +16,7 @@ useEffect(() => {
         settype("")
     setmsg("")
       }, 2000);
-}, [type])
+}, [props.type])
 
   
  
