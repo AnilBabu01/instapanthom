@@ -1,0 +1,10 @@
+.showusedetalinmenuin-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 780px) {
+  .showusedetalinmenuin-mobile {
+    display: block;
+    margin-right: 30px;
+  }
+}
