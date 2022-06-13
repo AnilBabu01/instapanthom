@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import style from "./Home.module.css";
+import Footer from '../Footer/Footer'
 import Steps from "./Steps";
 const st = {
   margin: "auto",
@@ -92,6 +93,7 @@ const Home = () => {
         </div>
       </div>
       <Steps />
+      <Footer/>
     </>
   );
 };
