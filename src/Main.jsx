@@ -11,6 +11,7 @@ import Maindashboard from "./Components/Dashboard/maindashboard/Maindashboard";
 import Addacount from './Components/Dashboard/Addacount/Addacount';
 import Placeorder from './Components/Dashboard/Placeorder/Placeorder';
 import Dashboard from './Components/Dashboard/dashboard/Dashboard';
+import About from './Components/About/About'
 const Main = () => {
 const [opendashboard, setopendashboard] = useState(false);
 
@@ -25,6 +26,7 @@ const [opendashboard, setopendashboard] = useState(false);
           <Route path="/faq" element={<Faq/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/login" element={<Login1/>} />
+          <Route path="/about" element={<About/>} />
           <Route path="/forgetpassword" element={<Reset/>} />
           <Route path="/verify" element={<Verify/>} />
           <Route path="/dashboard"  element={<Maindashboard setopendashboard={setopendashboard}/>} />
