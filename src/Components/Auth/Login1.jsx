@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import user from "../Images/user.jpg";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Btn from "./Forgetpassword/Btn";
+import Footer from '../Footer/Footer'
 import "./Signup.css";
 import "./Login.css";
 const style = {
@@ -228,6 +228,7 @@ const Login1 = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Btn from "./Forgetpassword/Btn";
+import Footer from '../Footer/Footer'
 import "./Signup.css";
 const style = {
   main: {
@@ -223,6 +224,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
