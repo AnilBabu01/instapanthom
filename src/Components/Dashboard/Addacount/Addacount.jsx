@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
-import User from './User';
+import User from "./User";
 import "./Addacount.css";
 
 const Addacount = () => {
@@ -38,7 +38,6 @@ const Addacount = () => {
             <div className="formdivaddacout">
               <div Htmlfor="name">
                 <input
-                
                   className="inputaddacout"
                   type="text"
                   name="name"
@@ -51,7 +50,7 @@ const Addacount = () => {
 
               <div>
                 <input
-                   className="inputaddacout"
+                  className="inputaddacout"
                   type="password"
                   value={credentials.password}
                   onChange={onChange}
@@ -62,25 +61,23 @@ const Addacount = () => {
               </div>
 
               <div>
-                <button className="addacoutbtn" type="submit">Add</button>
+                <button className="addacoutbtn" type="submit">
+                  Add
+                </button>
               </div>
             </div>
           </form>
         </div>
-          <div className="userdiv">
-           
-            
-          <User/>
-          <User/>
-          <User/>
-          <User/>
-          <User/>
-          <User/>
-          <User/>
-          <User/>
-          
-          </div>
-
+        <div className="userdiv">
+          <User />
+          <User />
+          <User />
+          <User />
+          <User />
+          <User />
+          <User />
+          <User />
+        </div>
       </div>
     </>
   );
