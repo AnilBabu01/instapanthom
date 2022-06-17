@@ -23,6 +23,7 @@ const Addacount = () => {
   return (
     <>
       <Sidebar />
+      <div className='mainpaccount'>
       <div className="mainAddacount">
         <div className="addacountlinltext">
           <Typography variant="h3" className="addtext">
@@ -79,6 +80,8 @@ const Addacount = () => {
           <User />
         </div>
       </div>
+      </div>
+    
     </>
   );
 };

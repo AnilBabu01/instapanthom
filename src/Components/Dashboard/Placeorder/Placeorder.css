@@ -1,0 +1,237 @@
+.mainplaceorder {
+  background-color: #f5f5f5;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 144px;
+}
+.divcontentplaceorder {
+  background-color: #d9d9d9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.choosediv {
+  display: flex;
+  background: white;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-right: 20px;
+  border-top-left-radius: 12px;
+  height: 35px;
+  align-items: center;
+}
+
+.choosetext {
+  background-color: #c8d6f5;
+  margin-left: 87px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding-left: 70px;
+  padding-right: 70px;
+  border-radius: 12px;
+}
+
+.choosetext1 {
+  background-color: #c8d6f5;
+  margin-left: 50px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding-left: 81px;
+  padding-right: 80px;
+  border-radius: 12px;
+}
+.textchoose {
+  font-weight: 600 !important;
+}
+
+.textchoose1 {
+  font-weight: 400 !important;
+}
+.orderdivselect {
+  display: flex;
+}
+.freediv {
+  display: flex;
+}
+.freetext {
+  background-color: white;
+  border-top: 1px solid #d9d9d9;
+  width: 250px;
+  height: 30px;
+}
+.freetext1 {
+  background-color: white;
+  border-top: 1px solid #d9d9d9;
+  width: 250px;
+  height: 30px;
+  border-bottom-left-radius: 12px;
+}
+.featuresdiv {
+  padding-left: 50px;
+  padding-top: 30px;
+  padding-right: 250px;
+}
+
+.selectdiv {
+  margin-top: 30px;
+}
+
+.select {
+  border: none;
+  width: 400px;
+  height: 40px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-left: 80px;
+}
+.select:focus {
+  border: none;
+}
+
+.orderbtn {
+  border: none;
+  padding-left: 70px;
+  padding-right: 70px;
+  background-color: #e84545;
+  color: white;
+  border-radius: 10px;
+  margin-left: 200px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.userlistmain {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.divdropdown {
+  width: 400px;
+  margin-left: 89px;
+  margin-top: 50px;
+}
+.dropdown {
+  position: relative;
+  color: #333;
+  cursor: default;
+}
+
+.dropdown .arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  content: " ";
+  display: block;
+  height: 0;
+  margin-top: 0.3rem;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  width: 0;
+}
+
+.dropdown .arrow.open {
+  border-color: transparent transparent #999;
+  border-width: 0 5px 5px;
+  display: none;
+}
+
+.dropdown .selected-value input {
+  line-height: 1.5;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: default;
+  outline: none;
+  padding: 8px 52px 8px 10px;
+  transition: all 200ms ease;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.dropdown .options {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dropdown .options.open {
+  display: block;
+}
+
+.dropdown .option {
+  box-sizing: border-box;
+  color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  border-bottom: 1px solid gray;
+}
+
+.dropdown .option.selected,
+.dropdown .option:hover {
+  background-color: #f2f9fc;
+  color: #333;
+}
+
+@media screen and (max-width: 780px) {
+  .orderdivselect {
+    display: block;
+  }
+
+  .freediv {
+    display: block;
+  }
+  .choosetext {
+    display: none;
+  }
+  .choosetext1 {
+    display: none;
+  }
+  .featuresdiv {
+    padding-right: 0px;
+  }
+
+  .orderbtn {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .select {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .mobileplace {
+    font-size: 30px !important;
+    margin-bottom: 5px !important;
+  }
+  .mainplaceorder {
+    padding-bottom: 20px;
+  }
+
+  .divdropdown {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+  .choosediv {
+    width:100%;
+  }
+}
