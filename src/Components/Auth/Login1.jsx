@@ -123,7 +123,7 @@ const Login1 = () => {
   const validate = (values) => {
     console.log("validate data", values.name);
     const errors = {};
-    const regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+  
     if (!values.name) {
       errors.name = "Username is required";
     }
@@ -220,7 +220,7 @@ const Login1 = () => {
                 </div>
                 <div style={style.loginbtn}>
                   <Typography style={{ marginTop: "15px",fontSize:"15px" }} align="center">
-                    Already have an account?<Link style={{textDecoration:"none"}} to="/signup"><span style={{color:"red",paddingLeft:"5px"}}>Please Signup</span> </Link>
+                    don't have an account?<Link style={{textDecoration:"none"}} to="/signup"><span style={{color:"red",paddingLeft:"5px"}}>Please Signup</span> </Link>
                   </Typography>
                 </div>
               </div>

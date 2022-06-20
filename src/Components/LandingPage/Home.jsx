@@ -16,7 +16,7 @@ const Home = () => {
       <div style={st}>
         <Typography
           align="center"
-          style={{ marginTop: "40px", marginBottom: "20px" }}
+          style={{ marginTop: "80px", marginBottom: "20px" }}
         >
           <span
             style={{
@@ -24,6 +24,7 @@ const Home = () => {
               padding: "2px",
               color: "white",
               fontSize:"15px"
+
             }}
           >
             Free Instagram Followers | Free Instagram Likes
