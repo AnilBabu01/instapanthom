@@ -34,7 +34,7 @@
   }
 .mainfirst{
     display: flex;
-    
+    margin-top: 50px;
 }
 .leftpart{
     background-color: purple;
@@ -57,6 +57,7 @@
    
     margin-bottom: -35%;
     padding-bottom: 25px;
+    margin-top: 48px;
     
    }
    .mobileviewmainfirst{

@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import style from "./Home.module.css";
+import Footer from '../Footer/Footer'
 import Steps from "./Steps";
 const st = {
   margin: "auto",
@@ -15,7 +16,7 @@ const Home = () => {
       <div style={st}>
         <Typography
           align="center"
-          style={{ marginTop: "40px", marginBottom: "20px" }}
+          style={{ marginTop: "80px", marginBottom: "20px" }}
         >
           <span
             style={{
@@ -23,6 +24,7 @@ const Home = () => {
               padding: "2px",
               color: "white",
               fontSize:"15px"
+
             }}
           >
             Free Instagram Followers | Free Instagram Likes
@@ -92,6 +94,7 @@ const Home = () => {
         </div>
       </div>
       <Steps />
+      <Footer/>
     </>
   );
 };

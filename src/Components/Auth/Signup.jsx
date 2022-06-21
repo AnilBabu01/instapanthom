@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import user from "../Images/user.jpg";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Btn from "./Forgetpassword/Btn";
+import Footer from '../Footer/Footer'
 import "./Signup.css";
 const style = {
   main: {
@@ -98,13 +98,14 @@ const Signup = () => {
   const validate = (values) => {
     console.log("validate data", values.name);
     const errors = {};
-    const regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+    
     if (!values.name) {
       errors.name = "Username is required";
     }
     if (!values.email) {
       errors.email = "Email is required";
     }
+    
     if (!values.number) {
       errors.number = "Mobile number is required";
     }
@@ -215,7 +216,7 @@ const Signup = () => {
                   <Btn value={" Signup"}/>
                 </form>
 
-                <Typography style={{ marginTop: "15px" }} align="center">
+                <Typography style={{ marginTop: "15px",fontSize: "15px"}} align="center">
                   Already have an account?<Link style={{textDecoration:"none"}} to="/login"><span style={{color:"red",paddingLeft:"5px"}}>Please login</span>  </Link>
                 </Typography>
               </div>
@@ -223,6 +224,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
