@@ -10,6 +10,18 @@ import rupee from "../Dasgimages/rupee.svg";
 import dol from "../Dasgimages/dol.svg";
 import pay from "../Dasgimages/pay.svg";
 import "./Placeorder.css";
+const Plan = (props) => {
+  return (
+    <>
+      <div className="freetext">
+        <Typography align="center" className="textchoose">
+          <img style={{ marginRight: "4px" }} src={rupee} alt="rupee" />{" "}
+          {props.value}
+        </Typography>
+      </div>
+    </>
+  );
+};
 const Placeorder = () => {
   return (
     <>
@@ -43,66 +55,13 @@ const Placeorder = () => {
                     Free
                   </Typography>
                 </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    199
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    599
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    999
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    1999
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    2999
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    5999
-                  </Typography>
-                </div>
+                <Plan value={"199"} />
+                <Plan value={"599"} />
+                <Plan value={"999"} />
+                <Plan value={"1999"} />
+                <Plan value={"2999"} />
+                <Plan value={"5999"} />
+
                 <div className="freetext1"></div>
               </div>
               <div className="featuresdiv">

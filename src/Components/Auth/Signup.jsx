@@ -4,68 +4,8 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Btn from "./Forgetpassword/Btn";
 import Footer from '../Footer/Footer'
+import Common from "./Common";
 import "./Signup.css";
-const style = {
-  main: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "red",
-
-    paddingTop: "6%",
-    paddingBottom: "6%",
-    paddingLeft: "2%",
-    paddingRight: "2%",
-  },
-  leftpart: {
-    backgroundColor: "purple",
-    paddingTop: "10%",
-    paddingLeft: "4%",
-    paddingRight: "4%",
-    color: "white",
-  },
-  rightpart: {
-    backgroundColor: "white",
-  },
-  img: {
-    width: "10%",
-    height: "10%",
-  },
-  imgcontent: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  imgdiv: {
-    justifyContent: "center",
-    display: "flex",
-  },
-  formcontainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  inputdiv: {
-    display: "flex",
-    flexDirection: "column",
-  },
-
-  btn: {
-    backgroundColor: "purple",
-    border: "none",
-    width: "100%",
-    height: "28px",
-    marginTop: "30px",
-    borderRadius: "5px",
-    color: "white",
-  },
-  
-  logo: {
-    width: "300px",
-    height: "300px",
-  },
-};
 const Signup = () => {
   const [credentials, setCredentials] = useState({
     name: "",
@@ -124,37 +64,25 @@ const Signup = () => {
       <div className="main mobileview">
         <div className="mainfirst mobileviewmainfirst">
           <div className="leftpart mobileviewrleftpart ">
-            <div>
-              <Typography>Instaphantom</Typography>
-            </div>
-            <div style={{ marginTop: "21%" }}>
-              <Typography variant="h4">
-                Create a account <br />
-                To get followers
-              </Typography>
-            </div>
-            <div style={{ marginTop: "10%", marginBottom: "42%" }}>
-              <Typography>
-                It is simple to get targeted, high quality,
-                <br /> free Instagram followers or free Instagram <br />
-                likes from our network!{" "}
-              </Typography>
-            </div>
+
+         <Common/>
+
           </div>
-          <div style={style.rightpart}>
-            <div style={style.imgcontent}>
-              <div style={style.imgdiv}>
-                <img src={user} style={style.img} alt="user"></img>
+          
+          <div className='rightpart'>
+            <div  className='imgcontent'>
+              <div   className='imgdiv'>
+                <img src={user}  className='img' alt="user"></img>
               </div>
               <div>
                 <h3>Account Details</h3>
               </div>
             </div>
-            <div style={style.formcontainer}>
+            <div  className='formcontainer'>
               <div className="mobileform lapform">
                
                 <form onSubmit={handleSubmit}>
-                  <div style={style.inputdiv} Htmlfor="name">
+                  <div className='inputdiv' Htmlfor="name">
                     <label>Your name</label>
                     <input
                       className={
@@ -170,7 +98,7 @@ const Signup = () => {
 
                   <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
 
-                  <div style={style.inputdiv}>
+                  <div  className='inputdiv'>
                     <label Htmlfor="email">Your email</label>
                     <input
                       className={
@@ -184,7 +112,7 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.email}</p>
-                  <div style={style.inputdiv}>
+                  <div  className='inputdiv'>
                     <label Htmlfor="number">Mobile number</label>
                     <input
                       className={
@@ -198,7 +126,7 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.number}</p>
-                  <div style={style.inputdiv}>
+                  <div  className='inputdiv'>
                     <label htmlFor="password">Password</label>
                     <input
                       className={

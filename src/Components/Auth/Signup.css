@@ -48,6 +48,37 @@
     padding: 4%;
     width: 50%;
 }
+
+.rightpart{
+    background-color: white;
+  }
+  .img{
+    width: 10%;
+    height: 10%;
+  }
+  .imgcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgdiv{
+    justify-content: center;
+    display: flex;
+  }
+  .formcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .inputdiv{
+    display: flex;
+    flex-direction: column;
+  }
+.logo{
+    width: 300px;
+    height: 300px;
+  }
 @media screen and (max-width: 780px) {
    .mobileview{
            display: block;

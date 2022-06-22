@@ -8,6 +8,29 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Badge from "@mui/material/Badge";
 import "./Steps.css";
 
+const Com = (props) => {
+  return (
+    <>
+      <div className="iconmaindiv iconmaindivmobile">
+        <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <span className="icondiv">{props.icon}</span>
+          </div>
+
+          <Typography align="center" variant="h5">
+            {props.step}
+          </Typography>
+          <Typography align="center">{props.text}</Typography>
+        </div>
+      </div>
+    </>
+  );
+};
 const Steps = () => {
   return (
     <>
@@ -37,121 +60,41 @@ const Steps = () => {
         <div>
           <div className="centerallSteps">
             <div className="maindiv maindivmobile">
-              <div className="iconmaindiv iconmaindivmobile">
-               
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span className="icondiv">
-                      <GroupAddIcon />
-                    </span>
-                  </div>
-
-                  <Typography align="center" variant="h5">
-                    Step1
-                  </Typography>
-                  <Typography align="center">Register & Login</Typography>
-                </div>
-              </div>
-
-              <div className="iconmaindiv iconmaindivmobile">
-                {" "}
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span className="icondiv">
-                      <ArrowRightAltIcon />
-                    </span>
-                  </div>
-
-                  <Typography align="center" variant="h5">
-                    Step2
-                  </Typography>
-                  <Typography align="center">Active the Free Plan</Typography>
-                </div>
-              </div>
-              <div className="iconmaindiv iconmaindivmobile ">
-                {" "}
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span className="icondiv">
-                      <SettingsIcon />
-                    </span>
-                  </div>
-
-                  <Typography align="center" variant="h5">
-                    Step3
-                  </Typography>
-                  <Typography align="center">
-                    Follow Profile of <br />
-                    Interest
-                  </Typography>
-                </div>
-              </div>
-              <div className="iconmaindiv iconmaindivmobile">
-                {" "}
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span className="icondiv">
-                      <PermDataSettingIcon />
-                    </span>
-                  </div>
-
-                  <Typography align="center" variant="h5">
-                    Step4
-                  </Typography>
-                  <Typography align="center">
-                    -2 Minutes Later
-                    <br /> You're Done
-                  </Typography>
-                </div>
-              </div>
-              <div className="iconmaindiv iconmaindivmobile">
-                {" "}
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span className="icondiv">
-                      <Badge badgeContent={8} color="primary">
-                        <InstagramIcon />
-                      </Badge>
-                    </span>
-                  </div>
-
-                  <Typography align="center" variant="h5">
-                    Step5
-                  </Typography>
-                  <Typography align="center">Get Free Fan's</Typography>
-                </div>
-              </div>
+              <Com
+                step={"step1"}
+                text={"Register & Login"}
+                icon={<GroupAddIcon />}
+              />
+              <Com
+                step={"step2"}
+                text={"Active the Free Plan"}
+                icon={<ArrowRightAltIcon />}
+              />
+              <Com
+                step={"step3"}
+                text={" Follow Profile of interest"}
+                icon={<SettingsIcon />}
+              />
+              <Com
+                step={"step4"}
+                text={"2 Minutes You're Done"}
+                icon={<PermDataSettingIcon />}
+              />
+              <Com
+                step={"step5"}
+                text={"Get Free Fan's"}
+                icon={<InstagramIcon />}
+                Badge={Badge}
+              />
             </div>
           </div>
         </div>
         <div className="btndiv">
           <button className="btn btn2">
-            <InstagramIcon /> <span style={{paddingLeft:"10px"}}>Register Your Free Acount Now </span>{" "}
+            <InstagramIcon />{" "}
+            <span style={{ paddingLeft: "10px" }}>
+              Register Your Free Acount Now{" "}
+            </span>{" "}
           </button>
         </div>
       </div>
