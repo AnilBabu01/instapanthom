@@ -1,0 +1,79 @@
+
+.spanhometxt{
+    background-color: #9e9191;
+    padding: 2px;
+    color: white;
+    font-size: 15px;
+}
+
+.spanhometxt1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.spanhometxt2{
+    font-size: 150%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    justify-content: center;
+    font-weight: 600;
+}
+
+
+
+.spanhometxt3{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+
+
+.spanhometxt4{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.mainhome{
+    margin: auto;
+  width: 100%;
+
+  padding: 6px;
+}
+.mainhometxt{
+
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.homebtn{
+    height: 45px;
+}
+
+.homeOR{
+    color: gray;
+     font-size: 40;
+}
+@media screen and (max-width: 780px) {
+    .buttonfree{
+       width: 100%;
+    }
+    .Headingsize
+    {
+        font-size: 40px;
+
+    }
+    
+    .mobilewidth
+    {
+        width: 100%;
+    }
+
+
+  }
+  

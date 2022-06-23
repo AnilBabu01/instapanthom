@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="phonecon">
-            <Typography variant="h6" style={{ fontWeight: "400" }}>
+            <Typography variant="h6"  className='instatxt'>
               Legal
             </Typography>
             <div className="mardivcontent">
@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="phonecon">
-            <Typography variant="h6" style={{ fontWeight: "400" }}>
+            <Typography variant="h6"  className='instatxt'>
               Business
             </Typography>
             <div className="mardivcontent">
@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="phonecon">
-            <Typography variant="h6" style={{ fontWeight: "400" }}>
+            <Typography variant="h6"  className='instatxt'>
               Addreass
             </Typography>
             <div className="mardivcontent">

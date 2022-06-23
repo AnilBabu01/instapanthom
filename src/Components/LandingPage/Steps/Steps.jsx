@@ -34,25 +34,12 @@ const Com = (props) => {
 const Steps = () => {
   return (
     <>
-      <div
-        style={{
-          width: "100%",
-          padding: "30px 0 80px",
-          backgroundColor: "aliceblue",
-        }}
-      >
-        <Typography variant="h4" align="center" style={{ fontWeight: "500" }}>
+      <div className="stepmain">
+        <Typography variant="h4" align="center" className="stepmaintxt1">
           Simple Steps To Activate Our Free Service
         </Typography>
 
-        <Typography
-          align="center"
-          style={{
-            marginTop: "40px",
-            marginBottom: "20px",
-            fontSize: "20px",
-          }}
-        >
+        <Typography align="center" className="stepmaintxt">
           It is simple to get targeted, high quality, free Instagram followers
           or free Instagram likes from <br /> our network! The process takes
           only 2 minutes to activate a plan and here are the steps:

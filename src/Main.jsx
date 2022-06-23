@@ -1,10 +1,10 @@
 import React ,{useState}from "react";
-import Home from "./Components/LandingPage/Home";
+import Home from "./Components/LandingPage/Home/Home";
 import Faq from "./Components/Faq/Faq";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Header/Navbar";
-import Signup from "./Components/Auth/Signup";
-import Login1 from "./Components/Auth/Login1";
+import Signup from "./Components/Auth/Signup/Signup";
+import Login1 from "./Components/Auth/Login/Login1";
 import Reset from "./Components/Auth/Forgetpassword/Reset";
 import Verify from "./Components/Auth/Forgetpassword/Verify";
 import Maindashboard from "./Components/Dashboard/maindashboard/Maindashboard";

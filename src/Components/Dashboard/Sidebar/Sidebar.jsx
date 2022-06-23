@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Profileoptions from "./Profileoptions";
-import Userdetails from "../Sidebar/Usredetails";
+import Profileoptions from "../Sidebar/Profile/Profileoptions";
+import Userdetails from "../Sidebar/Usedetails/Usredetails";
 import burder from "../../Images/Component_1.svg";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import CallMadeIcon from "@material-ui/icons/CallMade";
-import "./Maindashboard.css";
+import "./Sidebar.css";
 function Sidebar() {
   const [click, setclick] = useState(false);
   const handclick = () => setclick(!click);
@@ -19,7 +19,7 @@ function Sidebar() {
         <div className="showuserdetails">
           <Userdetails />
         </div>
-        <div style={{ paddingRight: "50px" }}>
+        <div className='profilediv'>
           <Profileoptions />
         </div>
         <div className={click ? "open " : "menu-div"}>
@@ -30,8 +30,8 @@ function Sidebar() {
                 to="/dashboard/dashboard"
                 className="nav-link"
               >
-                <DashboardIcon />{" "}
-                <spna style={{ paddingLeft: "10px" }}> Dashboard</spna>
+                <DashboardIcon />
+                <spna className='linkspan' > Dashboard</spna>
               </Link>
             </li>
             <li className="nav-item">
@@ -40,8 +40,8 @@ function Sidebar() {
                 to="/dashboard/addacount"
                 className="nav-link"
               >
-                <PersonAddIcon />{" "}
-                <spna style={{ paddingLeft: "10px" }}>Addacount </spna>
+                <PersonAddIcon />
+                <spna className='linkspan'>Addacount </spna>
               </Link>
             </li>
 
@@ -51,8 +51,8 @@ function Sidebar() {
                 to="/dashboard/placeorder"
                 className="nav-link"
               >
-                <CallMadeIcon />{" "}
-                <spna style={{ paddingLeft: "10px" }}>Placseorder </spna>
+                <CallMadeIcon />
+                <spna className='linkspan'>Placseorder </spna>
               </Link>
             </li>
           </ul>

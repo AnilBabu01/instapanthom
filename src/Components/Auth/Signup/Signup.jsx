@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import user from "../Images/user.jpg";
+import user from "../../Images/user.jpg";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-import Btn from "./Forgetpassword/Btn";
-import Footer from '../Footer/Footer'
-import Common from "./Common";
+import Btn from "../Forgetpassword/Btn";
+import Footer from "../../Footer/Footer";
+import Common from "../Common";
+import "../Login/Login.css";
 import "./Signup.css";
 const Signup = () => {
   const [credentials, setCredentials] = useState({
@@ -38,14 +39,14 @@ const Signup = () => {
   const validate = (values) => {
     console.log("validate data", values.name);
     const errors = {};
-    
+
     if (!values.name) {
       errors.name = "Username is required";
     }
     if (!values.email) {
       errors.email = "Email is required";
     }
-    
+
     if (!values.number) {
       errors.number = "Mobile number is required";
     }
@@ -64,25 +65,22 @@ const Signup = () => {
       <div className="main mobileview">
         <div className="mainfirst mobileviewmainfirst">
           <div className="leftpart mobileviewrleftpart ">
-
-         <Common/>
-
+            <Common />
           </div>
-          
-          <div className='rightpart'>
-            <div  className='imgcontent'>
-              <div   className='imgdiv'>
-                <img src={user}  className='img' alt="user"></img>
+
+          <div className="rightpart">
+            <div className="imgcontent">
+              <div className="imgdiv">
+                <img src={user} className="img" alt="user"></img>
               </div>
               <div>
                 <h3>Account Details</h3>
               </div>
             </div>
-            <div  className='formcontainer'>
+            <div className="formcontainer">
               <div className="mobileform lapform">
-               
                 <form onSubmit={handleSubmit}>
-                  <div className='inputdiv' Htmlfor="name">
+                  <div className="inputdiv" Htmlfor="name">
                     <label>Your name</label>
                     <input
                       className={
@@ -98,7 +96,7 @@ const Signup = () => {
 
                   <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
 
-                  <div  className='inputdiv'>
+                  <div className="inputdiv">
                     <label Htmlfor="email">Your email</label>
                     <input
                       className={
@@ -112,7 +110,7 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.email}</p>
-                  <div  className='inputdiv'>
+                  <div className="inputdiv">
                     <label Htmlfor="number">Mobile number</label>
                     <input
                       className={
@@ -126,7 +124,7 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.number}</p>
-                  <div  className='inputdiv'>
+                  <div className="inputdiv">
                     <label htmlFor="password">Password</label>
                     <input
                       className={
@@ -140,19 +138,22 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.password}</p>
-                  
-                  <Btn value={" Signup"}/>
+
+                  <Btn value={" Signup"} />
                 </form>
 
-                <Typography style={{ marginTop: "15px",fontSize: "15px"}} align="center">
-                  Already have an account?<Link style={{textDecoration:"none"}} to="/login"><span style={{color:"red",paddingLeft:"5px"}}>Please login</span>  </Link>
+                <Typography className="gotAntherAuth" align="center">
+                  Already have an account?
+                  <Link style={{ textDecoration: "none" }} to="/login">
+                    <span className="gotAntherAuthText">Please login</span>{" "}
+                  </Link>
                 </Typography>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

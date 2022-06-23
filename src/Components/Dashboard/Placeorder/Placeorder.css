@@ -32,6 +32,16 @@
   border-radius: 12px;
 }
 
+.imgorder{
+
+  width: 20px;
+   margin-right: 10px;
+}
+
+.imgplan{
+
+  margin-right: 4px;
+}
 .choosetext1 {
   background-color: #c8d6f5;
   margin-left: 50px;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import user from "../Images/user.jpg";
+import user from "../../Images/user.jpg";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-import Btn from "./Forgetpassword/Btn";
-import Footer from "../Footer/Footer";
-import Common from "./Common";
-import "./Signup.css";
+import Btn from "../Forgetpassword/Btn";
+import Footer from "../../Footer/Footer";
+import Common from "../Common";
+import "../Signup/Signup.css";
 import "./Login.css";
 const Login1 = () => {
   const [credentials, setCredentials] = useState({
@@ -58,19 +58,19 @@ const Login1 = () => {
           <div className="leftpart mobileviewrleftpart ">
             <Common />
           </div>
-          <div className='rightpart'>
-            <div className='imgcontent'>
-              <div className='imgdiv'>
-                <img src={user}  className='img' alt="user"></img>
+          <div className="rightpart">
+            <div className="imgcontent">
+              <div className="imgdiv">
+                <img src={user} className="img" alt="user"></img>
               </div>
               <div>
                 <h3>Login</h3>
               </div>
             </div>
-            <div className='formcontainer'>
+            <div className="formcontainer">
               <div className="formdiv">
                 <form onSubmit={handleSubmit}>
-                  <div  className='inputdiv' Htmlfor="name">
+                  <div className="inputdiv" Htmlfor="name">
                     <label>Your name</label>
                     <input
                       className={
@@ -85,7 +85,7 @@ const Login1 = () => {
                     />
                   </div>
                   <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
-                  <div  className='inputdiv'>
+                  <div className="inputdiv">
                     <label htmlFor="password">Password</label>
                     <input
                       className={
@@ -102,27 +102,22 @@ const Login1 = () => {
                   <p className="errorcolor">
                     {issubmit ? formerror.password : ""}
                   </p>
-                  <div className='rem'>
+                  <div className="rem">
                     <input type="checkbox" />
-                    <p  className='reminputtext'>Remember me</p>
+                    <p className="reminputtext">Remember me</p>
                   </div>
-                  <div className='loginbtn'>
+                  <div className="loginbtn">
                     <Btn value={"Login"} />
                   </div>
                 </form>
-                <div   className='loginbtn'>
+                <div className="loginbtn">
                   <Link to="/forgetpassword">Forget Your Password</Link>
                 </div>
-                <div   className='loginbtn'>
-                  <Typography
-                    style={{ marginTop: "15px", fontSize: "15px" }}
-                    align="center"
-                  >
+                <div className="loginbtn">
+                  <Typography className="gotAntherAuth" align="center">
                     don't have an account?
                     <Link style={{ textDecoration: "none" }} to="/signup">
-                      <span style={{ color: "red", paddingLeft: "5px" }}>
-                        Please Signup
-                      </span>{" "}
+                      <span className="gotAntherAuthText">Please Signup</span>{" "}
                     </Link>
                   </Typography>
                 </div>
