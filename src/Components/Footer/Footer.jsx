@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import CallMadeIcon from "@material-ui/icons/CallMade";
+import dil from "../Images/dil.svg";
 import "./Footer.css";
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
             <Typography variant="h4" style={{ fontWeight: "400" }}>
               Instaphantom
             </Typography>
-            <div className="mardivcontent">
+            <div className="mardivcontent1">
               <Typography>New generation social</Typography>
               <Typography>media management</Typography>
               <Typography>software</Typography>
@@ -76,12 +77,12 @@ const Footer = () => {
               />
             </svg>
 
-            <Typography style={{ paddingLeft: "10px" }}>
+            <Typography className='right'>
               2022 instaphantom. All right reserved
             </Typography>
           </div>
           <div>
-            <Typography>Made with by Mayankal Team</Typography>
+            <Typography>Made with  <img src={dil} alt="dil" className='dilimg'/> by Mayankal Team</Typography>
           </div>
         </div>
         <div className="hrdiv">

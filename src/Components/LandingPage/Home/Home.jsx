@@ -20,8 +20,8 @@ const Home = () => {
             </Typography>
           </div>
         </div>
-
-        <Typography align="center" className="spanhometxt3">
+         
+        <Typography align="center" style={{  marginTop: "40px", marginBottom: '20px', fontSize: "20px"}}>
           Use our service to get targeted, high quality, free Instagram
           followers and free <br /> Instagram Likes! Unlimited activations to
           continue receiving daily growth. No surveys!

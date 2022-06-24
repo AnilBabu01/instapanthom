@@ -12,6 +12,20 @@
 
 .mardivcontent{
     margin-top: 20px;
+    color:  #B4ABAB;
+    font-size: 65px;
+}
+
+.mardivcontent1{
+    margin-top: 20px;
+   font-size: 65px;
+}
+
+.right{
+    padding-left: 10px;
+    color:  #B4ABAB;
+    font-size: 65px;
+
 }
 .pincodediv{
     display: flex;
@@ -54,11 +68,21 @@
     justify-content: center !important;
     align-items: center !important;
 }
-
+.icondiv5:hover{
+    border-radius: 26px !important;
+    height: 55px !important;
+    width: 55px !important;
+    margin-top: 8px;
+    transition: width 0.2s;
+    transition: height 0.2s;
+}
 .instatxt{
     font-weight: 400;
 }
+.dilimg {
 
+    width: 20px;
+}
 @media screen and (max-width: 780px) {
       
 .footercontent{
