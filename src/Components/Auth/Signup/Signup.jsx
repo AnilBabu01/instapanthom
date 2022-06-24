@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Btn from "../Forgetpassword/Btn";
 import Footer from "../../Footer/Footer";
 import Common from "../Common";
+import Otp from "./Otp";
 import "../Login/Login.css";
 import "./Signup.css";
 const Signup = () => {
@@ -124,6 +125,8 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.number}</p>
+
+                  <Otp />
                   <div className="inputdiv">
                     <label htmlFor="password">Password</label>
                     <input

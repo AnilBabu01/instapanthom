@@ -18,6 +18,40 @@
      padding: 6px;
     
 }
+.otpinput{
+  height: 36px;
+  border-radius: 4px;
+  padding: 6px;
+  
+  border: 1px solid #dbcece;
+}
+.otpinput:hover{
+  border: none;
+  outline: 1px solid blue;
+
+}
+.otpinput:focus{
+  border: none;
+  outline: 1px solid blue;
+}
+.otpinput3{
+  border: 1px solid red;
+  height: 30px;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.otpinputdiv{
+  display: flex;
+}
+.otpbtn{
+  width: 200px;
+    border: none;
+    color: white;
+    background: #514b4b;
+    border-radius: 5px;
+}
+
 .errorcolor{
     color:red;
    
