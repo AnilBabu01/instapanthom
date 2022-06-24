@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
-import "./Maindashboard.css";
+import "../Sidebar.css";
 const useStyles = makeStyles({
   MuiAvatarRoot: {
     width: 60,
@@ -11,24 +11,11 @@ const useStyles = makeStyles({
   },
 });
 
-const style = {
-  maindiv: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    marginRight: "80px",
-  },
-  textdib: {
-    lineHeight: "10px",
-    marginTop: "10px",
-    fontSize: "17px",
-  },
-};
 const Usredetails = () => {
   const classes = useStyles(useStyles);
   return (
     <>
-      <div className="hideinphone" style={style.maindiv}>
+      <div className="hideinphone maindivuser"  >
         <div>
           <Avatar
             className={classes.MuiAvatarRoot}
@@ -36,7 +23,7 @@ const Usredetails = () => {
             src="/static/images/avatar/1.jpg"
           />
         </div>
-        <div style={style.textdib}>
+        <div className='textdibuser'>
           <p>User Full Name</p>
           <p>Wallet : 25 RS</p>
         </div>

@@ -10,7 +10,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import TrackChangesIcon from "@material-ui/icons/TrackChanges";
 import PaymentIcon from "@material-ui/icons/Payment";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import Userdetails from "../Sidebar/Usredetails";
+import Userdetails from "../Usedetails/Usredetails";
 import "./Profileoptions.css";
 const StyledMenu = withStyles({
   paper: {

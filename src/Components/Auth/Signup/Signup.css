@@ -18,6 +18,40 @@
      padding: 6px;
     
 }
+.otpinput{
+  height: 36px;
+  border-radius: 4px;
+  padding: 6px;
+  
+  border: 1px solid #dbcece;
+}
+.otpinput:hover{
+  border: none;
+  outline: 1px solid blue;
+
+}
+.otpinput:focus{
+  border: none;
+  outline: 1px solid blue;
+}
+.otpinput3{
+  border: 1px solid red;
+  height: 30px;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.otpinputdiv{
+  display: flex;
+}
+.otpbtn{
+  width: 200px;
+    border: none;
+    color: white;
+    background: #514b4b;
+    border-radius: 5px;
+}
+
 .errorcolor{
     color:red;
    
@@ -48,6 +82,37 @@
     padding: 4%;
     width: 50%;
 }
+
+.rightpart{
+    background-color: white;
+  }
+  .img{
+    width: 10%;
+    height: 10%;
+  }
+  .imgcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgdiv{
+    justify-content: center;
+    display: flex;
+  }
+  .formcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .inputdiv{
+    display: flex;
+    flex-direction: column;
+  }
+.logo{
+    width: 300px;
+    height: 300px;
+  }
 @media screen and (max-width: 780px) {
    .mobileview{
            display: block;

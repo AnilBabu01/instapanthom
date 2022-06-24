@@ -23,65 +23,64 @@ const Addacount = () => {
   return (
     <>
       <Sidebar />
-      <div className='mainpaccount'>
-      <div className="mainAddacount">
-        <div className="addacountlinltext">
-          <Typography variant="h3" className="addtext">
-            Please add your instagram account
-          </Typography>
-          <Link style={{ paddingLeft: "20px", paddingTop: "20px" }} to="/">
-            Don’t worry your account <br /> will be safe
-          </Link>
-        </div>
+      <div className="mainpaccount">
+        <div className="mainAddacount">
+          <div className="addacountlinltext">
+            <Typography variant="h3" className="addtext">
+              Please add your instagram account
+            </Typography>
+            <Link className="addlink" to="/">
+              Don’t worry your account <br /> will be safe
+            </Link>
+          </div>
 
-        <div>
-          <form onSubmit={handleSubmit}>
-            <div className="formdivaddacout">
-              <div Htmlfor="name">
-                <input
-                  className="inputaddacout"
-                  type="text"
-                  name="name"
-                  value={credentials.name}
-                  onChange={onChange}
-                  id="name"
-                  placeholder="Enter your Username "
-                />
-              </div>
+          <div>
+            <form onSubmit={handleSubmit}>
+              <div className="formdivaddacout">
+                <div Htmlfor="name">
+                  <input
+                    className="inputaddacout"
+                    type="text"
+                    name="name"
+                    value={credentials.name}
+                    onChange={onChange}
+                    id="name"
+                    placeholder="Enter your Username "
+                  />
+                </div>
 
-              <div>
-                <input
-                  className="inputaddacout"
-                  type="password"
-                  value={credentials.password}
-                  onChange={onChange}
-                  name="password"
-                  id="password"
-                  placeholder="Enter your password"
-                ></input>
-              </div>
+                <div>
+                  <input
+                    className="inputaddacout"
+                    type="password"
+                    value={credentials.password}
+                    onChange={onChange}
+                    name="password"
+                    id="password"
+                    placeholder="Enter your password"
+                  ></input>
+                </div>
 
-              <div>
-                <button className="addacoutbtn" type="submit">
-                  Add
-                </button>
+                <div>
+                  <button className="addacoutbtn" type="submit">
+                    Add
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
-        <div className="userdiv">
-          <User />
-          <User />
-          <User />
-          <User />
-          <User />
-          <User />
-          <User />
-          <User />
+            </form>
+          </div>
+          <div className="userdiv">
+            <User />
+            <User />
+            <User />
+            <User />
+            <User />
+            <User />
+            <User />
+            <User />
+          </div>
         </div>
       </div>
-      </div>
-    
     </>
   );
 };

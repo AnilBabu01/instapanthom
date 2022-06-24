@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import CallMadeIcon from "@material-ui/icons/CallMade";
+import dil from "../Images/dil.svg";
 import "./Footer.css";
 const Footer = () => {
   return (
@@ -14,14 +15,16 @@ const Footer = () => {
             <Typography variant="h4" style={{ fontWeight: "400" }}>
               Instaphantom
             </Typography>
-            <div className="mardivcontent">
+            <div className="mardivcontent1">
               <Typography>New generation social</Typography>
               <Typography>media management</Typography>
               <Typography>software</Typography>
             </div>
           </div>
           <div className="phonecon">
-            <Typography variant="h6"  style={{ fontWeight: "400" }}>Explore</Typography>
+            <Typography variant="h6" style={{ fontWeight: "400" }}>
+              Explore
+            </Typography>
             <div className="mardivcontent">
               <Typography>Home</Typography>
               <Typography>About us</Typography>
@@ -30,21 +33,27 @@ const Footer = () => {
             </div>
           </div>
           <div className="phonecon">
-            <Typography variant="h6"  style={{ fontWeight: "400" }}>Legal</Typography>
+            <Typography variant="h6"  className='instatxt'>
+              Legal
+            </Typography>
             <div className="mardivcontent">
               <Typography>Tearm & Condition</Typography>
               <Typography>Privacy policy</Typography>
             </div>
           </div>
           <div className="phonecon">
-            <Typography variant="h6"  style={{ fontWeight: "400" }}>Business</Typography>
+            <Typography variant="h6"  className='instatxt'>
+              Business
+            </Typography>
             <div className="mardivcontent">
               <Typography>business@instaphantom.com</Typography>
               <Typography>+91-7454808301</Typography>
             </div>
           </div>
           <div className="phonecon">
-            <Typography variant="h6"  style={{ fontWeight: "400" }}>Addreass</Typography>
+            <Typography variant="h6"  className='instatxt'>
+              Addreass
+            </Typography>
             <div className="mardivcontent">
               <Typography>News xyz market</Typography>
               <Typography>Trisla Road, Panchkula</Typography>
@@ -55,7 +64,7 @@ const Footer = () => {
         <div className="pincodediv">
           <div style={{ display: "flex" }}>
             <svg
-               className="svgphone"
+              className="svgphone"
               width="20"
               height="20"
               viewBox="0 0 80 80"
@@ -68,12 +77,12 @@ const Footer = () => {
               />
             </svg>
 
-            <Typography style={{ paddingLeft: "10px" }}>
+            <Typography className='right'>
               2022 instaphantom. All right reserved
             </Typography>
           </div>
           <div>
-            <Typography>Made with by Mayankal Team</Typography>
+            <Typography>Made with  <img src={dil} alt="dil" className='dilimg'/> by Mayankal Team</Typography>
           </div>
         </div>
         <div className="hrdiv">

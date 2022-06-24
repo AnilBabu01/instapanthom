@@ -64,6 +64,24 @@
   margin-top: 80px;
   margin-bottom: 20px;
 }
+
+.stepmain{
+  width: 100%;
+  padding: 30px 0 80px;
+  background-color: aliceblue;
+}
+
+
+.stepmaintxt{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+
+.stepmaintxt1{
+  font-weight: 500;
+}
 @media screen and (max-width: 780px) {
   .maindivmobile {
     display: block!important;

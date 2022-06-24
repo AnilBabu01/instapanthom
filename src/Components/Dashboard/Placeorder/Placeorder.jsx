@@ -4,12 +4,35 @@ import Typography from "@mui/material/Typography";
 import UseraccountList from "./UseraccountList";
 import clock from "../Dasgimages/clock.svg";
 import cal from "../Dasgimages/cal.svg";
-import loc from "../Dasgimages/loc.svg";
+import lock from "../Dasgimages/l.svg";
 import originn from "../Dasgimages/originn.svg";
 import rupee from "../Dasgimages/rupee.svg";
 import dol from "../Dasgimages/dol.svg";
 import pay from "../Dasgimages/pay.svg";
 import "./Placeorder.css";
+const Plan = (props) => {
+  return (
+    <>
+      <div className="freetext">
+        <Typography align="center" className="textchoose">
+          <img className='imgplan' src={rupee} alt="rupee" />{" "}
+          {props.value}
+        </Typography>
+      </div>
+    </>
+  );
+};
+
+const Feature = (props) => {
+  return (
+    <>
+      <Typography>
+        <img className="imgorder" src={props.img} alt="clock" />
+        {props.txt}
+      </Typography>
+    </>
+  );
+};
 const Placeorder = () => {
   return (
     <>
@@ -43,122 +66,23 @@ const Placeorder = () => {
                     Free
                   </Typography>
                 </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    199
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    599
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    999
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    1999
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    2999
-                  </Typography>
-                </div>
-                <div className="freetext">
-                  <Typography align="center" className="textchoose">
-                    <img
-                      style={{ marginRight: "4px" }}
-                      src={rupee}
-                      alt="rupee"
-                    />{" "}
-                    5999
-                  </Typography>
-                </div>
+                <Plan value={"199"} />
+                <Plan value={"599"} />
+                <Plan value={"999"} />
+                <Plan value={"1999"} />
+                <Plan value={"2999"} />
+                <Plan value={"5999"} />
+
                 <div className="freetext1"></div>
               </div>
               <div className="featuresdiv">
                 <Typography>Features</Typography>
-                <Typography>
-                  {" "}
-                  <img
-                    style={{ width: "20px", marginRight: "10px" }}
-                    src={clock}
-                    alt="clock"
-                  />{" "}
-                  Time taken : 2-5 days
-                </Typography>
-                <Typography>
-                  {" "}
-                  <img
-                    style={{ width: "20px", marginRight: "10px" }}
-                    src={originn}
-                    alt="originn"
-                  />{" "}
-                  Organic followers
-                </Typography>
-                <Typography>
-                  <img
-                    style={{ width: "20px", marginRight: "10px" }}
-                    src={loc}
-                    alt="loc"
-                  />{" "}
-                  100% safe & secure
-                </Typography>
-                <Typography>
-                  <img
-                    style={{ width: "20px", marginRight: "10px" }}
-                    src={dol}
-                    alt="dol"
-                  />{" "}
-                  Money back guarantee
-                </Typography>
-                <Typography>
-                  {" "}
-                  <img
-                    style={{ width: "20px", marginRight: "10px" }}
-                    src={pay}
-                    alt="pay"
-                  />
-                  1 time payement
-                </Typography>
-                <Typography>
-                  {" "}
-                  <img
-                    style={{ width: "20px", marginRight: "10px" }}
-                    src={cal}
-                    alt="cal"
-                  />
-                  24 X 7 support
-                </Typography>
+                <Feature txt={"Time taken : 2-5 days"} img={clock} />
+                <Feature txt={"Organic followers"} img={originn} />
+                <Feature txt={"100% safe & secure"} img={lock} />
+                <Feature txt={" Money back guarantee"} img={dol} />
+                <Feature txt={"1 time payement"} img={pay} />
+                <Feature txt={"24 X 7 support"} img={cal} />
               </div>
             </div>
 
