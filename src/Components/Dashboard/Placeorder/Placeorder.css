@@ -12,17 +12,16 @@
 }
 .choosediv {
   display: flex;
-  background:#F4F8FC;
+  background: #f4f8fc;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   margin-right: 20px;
   border-top-left-radius: 12px;
   height: 67px;
   align-items: center;
-  
 }
 
-.chooseplan{
+.chooseplan {
   margin-top: 34px;
   margin-left: 90px;
 }
@@ -37,14 +36,12 @@
   border-radius: 20px;
 }
 
-.imgorder{
-
+.imgorder {
   width: 35px;
-   margin-right: 10px;
+  margin-right: 10px;
 }
 
-.imgplan{
-
+.imgplan {
   margin-right: 4px;
 }
 .choosetext1 {
@@ -56,21 +53,18 @@
   padding-left: 81px;
   padding-right: 80px;
   border-radius: 20px;
- 
-  
 }
 .textchoose {
   font-weight: 600 !important;
   height: 61px;
-  font-size: 25px!important;
-  font-weight: 400!important;
- 
+  font-size: 25px !important;
+  font-weight: 400 !important;
 }
 
 .textchoose1 {
   font-weight: 400 !important;
-  font-size: 25px!important;
-  font-weight: 400!important;
+  font-size: 25px !important;
+  font-weight: 400 !important;
 }
 .orderdivselect {
   display: flex;
@@ -79,18 +73,17 @@
   display: flex;
 }
 .freetext {
-  background-color:#F4F8FC;
+  background-color: #f4f8fc;
   border-top: 1px solid #d9d9d9;
   width: 250px;
-  height:38px;
+  height: 38px;
 }
 .freetext1 {
-  background-color: #F4F8FC;
+  background-color: #f4f8fc;
   border-top: 1px solid #d9d9d9;
   width: 250px;
-  height:38px;
+  height: 38px;
   border-bottom-left-radius: 20px;
-  
 }
 .featuresdiv {
   padding-left: 20px;
@@ -112,14 +105,14 @@
 .select:focus {
   border: none;
 }
-.feature{
-  font-size: 25px!important;
-  font-weight: 400!important;
+.feature {
+  font-size: 25px !important;
+  font-weight: 400 !important;
 }
 
-.imgtext{
-  font-size: 25px!important;
-  font-weight: 400!important;
+.imgtext {
+  font-size: 25px !important;
+  font-weight: 400 !important;
 }
 .orderbtn {
   border: none;
@@ -215,7 +208,7 @@
   color: rgba(51, 51, 51, 0.8);
   cursor: pointer;
   display: block;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border-bottom: 1px solid gray;
   height: 84px;
   width: 566px;
@@ -232,7 +225,16 @@
   font-size: 45px !important;
   margin-bottom: 5px !important;
 }
+.orderimgg{
+  width: 40px; 
+  margin-right: 10px;
+}
 
+.arrowicon{
+  width: 30px;
+  
+  margin-right: 10px;
+}
 @media screen and (max-width: 780px) {
   .orderdivselect {
     display: block;
@@ -275,6 +277,56 @@
     margin-top: 50px;
   }
   .choosediv {
-    width:100%;
+    width: 100%;
   }
+
+  .dropdown .selected-value input {
+    width: 307px;
+    font-size: 20px;
+    height: 45px;
+  }
+
+  .dropdown .arrow {
+    border-width: 5px 5px 0;
+    top: 15px;
+    left: 270px;
+  }
+  
+.dropdown .options {
+  
+  max-height: 307px;
+ 
+  width: 307px;
+}
+
+
+.dropdown .option {
+ 
+  padding: 3px 2px;
+ 
+  height: 45px;
+  width: 306px;
+  font-size: 15px;
+}
+
+.orderbtn {
+  
+  padding-left: 70px;
+  padding-right: 70px;
+  height: 45px;
+  width: 307px;
+  font-size: 15px;
+}
+
+.arrowicon{
+  width: 20px;
+}
+
+.mainplaceorder {
+  background-color: #f5f5f5;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
 }

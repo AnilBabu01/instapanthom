@@ -54,20 +54,18 @@
   position: fixed;
   top: 100px;
   left: 0;
-  z-index: 1001;
-  background-color: #7373cd;
   width: 20%;
- 
+  background-color: white;
   transform: translateX(-100%);
   -webkit-trsnsform: translateX(-100%);
   -moz-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   -o-transform: translateX(-100%);
-
+ 
   transition: all 0.3s ease-in-out;
 }
 
-.open {
+.open1 {
   display: block;
   width: 20%;
   transition-timing-function: ease-in;
@@ -75,17 +73,21 @@
   top: 100px;
   left: 0;
   z-index: 1001;
-  background-color: #7373cd;
+  background-color: white;
   transform: translateX(0);
   -webkit-trsnsform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transition: all 0.3s ease-in-out;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .linkspan{
   padding-left: 10px;
+  top: 100px;
+  left: 0;
 }
 
 .profilediv{
@@ -107,20 +109,14 @@
   .hideinphone {
     display: none;
   }
-  .open {
-    width: 100%;
-    transition-timing-function: ease-in;
-    position: fixed;
-    top: 130px;
-    left: 0;
-    z-index: 1001;
-    background-color: #7373cd;
-    transform: translateX(0);
-    -webkit-trsnsform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
+  .open1 {
+    width:200px; 
+   
   }
+  .menu-div {
+    width:50%;
+  }
+  
   .showuserdetails {
     display: none;
   }
@@ -130,5 +126,6 @@
   background-color: #0f0f99;
   color: white;
 }
+
 }
 

@@ -19,7 +19,7 @@ const StyledMenu = withStyles({
   },
 })((props) => (
   <Menu
-    style={{ marginTop: "10px" }}
+    style={{ marginTop: "26px" }}
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{
@@ -59,8 +59,9 @@ export default function CustomizedMenus() {
   return (
     <div>
       <svg
+      
         width="20"
-        height="70"
+        height="25"
         viewBox="0 0 20 70"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

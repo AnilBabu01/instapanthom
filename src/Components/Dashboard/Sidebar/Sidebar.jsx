@@ -33,7 +33,7 @@ function Sidebar() {
         <div className="profilediv">
           <Profileoptions />
         </div>
-        <div className={click ? "open " : "menu-div"}>
+        <div className={click ? "open1 " : "menu-div"}>
           <ul className="nav-menu" onClick={handclick}>
             <li className="nav-item">
               <Link

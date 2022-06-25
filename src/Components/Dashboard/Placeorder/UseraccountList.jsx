@@ -74,13 +74,14 @@ const UseraccountList = () => {
                 >
                   <div style={{ display: "flex" }}>
                     <img
-                      style={{ width: "30px", marginRight: "10px" }}
+                      className="arrowicon"
+                     
                       src={followers}
                       alt="followers"
                     />
                     <span style={{ marginleft: "10px" }}> {option[label]}</span>
 
-                    <div style={{ marginLeft: "50px" }}>
+                    <div style={{ marginLeft: "10px" }}>
                       <SubdirectoryArrowLeftIcon />
                     </div>
                   </div>
@@ -93,7 +94,8 @@ const UseraccountList = () => {
         <div style={{ marginTop: "120px" }}>
           <button className="orderbtn">
             <img
-              style={{ width: "40px", marginRight: "10px" }}
+              className="orderimgg"
+              
               src={order}
               alt="order"
             />{" "}
