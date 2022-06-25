@@ -141,8 +141,10 @@ const Signup = () => {
                     ></input>
                   </div>
                   <p className="errorcolor">{formerror.password}</p>
-
+                  <div className="inputdiv">
                   <Btn value={" Signup"} />
+                  </div>
+                
                 </form>
 
                 <Typography className="gotAntherAuth" align="center">

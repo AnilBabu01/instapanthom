@@ -14,7 +14,7 @@ const Home = () => {
         </Typography>
         <div className="spanhometxt1">
           <div>
-            <Typography variant="h3" align="center" className="spanhometxt2">
+            <Typography variant="h6" align="center" className="spanhometxt2">
               Get Fast & Targeted Growth <br />
               with Free Instagram Followers & Likes Today!
             </Typography>

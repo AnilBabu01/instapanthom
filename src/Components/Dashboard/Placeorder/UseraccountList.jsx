@@ -55,8 +55,9 @@ const UseraccountList = () => {
                     onChange("");
                   }}
                 />
+                <div className={`arrow ${open ? "open " : null}`} />
               </div>
-              <div className={`arrow ${open ? "open " : null}`} />
+              
             </div>
             <div className={`options ${open ? "open " : null}`}>
               {filterr(countries).map((option) => (
@@ -73,7 +74,7 @@ const UseraccountList = () => {
                 >
                   <div style={{ display: "flex" }}>
                     <img
-                      style={{ width: "20px", marginRight: "10px" }}
+                      style={{ width: "30px", marginRight: "10px" }}
                       src={followers}
                       alt="followers"
                     />
@@ -92,7 +93,7 @@ const UseraccountList = () => {
         <div style={{ marginTop: "120px" }}>
           <button className="orderbtn">
             <img
-              style={{ width: "30px", marginRight: "10px" }}
+              style={{ width: "40px", marginRight: "10px" }}
               src={order}
               alt="order"
             />{" "}

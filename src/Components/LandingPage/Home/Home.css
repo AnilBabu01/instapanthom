@@ -1,25 +1,25 @@
 
 .spanhometxt{
-    background-color: #9e9191;
-    padding: 2px;
-    color: white;
-    font-size: 15px;
+    background-color: #9e9191!important;
+    padding: 2px!important;
+    color: white!important;
+    font-size: 15px!important;
 }
 
 .spanhometxt1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
 }
 
 
 .spanhometxt2{
-    font-size: 150%;
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 12px;
-    justify-content: center;
-    font-weight: 600;
+    font-size: 150%!important;
+    display: flex!important;
+    flex-wrap: wrap!important;
+    padding-top: 12px!important;
+    justify-content: center!important;
+    font-weight: 600!important;
 }
 
 .spanhometxt4{
@@ -30,9 +30,9 @@
 }
 
 .mainhome{
-    margin: auto;
+   
   width: 100%;
-
+  padding-top: 80px!important;
   padding: 6px;
 }
 .mainhometxt{

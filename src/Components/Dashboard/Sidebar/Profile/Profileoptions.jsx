@@ -15,11 +15,11 @@ import "./Profileoptions.css";
 const StyledMenu = withStyles({
   paper: {
     border: "1px solid #d3d4d5",
-    width: "400px",
+    width: "250px",
   },
 })((props) => (
   <Menu
-    style={{ marginTop: "40px" }}
+    style={{ marginTop: "10px" }}
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{

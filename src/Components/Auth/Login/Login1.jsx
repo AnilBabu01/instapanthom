@@ -106,21 +106,21 @@ const Login1 = () => {
                     <input type="checkbox" />
                     <p className="reminputtext">Remember me</p>
                   </div>
-                  <div className="loginbtn">
+                  <div className="inputdiv">
                     <Btn value={"Login"} />
                   </div>
                 </form>
                 <div className="loginbtn">
                   <Link to="/forgetpassword">Forget Your Password</Link>
                 </div>
-                <div className="loginbtn">
+              
                   <Typography className="gotAntherAuth" align="center">
                     don't have an account?
                     <Link style={{ textDecoration: "none" }} to="/signup">
                       <span className="gotAntherAuthText">Please Signup</span>{" "}
                     </Link>
                   </Typography>
-                </div>
+               
               </div>
             </div>
           </div>

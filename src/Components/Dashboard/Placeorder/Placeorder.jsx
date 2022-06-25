@@ -26,7 +26,7 @@ const Plan = (props) => {
 const Feature = (props) => {
   return (
     <>
-      <Typography>
+      <Typography className='imgtext'>
         <img className="imgorder" src={props.img} alt="clock" />
         {props.txt}
       </Typography>
@@ -38,12 +38,12 @@ const Placeorder = () => {
     <>
       <Sidebar />
       <div className="mainplaceorder">
-        <Typography className="mobileplace" variant="h3">
+        <Typography className="mobileplace" >
           Place your order
         </Typography>
         <div className="divcontentplaceorder">
           <div className="choosediv">
-            <div style={{ marginLeft: "90px" }}>
+            <div className="chooseplan">
               <Typography className="textchoose">Choose plane</Typography>
             </div>
             <div className="choosetext">
@@ -60,7 +60,7 @@ const Placeorder = () => {
                 <div className="freetext">
                   <Typography
                     align="center"
-                    style={{ marginLeft: "40px" }}
+                    style={{ marginLeft: "40px",height:"441px" }}
                     className="textchoose"
                   >
                     Free
@@ -76,7 +76,7 @@ const Placeorder = () => {
                 <div className="freetext1"></div>
               </div>
               <div className="featuresdiv">
-                <Typography>Features</Typography>
+                <Typography className="feature">Features</Typography>
                 <Feature txt={"Time taken : 2-5 days"} img={clock} />
                 <Feature txt={"Organic followers"} img={originn} />
                 <Feature txt={"100% safe & secure"} img={lock} />

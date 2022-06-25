@@ -21,15 +21,10 @@
 .otpinput{
   height: 36px;
   border-radius: 4px;
-  padding: 6px;
-  
+  width: 230px;
   border: 1px solid #dbcece;
 }
-.otpinput:hover{
-  border: none;
-  outline: 1px solid blue;
 
-}
 .otpinput:focus{
   border: none;
   outline: 1px solid blue;
@@ -43,9 +38,10 @@
 
 .otpinputdiv{
   display: flex;
+  margin-bottom: 5px;
 }
 .otpbtn{
-  width: 200px;
+    width: 100px;
     border: none;
     color: white;
     background: #514b4b;

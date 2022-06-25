@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Typography from "@mui/material/Typography";
 import Alert from "../../Context/Alert";
 import { useNavigate } from "react-router-dom";
-import Btn from "./Btn";
+
 
 const id = "anilb99";
 
@@ -83,7 +83,12 @@ const Reset = () => {
                 </div>
                 <p className="errorcolor">{formerror.name}</p>
 
-                <Btn value={"Reset Password"} />
+               <div className="alignbtn">
+               <button className="btn02" type="submit">
+                Reset Password
+                  </button>
+               </div>
+               
               </form>
             </div>
           </div>

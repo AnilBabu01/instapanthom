@@ -21,9 +21,9 @@
 .nav-logo {
   margin-left: 20px;
   cursor: pointer;
-
   font-size: 2rem;
   flex-grow: 1;
+  margin-bottom: 15px;
 }
 .nav-link {
   display: flex;
@@ -51,13 +51,20 @@
   color: white;
 }
 .menu-div {
-  display: none;
-  transition-timing-function: ease-in;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  z-index: 1001;
+  background-color: #7373cd;
+  width: 20%;
+ 
   transform: translateX(-100%);
   -webkit-trsnsform: translateX(-100%);
   -moz-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   -o-transform: translateX(-100%);
+
+  transition: all 0.3s ease-in-out;
 }
 
 .open {
@@ -65,7 +72,7 @@
   width: 20%;
   transition-timing-function: ease-in;
   position: fixed;
-  top: 130px;
+  top: 100px;
   left: 0;
   z-index: 1001;
   background-color: #7373cd;
@@ -74,7 +81,7 @@
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
-  
+  transition: all 0.3s ease-in-out;
 }
 
 .linkspan{
