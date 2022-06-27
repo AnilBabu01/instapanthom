@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Typography from "@mui/material/Typography";
 import UseraccountList from "./UseraccountList";
+import Placeordermobile from "./Placeordermobile";
 import clock from "../Dasgimages/clock.svg";
 import cal from "../Dasgimages/cal.svg";
 import lock from "../Dasgimages/l.svg";
@@ -42,6 +43,9 @@ const Placeorder = () => {
           Place your order
         </Typography>
         <div className="divcontentplaceorder">
+        <p className="mobileplaceshow" >
+          Place your order
+        </p>
           <div className="choosediv">
             <div className="chooseplan">
               <Typography className="textchoose">Choose plane</Typography>
@@ -56,7 +60,8 @@ const Placeorder = () => {
 
           <div className="orderdivselect">
             <div className="freediv">
-              <div>
+                  <Placeordermobile/>
+              <div className="freemobilehide">
                 <div className="freetext">
                   <Typography
                     align="center"

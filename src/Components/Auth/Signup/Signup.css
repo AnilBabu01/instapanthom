@@ -21,7 +21,7 @@
 .otpinput{
   height: 36px;
   border-radius: 4px;
-  width: 230px;
+  width: 308px;
   border: 1px solid #dbcece;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .otpinputdiv{
-  display: flex;
+ 
   margin-bottom: 5px;
 }
 .otpbtn{

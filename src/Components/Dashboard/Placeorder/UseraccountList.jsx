@@ -38,6 +38,7 @@ const UseraccountList = () => {
 
   return (
     <>
+     <div className="mobileuserlist">
       <div className="userlistmain">
         <div className="divdropdown">
           <div className="dropdown">
@@ -102,6 +103,7 @@ const UseraccountList = () => {
             Place Order
           </button>
         </div>
+      </div>
       </div>
     </>
   );

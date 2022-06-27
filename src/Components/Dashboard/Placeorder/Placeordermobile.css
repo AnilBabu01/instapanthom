@@ -1,0 +1,63 @@
+.showinmobile {
+  display: none;
+}
+.alignmobileorder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.normalmobile {
+  width: 151px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #c8d6f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftRs {
+  width: 170px;
+  height: 51px;
+  top: 1px;
+  background-color: #f4f8fc;
+  border-radius: 20px 0px 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightRs {
+  width: 170px;
+  height: 51px;
+  top: 1px;
+  background-color: #f4f8fc;
+  border-radius: 0px 20px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.freers {
+  width: 170px;
+  height: 51px;
+  top: 1px;
+  background-color: #f4f8fc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.freealinginmobile {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+.textordermobile{
+    font-size: 25px!important;
+    font-weight: 600!important;
+}
+@media screen and (max-width: 780px) {
+  .showinmobile {
+    display: block;
+  }
+}

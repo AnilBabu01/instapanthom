@@ -3,7 +3,7 @@
   padding-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 144px;
+  padding-bottom: 122px;
 }
 .addtext {
   display: flex;
@@ -101,6 +101,23 @@
 
 
 @media screen and (max-width: 780px) {
+
+  .mainAddacount {
+    background-color: #d9d9d9;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 20px;
+  }
+
+  
+.addlink{
+ 
+  padding-left: 0px;
+  padding-top: 20px; 
+  color: #1E0DDE;
+
+}
     .addacountlinltext{
         display: block!important;
     }

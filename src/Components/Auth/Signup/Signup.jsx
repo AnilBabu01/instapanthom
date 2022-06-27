@@ -17,6 +17,7 @@ const Signup = () => {
   });
   const [formerror, setFormerror] = useState({});
   const [issubmit, setIssubmit] = useState(false);
+  const [showotpform, setshowotpform] = useState(false);
   const onChange = (e) => {
     const { name, email, number, password } = e.target;
     console.log("Registration data is ", name, email, number, password);
@@ -29,6 +30,10 @@ const Signup = () => {
     setIssubmit(true);
     const { name, number, email, password } = credentials;
     console.log("Registration data is ", name, email, number, password);
+
+    if (name && email && number && password) {
+      setshowotpform(true);
+    }
   };
   useEffect(() => {
     console.log(formerror);
@@ -74,85 +79,90 @@ const Signup = () => {
               <div className="imgdiv">
                 <img src={user} className="img" alt="user"></img>
               </div>
+
               <div>
                 <h3>Account Details</h3>
               </div>
             </div>
             <div className="formcontainer">
               <div className="mobileform lapform">
-                <form onSubmit={handleSubmit}>
-                  <div className="inputdiv" Htmlfor="name">
-                    <label>Your name</label>
-                    <input
-                      className={
-                        formerror.name && issubmit ? "input3" : "input"
-                      }
-                      type="text"
-                      name="name"
-                      value={credentials.name}
-                      onChange={onChange}
-                      id="name"
-                    />
-                  </div>
+                {showotpform && <Otp />}
+                {!showotpform && (
+                  <>
+                    <form onSubmit={handleSubmit}>
+                      <div className="inputdiv" Htmlfor="name">
+                        <label>Your name</label>
+                        <input
+                          className={
+                            formerror.name && issubmit ? "input3" : "input"
+                          }
+                          type="text"
+                          name="name"
+                          value={credentials.name}
+                          onChange={onChange}
+                          id="name"
+                        />
+                      </div>
 
-                  <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
+                      <p className="errorcolor">
+                        {issubmit ? formerror.name : ""}
+                      </p>
 
-                  <div className="inputdiv">
-                    <label Htmlfor="email">Your email</label>
-                    <input
-                      className={
-                        formerror.email && issubmit ? "input3" : "input"
-                      }
-                      type="email"
-                      name="email"
-                      value={credentials.email}
-                      onChange={onChange}
-                      id="email"
-                    ></input>
-                  </div>
-                  <p className="errorcolor">{formerror.email}</p>
-                  <div className="inputdiv">
-                    <label Htmlfor="number">Mobile number</label>
-                    <input
-                      className={
-                        formerror.number && issubmit ? "input3" : "input"
-                      }
-                      type="text"
-                      name="number"
-                      value={credentials.number}
-                      onChange={onChange}
-                      id="number"
-                    ></input>
-                  </div>
-                  <p className="errorcolor">{formerror.number}</p>
+                      <div className="inputdiv">
+                        <label Htmlfor="email">Your email</label>
+                        <input
+                          className={
+                            formerror.email && issubmit ? "input3" : "input"
+                          }
+                          type="email"
+                          name="email"
+                          value={credentials.email}
+                          onChange={onChange}
+                          id="email"
+                        ></input>
+                      </div>
+                      <p className="errorcolor">{formerror.email}</p>
+                      <div className="inputdiv">
+                        <label Htmlfor="number">Mobile number</label>
+                        <input
+                          className={
+                            formerror.number && issubmit ? "input3" : "input"
+                          }
+                          type="text"
+                          name="number"
+                          value={credentials.number}
+                          onChange={onChange}
+                          id="number"
+                        ></input>
+                      </div>
+                      <p className="errorcolor">{formerror.number}</p>
 
-                  <Otp />
-                  <div className="inputdiv">
-                    <label htmlFor="password">Password</label>
-                    <input
-                      className={
-                        formerror.password && issubmit ? "input3" : "input"
-                      }
-                      type="password"
-                      value={credentials.password}
-                      onChange={onChange}
-                      name="password"
-                      id="password"
-                    ></input>
-                  </div>
-                  <p className="errorcolor">{formerror.password}</p>
-                  <div className="inputdiv">
-                  <Btn value={" Signup"} />
-                  </div>
-                
-                </form>
-
-                <Typography className="gotAntherAuth" align="center">
-                  Already have an account?
-                  <Link style={{ textDecoration: "none" }} to="/login">
-                    <span className="gotAntherAuthText">Please login</span>{" "}
-                  </Link>
-                </Typography>
+                      <div className="inputdiv">
+                        <label htmlFor="password">Password</label>
+                        <input
+                          className={
+                            formerror.password && issubmit ? "input3" : "input"
+                          }
+                          type="password"
+                          value={credentials.password}
+                          onChange={onChange}
+                          name="password"
+                          id="password"
+                        ></input>
+                      </div>
+                      <p className="errorcolor">{formerror.password}</p>
+                      <div className="inputdiv">
+                        <Btn value={"Next"} />
+                      </div>
+                    </form>
+                    <Typography className="gotAntherAuth" align="center">
+                      Already have an account?
+                      <Link style={{ textDecoration: "none" }} to="/login">
+                        <span className="gotAntherAuthText">Please login</span>{" "}
+                      </Link>
+                    </Typography>
+                  </>
+                )}
               </div>
             </div>
           </div>
