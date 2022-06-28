@@ -1,0 +1,141 @@
+.trackbgcolor{
+ 
+    padding: 25px;
+}
+
+.divtrack{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.gain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 278px;
+}
+.gaintext1{
+    font-size: 125px!important;
+    font-weight: 500!important;
+    margin-top: -30px!important;
+}
+.gaintext2{
+    font-size: 25px!important;
+    font-weight: 500!important;
+    margin-top: -33px!important;
+}  
+.ordertext1{
+    font-size: 25px!important;
+    font-weight: 700!important;
+}
+.gaintext{
+    margin-left: 10px!important;
+    font-size: 20px!important;
+   
+}
+
+.gaintextblack{
+    margin-left: 10px!important;
+    font-size: 20px!important;
+    font-size: 22px!important;
+    font-weight: 700!important;
+}
+.gaintextorder{
+    font-size: 25px!important;
+    font-weight: 500!important;
+    margin-top: -30px!important;
+}
+.alignordertext{
+
+    display: flex;
+  
+    align-items: center;
+    width: 248px;
+}
+
+.plandiv{
+    width: 278px;
+    padding: 5px;
+    
+}
+.restartbtn{
+    background-color: #242582;
+    border: none;
+    color: white;
+    width: 206px;
+    height: 58px;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    /* top: 100px; */
+    margin-top: 15px;
+}
+
+
+@media screen and (max-width: 780px) {
+    .alignordertext{
+
+       
+        width: 120px;
+    }
+    .ordertext1{
+        font-size: 12px!important;
+        font-weight: 700!important;
+    }
+
+    .gaintext{
+        margin-left: 10px!important;
+        font-size: 10px!important;
+    }
+
+    .restartbtn{
+       
+        width: 80px;
+        height: 35px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 700;
+       
+        margin-top: 15px;
+    }
+    .gaintext1 {
+        font-size: 25px!important;
+        font-weight: 500!important;
+        margin-top: -30px!important;
+    }
+
+    .gaintextorder {
+        font-size: 12px!important;
+        font-weight: 500!important;
+        margin-top: -3px!important;
+    }
+
+
+    .trackbgcolor{
+ 
+        padding: 10px;
+    }
+    
+    .divtrack{
+       
+        margin-bottom: 10px;
+    }
+
+    
+.gain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.plandiv {
+    width: 150px;
+    padding: 5px;
+}
+ }

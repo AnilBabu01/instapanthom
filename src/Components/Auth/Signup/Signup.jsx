@@ -6,6 +6,7 @@ import Btn from "../Forgetpassword/Btn";
 import Footer from "../../Footer/Footer";
 import Common from "../Common";
 import Otp from "./Otp";
+import axios from "axios";
 import "../Login/Login.css";
 import "./Signup.css";
 const Signup = () => {
@@ -24,17 +25,26 @@ const Signup = () => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { name, number, email, password } = credentials;
     console.log("Registration data is ", name, email, number, password);
+    axios.post("https://instaphantom.com/api/register", {
+        name: name,
+        email: email,
+        wnumber: number,
+        password: password,
+      })
+      .then((res) => {
+        console.log("hello",res);
+      })
+      .catch((err) => {
+        console.log("Errro",err);
+      });
+};
 
-    if (name && email && number && password) {
-      setshowotpform(true);
-    }
-  };
   useEffect(() => {
     console.log(formerror);
     if (Object.keys(formerror) && issubmit) {

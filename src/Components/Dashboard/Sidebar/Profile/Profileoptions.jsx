@@ -11,6 +11,7 @@ import TrackChangesIcon from "@material-ui/icons/TrackChanges";
 import PaymentIcon from "@material-ui/icons/Payment";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Userdetails from "../Usedetails/Usredetails";
+import {useNavigate } from "react-router-dom";
 import "./Profileoptions.css";
 const StyledMenu = withStyles({
   paper: {
@@ -56,10 +57,10 @@ export default function CustomizedMenus() {
     setAnchorEl(null);
   };
 
+  const navigate = useNavigate();
   return (
     <div>
       <svg
-      
         width="20"
         height="25"
         viewBox="0 0 20 70"
@@ -83,16 +84,17 @@ export default function CustomizedMenus() {
           <Userdetails />
         </div>
 
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => navigate("/dashboard/edit-profile")}>
           <ListItemIcon>
             <EditIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Edit profile" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => navigate("/dashboard/track-order")}>
           <ListItemIcon>
             <TrackChangesIcon fontSize="small" />
           </ListItemIcon>
+
           <ListItemText primary="Track Order" />
         </StyledMenuItem>
         <StyledMenuItem>
