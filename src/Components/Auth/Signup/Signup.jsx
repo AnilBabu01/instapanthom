@@ -25,25 +25,25 @@ const Signup = () => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { name, number, email, password } = credentials;
     console.log("Registration data is ", name, email, number, password);
-    axios.post("https://instaphantom.com/api/register", {
-        name: name,
-        email: email,
-        wnumber: number,
-        password: password,
-      })
-      .then((res) => {
-        console.log("hello",res);
-      })
-      .catch((err) => {
-        console.log("Errro",err);
-      });
-};
+    const response = await axios.post("/api/register", {
+      name: name,
+      email: email,
+      wnumber: number,
+      password: password,
+    });
+
+    if (name && email && number && password && response) {
+      setshowotpform(true);
+    }
+
+    console.log(response.data);
+  };
 
   useEffect(() => {
     console.log(formerror);
