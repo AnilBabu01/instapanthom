@@ -76,8 +76,7 @@ const Addacount = () => {
             <User />
             <User />
             <User />
-            <User />
-            <User />
+           
           </div>
         </div>
       </div>

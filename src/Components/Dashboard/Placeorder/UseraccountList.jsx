@@ -38,6 +38,7 @@ const UseraccountList = () => {
 
   return (
     <>
+     <div className="mobileuserlist">
       <div className="userlistmain">
         <div className="divdropdown">
           <div className="dropdown">
@@ -55,8 +56,9 @@ const UseraccountList = () => {
                     onChange("");
                   }}
                 />
+                <div className={`arrow ${open ? "open " : null}`} />
               </div>
-              <div className={`arrow ${open ? "open " : null}`} />
+              
             </div>
             <div className={`options ${open ? "open " : null}`}>
               {filterr(countries).map((option) => (
@@ -73,13 +75,14 @@ const UseraccountList = () => {
                 >
                   <div style={{ display: "flex" }}>
                     <img
-                      style={{ width: "20px", marginRight: "10px" }}
+                      className="arrowicon"
+                     
                       src={followers}
                       alt="followers"
                     />
                     <span style={{ marginleft: "10px" }}> {option[label]}</span>
 
-                    <div style={{ marginLeft: "50px" }}>
+                    <div style={{ marginLeft: "10px" }}>
                       <SubdirectoryArrowLeftIcon />
                     </div>
                   </div>
@@ -92,13 +95,15 @@ const UseraccountList = () => {
         <div style={{ marginTop: "120px" }}>
           <button className="orderbtn">
             <img
-              style={{ width: "30px", marginRight: "10px" }}
+              className="orderimgg"
+              
               src={order}
               alt="order"
             />{" "}
             Place Order
           </button>
         </div>
+      </div>
       </div>
     </>
   );

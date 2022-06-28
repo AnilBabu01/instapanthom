@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Btn from "../Forgetpassword/Btn";
 import "./Signup.css";
 const Otp = () => {
   const [getotp, setgetotp] = useState("");
@@ -17,6 +18,7 @@ const Otp = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="otpinputdiv">
+        <label>Enter OTP</label>
           <input
             className="otpinput"
             type="text"
@@ -25,7 +27,9 @@ const Otp = () => {
             onChange={onChange}
             id="number"
           ></input>
-          <button className="otpbtn">OTP</button>
+        </div>
+        <div className="inputdiv">
+          <Btn value={"Verify&Register"} />
         </div>
       </form>
     </>

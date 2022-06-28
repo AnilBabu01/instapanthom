@@ -3,7 +3,7 @@
   padding-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 144px;
+  padding-bottom: 122px;
 }
 .addtext {
   display: flex;
@@ -24,6 +24,7 @@
   /* justify-content: center; */
   align-items: center;
   font-weight: 600;
+ 
 }
 
 .formdivaddacout {
@@ -32,13 +33,19 @@
   margin-bottom: 20px;
 }
 .inputaddacout {
-  height: 35px;
-  border-radius: 4px;
-  padding: 6px;
+  height:66px;
+  border-radius: 15px;
+  padding: 15px;
   margin-top: 8px;
   border: 1px solid gray;
-  width: 380px;
-  margin-right: 80px;
+  width: 485px;
+  margin-right: 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.usertext{
+  font-size: 25px!important;
+  font-weight: 400!important;
 }
 .inputaddacout:hover {
   border: 1px solid blue;
@@ -55,24 +62,31 @@
   padding-left: 20px;
   /* padding: 10px; */
   padding-right: 20px;
-  height: 35px;
+  height: 66px;
   margin-top: 8px;
-  border-radius: 5px;
+  border-radius: 15px;
+  width: 158px;
+  font-weight: 400;
+  font-size: 40px;
 }
 .divuserdel{
     background-color: #FF7F7F;
     width:355px;
-    height: 35px;
+    height: 64px;
     border-radius:20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     margin-right: 10px;
+    font-size: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .userdiv{
-
+       
+    
     display: flex;
     flex-wrap: wrap;
 }
@@ -81,11 +95,29 @@
  
   padding-left: 20px;
   padding-top: 20px; 
+  color: #1E0DDE;
 
 }
 
 
 @media screen and (max-width: 780px) {
+
+  .mainAddacount {
+    background-color: #d9d9d9;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 20px;
+  }
+
+  
+.addlink{
+ 
+  padding-left: 0px;
+  padding-top: 20px; 
+  color: #1E0DDE;
+
+}
     .addacountlinltext{
         display: block!important;
     }
@@ -109,4 +141,10 @@
         width: 100%;
       }
 
+      .mainpaccount {
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+      }
 }

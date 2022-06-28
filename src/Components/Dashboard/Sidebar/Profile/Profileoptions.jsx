@@ -11,15 +11,16 @@ import TrackChangesIcon from "@material-ui/icons/TrackChanges";
 import PaymentIcon from "@material-ui/icons/Payment";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Userdetails from "../Usedetails/Usredetails";
+import {useNavigate } from "react-router-dom";
 import "./Profileoptions.css";
 const StyledMenu = withStyles({
   paper: {
     border: "1px solid #d3d4d5",
-    width: "400px",
+    width: "250px",
   },
 })((props) => (
   <Menu
-    style={{ marginTop: "40px" }}
+    style={{ marginTop: "26px" }}
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{
@@ -56,11 +57,12 @@ export default function CustomizedMenus() {
     setAnchorEl(null);
   };
 
+  const navigate = useNavigate();
   return (
     <div>
       <svg
         width="20"
-        height="70"
+        height="25"
         viewBox="0 0 20 70"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -82,16 +84,17 @@ export default function CustomizedMenus() {
           <Userdetails />
         </div>
 
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => navigate("/dashboard/edit-profile")}>
           <ListItemIcon>
             <EditIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Edit profile" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => navigate("/dashboard/track-order")}>
           <ListItemIcon>
             <TrackChangesIcon fontSize="small" />
           </ListItemIcon>
+
           <ListItemText primary="Track Order" />
         </StyledMenuItem>
         <StyledMenuItem>

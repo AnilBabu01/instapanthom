@@ -6,7 +6,8 @@ const User = () => {
   return (
     <>
        <div className="divuserdel">
-            <Typography >
+           
+            <Typography className='usertext' >
              username  
           </Typography>
           <DeleteIcon />

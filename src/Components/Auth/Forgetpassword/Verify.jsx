@@ -18,11 +18,11 @@ const Verify = () => {
                 link .if you did not receive the email , click here to request
                 another
               </Typography>
-              <div className="resetbtn">
-                  <button className="btn01" type="submit">
-                    Request New Link
+              <div className="alignbtn">
+               <button className="btn02" type="submit">
+               Request New Link
                   </button>
-                </div>
+               </div>
             </div>
           </div>
         </div>

@@ -12,6 +12,8 @@ import Addacount from './Components/Dashboard/Addacount/Addacount';
 import Placeorder from './Components/Dashboard/Placeorder/Placeorder';
 import Dashboard from './Components/Dashboard/dashboard/Dashboard';
 import About from './Components/About/About'
+import TrackOrder from "./Components/Dashboard/TrackOrder/TrackOrder";
+import Editprofile from "./Components/Dashboard/EditProfile/Editprofile";
 const Main = () => {
 const [opendashboard, setopendashboard] = useState(false);
 
@@ -33,6 +35,8 @@ const [opendashboard, setopendashboard] = useState(false);
           <Route path="dashboard/addacount" element={<Addacount/>} />
           <Route path="dashboard/placeorder" element={<Placeorder />} />
           <Route path="/dashboard/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/edit-profile" element={<Editprofile/>} />
+          <Route path="/dashboard/track-order" element={<TrackOrder/>} />
         </Routes>
        </Router>
     </>
