@@ -43,7 +43,7 @@ const Trackcommon = () => {
               <Typography className="gaintext">599Rs</Typography>
             </div>
             <div className="alignordertext">
-              <button className="restartbtn">Restart</button>
+              <button className="restartbtn">Re-Order</button>
             </div>
           </div>
         </div>

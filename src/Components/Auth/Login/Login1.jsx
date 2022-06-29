@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Btn from "../Forgetpassword/Btn";
 import Footer from "../../Footer/Footer";
 import Common from "../Common";
+import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 import "../Signup/Signup.css";
 import "./Login.css";
 const Login1 = () => {
@@ -14,7 +16,7 @@ const Login1 = () => {
   });
   const [formerror, setFormerror] = useState({});
   const [issubmit, setIssubmit] = useState(false);
-
+  const [showpassword, setshowpassword] = useState(false);
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -87,17 +89,31 @@ const Login1 = () => {
                   <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
                   <div className="inputdiv">
                     <label htmlFor="password">Password</label>
+                    <div style={{ position: "relative" }}>
                     <input
                       className={
                         formerror.password && issubmit ? "input3" : "input"
                       }
-                      type="password"
+                      type={showpassword ? "text" : "password"}
                       value={credentials.password}
                       onChange={onChange}
                       name="password"
                       id="password"
                       placeholder="Password"
-                    ></input>
+                    />
+                     <li
+                            className="showpassworddsignup"
+                            onClick={() => setshowpassword(!showpassword)}
+                          >
+                            {showpassword ? (
+                              <VisibilityIcon />
+                            ) : (
+                              <VisibilityOffIcon />
+                            )}
+                          </li>
+
+                    </div>
+                    
                   </div>
                   <p className="errorcolor">
                     {issubmit ? formerror.password : ""}

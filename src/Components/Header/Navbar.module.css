@@ -49,6 +49,14 @@
   display: none;
 }
 
+.burger{
+  background-color: #27d9e7;
+  height: 50;
+  width: 45px!important;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  color: white;
+}
 @media screen and (max-width: 780px) {
   .log {
     display: flex;
@@ -66,12 +74,11 @@
     list-style: none;
     background-color: white;
     left: 0;
-    top: 50px;
-    transition: all 0.5s ease-out;
+    top: 48.1px;
     width: 100%;
     box-shadow: 1px 1px 1px 1px #e2d9d9;
-    
     padding-right: 38px;
+  
   }
 
   .home,
@@ -95,6 +102,5 @@
     top: 15px;
     right: 25px;
   }
-  .mobilestyle {
-  }
+ 
 }

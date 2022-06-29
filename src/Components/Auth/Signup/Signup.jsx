@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Btn from "../Forgetpassword/Btn";
 import Footer from "../../Footer/Footer";
 import Common from "../Common";
+import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 import Otp from "./Otp";
 import axios from "axios";
 import "../Login/Login.css";
@@ -19,6 +21,7 @@ const Signup = () => {
   const [formerror, setFormerror] = useState({});
   const [issubmit, setIssubmit] = useState(false);
   const [showotpform, setshowotpform] = useState(false);
+  const [showpassword, setshowpassword] = useState(false);
   const onChange = (e) => {
     const { name, email, number, password } = e.target;
     console.log("Registration data is ", name, email, number, password);
@@ -31,18 +34,21 @@ const Signup = () => {
     setIssubmit(true);
     const { name, number, email, password } = credentials;
     console.log("Registration data is ", name, email, number, password);
-    const response = await axios.post("/api/register", {
-      name: name,
-      email: email,
-      wnumber: number,
-      password: password,
-    });
 
-    if (name && email && number && password && response) {
-      setshowotpform(true);
+    try {
+      const response = await axios.post("/api/register", {
+        name: name,
+        email: email,
+        wnumber: number,
+        password: password,
+      });
+      if (name && email && number && password && response) {
+        setshowotpform(true);
+      }
+      console.log(response.data);
+    } catch (e) {
+      console.log("error", e);
     }
-
-    console.log(response.data);
   };
 
   useEffect(() => {
@@ -149,16 +155,30 @@ const Signup = () => {
 
                       <div className="inputdiv">
                         <label htmlFor="password">Password</label>
-                        <input
-                          className={
-                            formerror.password && issubmit ? "input3" : "input"
-                          }
-                          type="password"
-                          value={credentials.password}
-                          onChange={onChange}
-                          name="password"
-                          id="password"
-                        ></input>
+                        <div style={{ position: "relative" }}>
+                          <input
+                            className={
+                              formerror.password && issubmit
+                                ? "input3"
+                                : "input"
+                            }
+                            type={showpassword ? "text" : "password"}
+                            value={credentials.password}
+                            onChange={onChange}
+                            name="password"
+                            id="password"
+                          />
+                          <li
+                            className="showpassworddsignup"
+                            onClick={() => setshowpassword(!showpassword)}
+                          >
+                            {showpassword ? (
+                              <VisibilityIcon />
+                            ) : (
+                              <VisibilityOffIcon />
+                            )}
+                          </li>
+                        </div>
                       </div>
                       <p className="errorcolor">{formerror.password}</p>
                       <div className="inputdiv">

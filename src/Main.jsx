@@ -14,6 +14,8 @@ import Dashboard from './Components/Dashboard/dashboard/Dashboard';
 import About from './Components/About/About'
 import TrackOrder from "./Components/Dashboard/TrackOrder/TrackOrder";
 import Editprofile from "./Components/Dashboard/EditProfile/Editprofile";
+import Resetpassword from "./Components/Dashboard/resetpassword/Resetpassword";
+import Addpayment from "./Components/Dashboard/AddPayment/Addpayment";
 const Main = () => {
 const [opendashboard, setopendashboard] = useState(false);
 
@@ -37,6 +39,8 @@ const [opendashboard, setopendashboard] = useState(false);
           <Route path="/dashboard/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/edit-profile" element={<Editprofile/>} />
           <Route path="/dashboard/track-order" element={<TrackOrder/>} />
+          <Route path="/dashboard/reset-password" element={<Resetpassword />} />
+          <Route path="/dashboard/add-payment" element={<Addpayment />} />
         </Routes>
        </Router>
     </>

@@ -45,21 +45,21 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-          <button
+          <i
           style={{ marginRight: "20px" }}
             onClick={() => setisMobile(!isMobile)}
             className={style.mobileMenuIcon}
           >
             {isMobile ? (
-              <i>
-                <CloseIcon />
-              </i>
+              <>
+                <CloseIcon style={{height: "40px"}} className={style.burger}/>
+              </>
             ) : (
-              <i>
-                <MenuIcon />
-              </i>
+              <>
+                <MenuIcon style={{height: "40px"}} className={style.burger} />
+              </>
             )}
-          </button>
+          </i>
        
       </nav>
     </>
