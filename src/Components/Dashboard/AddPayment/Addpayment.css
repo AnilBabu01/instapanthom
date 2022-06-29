@@ -1,0 +1,41 @@
+.mainpayment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.alignprices{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: antiquewhite;
+}
+
+.alignbuy{
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.pricediv{
+    margin-top: 15px;
+}
+
+.fontprice{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.amout{
+    font-size: 25px;
+    margin-right: 56px;
+    color: gray;
+}
+
+.amout1{
+    font-size: 25px;
+    color: gray;
+    margin-right: 25px;
+}

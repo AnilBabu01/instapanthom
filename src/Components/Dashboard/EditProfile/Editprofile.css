@@ -32,8 +32,7 @@
   box-sizing: border-box;
   font-size: 20px;
   font-weight: 600;
-  height: 55px;
-  width: 473px;
+   width: 473px;
 }
 .editinput:focus {
   border: 1px solid blue;
@@ -75,9 +74,10 @@ input[type="submit"]:hover {
 
   .editinput {
     width: 336px;
+    padding: 8px 20px;
   }
   input[type="submit"] {
-    height: 63px;
+    height: 45px;
     width: 336px;
   }
 }

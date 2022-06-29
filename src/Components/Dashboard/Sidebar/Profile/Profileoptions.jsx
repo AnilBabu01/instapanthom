@@ -97,14 +97,14 @@ export default function CustomizedMenus() {
 
           <ListItemText primary="Track Order" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => navigate("/dashboard/add-payment")}>
           <ListItemIcon>
             <PaymentIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Add Payment" />
         </StyledMenuItem>
         <Divider style={{ backgroundColor: "gray" }} />
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => navigate("/dashboard/reset-password")}>
           <ListItemIcon>
             <InboxIcon fontSize="small" />
           </ListItemIcon>
