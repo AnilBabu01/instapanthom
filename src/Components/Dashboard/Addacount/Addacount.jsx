@@ -26,7 +26,7 @@ const Addacount = () => {
       <div className="mainpaccount">
         <div className="mainAddacount">
           <div className="addacountlinltext">
-            <Typography variant="h3" className="addtext">
+            <Typography variant="h4" className="addtext">
               Please add your instagram account
             </Typography>
             <Link className="addlink" to="/">
@@ -70,6 +70,9 @@ const Addacount = () => {
             </form>
           </div>
           <div className="userdiv">
+            <User />
+            <User />
+            <User />
             <User />
             <User />
             <User />

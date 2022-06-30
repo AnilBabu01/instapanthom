@@ -9,12 +9,13 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  background-color: white;
-  color: black;
+  background-color: #0f0f99;
+  color:white;
   box-shadow: 1px 1px 1px 1px #e2d9d9;
   position: fixed;
   width: 100%;
   z-index: 1;
+
  
 }
 
@@ -28,10 +29,36 @@
   justify-content: flex-end;
   list-style: none;
   margin-top: 10px;
- 
+  margin-top: 16px;
 }
 
+.active{
 
+  text-decoration: none;
+
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: black;
+  background: aqua;
+  border-radius: 5px;
+}
+
+.home:hover,
+.about:hover,
+.login:hover,
+.singup:hover{
+  text-decoration: none;
+
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: black;
+  background: aqua;
+  border-radius: 5px;
+}
 .home,
 .about,
 .login,
@@ -42,7 +69,7 @@
   padding: 10px 20px;
   margin: 0 10px;
   cursor: pointer;
-  color: black;
+  color:white;
 }
 
 .mobileMenuIcon {
@@ -72,7 +99,7 @@
     position: absolute;
     display: block;
     list-style: none;
-    background-color: white;
+    background-color: #0f0f99;
     left: 0;
     top: 48.1px;
     width: 100%;
@@ -85,7 +112,7 @@
   .about,
   .login,
   .singup {
-    color: black;
+    color:white;
     text-align: center;
     padding: 10px;
     width: 100%;
@@ -93,6 +120,18 @@
     display: grid;
   }
 
+  .active{
+    margin-bottom: 8px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.5s ease-out;
+    display: grid;
+    background: aqua;
+    border-radius: 5px;
+  }
+  
   .mobileMenuIcon {
     display: block;
 

@@ -1,6 +1,6 @@
 .editbgcolor {
-  background-color: #f5f5f5;
-  padding: 25px;
+ 
+  padding: 20px;
 }
 .maindivedit {
   display: flex;
@@ -9,8 +9,8 @@
 }
 
 .formaligedit {
-  padding: 15px;
-  width: 573px;
+  
+  width: 373px;
 }
 .number {
   background-color: #b4abab;
@@ -19,38 +19,35 @@
 }
 
 .label {
-  margin-left: 16px;
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 .editinput {
-  
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border-radius: 18px;
-  box-sizing: border-box;
-  font-size: 20px;
-  font-weight: 600;
-   width: 473px;
+    height: 45px;
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid #dbcece;
+    width: 373px;
+    margin-bottom: 10px;
 }
 .editinput:focus {
   border: 1px solid blue;
-  outline: none;
+ 
 }
 .emiledit {
   background-color: white;
   color: black;
-  border: none;
+ 
 }
 .fullname {
   background-color: white;
   color: black;
-  border: none;
+  
 }
 input[type="submit"] {
-  height: 55px;
-  width: 473px;
+  height: 45px;
+  width: 373px;
   background-color: #242582;
   color: white;
  

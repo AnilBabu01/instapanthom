@@ -1,11 +1,6 @@
 .mainplaceorder {
-  background-color: #f5f5f5;
-  padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 66px;
- 
- 
 }
 .divcontentplaceorder {
   background-color: #d9d9d9;
@@ -227,38 +222,37 @@
   font-size: 45px !important;
   margin-bottom: 5px !important;
 }
-.orderimgg{
-  width: 40px; 
+.orderimgg {
+  width: 40px;
   margin-right: 10px;
 }
 
-.arrowicon{
+.arrowicon {
   width: 30px;
-  
+
   margin-right: 10px;
 }
-.mobileplaceshow{
+.mobileplaceshow {
   display: none;
 }
 @media screen and (max-width: 780px) {
-
-  .mobileuserlist{
+  .mobileuserlist {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .choosediv{
+  .choosediv {
     display: none;
   }
 
-  .freemobilehide{
+  .freemobilehide {
     display: none;
   }
-  
+
   .mobileplace {
     display: none;
   }
-  .mobileplaceshow{
+  .mobileplaceshow {
     display: block;
     font-size: 25px;
     margin-left: 20px;
@@ -315,42 +309,38 @@
     top: 15px;
     left: 270px;
   }
-  
-.dropdown .options {
-  
-  max-height: 307px;
- 
-  width: 307px;
-}
 
+  .dropdown .options {
+    max-height: 307px;
 
-.dropdown .option {
- 
-  padding: 3px 2px;
- 
-  height: 45px;
-  width: 306px;
-  font-size: 15px;
-}
+    width: 307px;
+  }
 
-.orderbtn {
-  
-  padding-left: 70px;
-  padding-right: 70px;
-  height: 45px;
-  width: 307px;
-  font-size: 15px;
-}
+  .dropdown .option {
+    padding: 3px 2px;
 
-.arrowicon{
-  width: 20px;
-}
+    height: 45px;
+    width: 306px;
+    font-size: 15px;
+  }
 
-.mainplaceorder {
-  background-color: #f5f5f5;
-  padding-top: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-}
+  .orderbtn {
+    padding-left: 70px;
+    padding-right: 70px;
+    height: 45px;
+    width: 307px;
+    font-size: 15px;
+  }
+
+  .arrowicon {
+    width: 20px;
+  }
+
+  .mainplaceorder {
+    background-color: #f5f5f5;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+  }
 }

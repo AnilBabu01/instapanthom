@@ -2,67 +2,121 @@ import React, { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Addpayment.css";
 const Addpayment = () => {
-  const [price, setprice] = useState("");
+  const [pay, setpay] = useState({
+    name: "",
+    number: "",
+  });
+  const [amount, setamount] = useState("");
   const onChange = (e) => {
-    const { price } = e.target;
-    console.log("your enter this price ", price);
-
-    setprice(e.target.value);
+    const { amount } = e.target;
+    console.log("your enter this price ", amount);
+    setpay({ ...pay, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log("your enter this price ", price);
+    const { name, number } = pay;
+    console.log("this is pay data", name, number, amount);
   };
   return (
     <>
       <Sidebar />
       <div className="mainpayment">
-        <div>
+        <div style={{ width: "100%" }}>
           <div className="alignbuy">
             <h3>Buy Followers</h3>
           </div>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div style={{ display: "flex", marginBottom: "15px" }}>
+              <input
+              style={{marginRight: "5px"}}
+                type="text"
+                className="input"
+                placeholder="name*"
+                name="name"
+                value={pay.name}
+                onChange={onChange}
+                id="price"
+              />
+              <input
+                type="number"
+                className="input"
+                placeholder="Mobile number*"
+                name="number"
+                value={pay.number}
+                onChange={onChange}
+                id="price"
+              />
+            </div>
+            <div style={{ display: "flex" }}>
               <input
                 type="text"
-                className="emiledit editinput"
-                placeholder="Enter Amount"
+                className="input"
+                placeholder="Amount*"
                 name="price"
-                value={price}
+                value={amount}
                 onChange={onChange}
                 id="price"
               />
             </div>
             <div className="pricediv">
               <div className="alignprices">
-                <p className="fontprice">Price</p>
-                <p className="fontprice">Followers</p>
+                <button
+                  onClick={() => {
+                    setamount("100");
+                  }}
+                  className="btnprice"
+                >
+                  100
+                </button>
+                <button
+                  onClick={() => {
+                    setamount("200");
+                  }}
+                  className="btnprice"
+                >
+                  200
+                </button>
+                <button
+                  onClick={() => {
+                    setamount("500");
+                  }}
+                  className="btnprice"
+                >
+                  500
+                </button>
               </div>
               <div className="alignprices">
-                <p className="amout">100</p>
-                <p className="amout1">200</p>
-              </div>
-              <div className="alignprices">
-                <p className="amout">200</p>
-                <p className="amout1">500</p>
-              </div>
-              <div className="alignprices">
-                <p className="amout">500</p>
-                <p className="amout1">1000</p>
-              </div>
-              <div className="alignprices">
-                <p className="amout">1000</p>
-                <p className="amout1">20000</p>
-              </div>
-              <div className="alignprices">
-                <p className="amout">2000</p>
-                <p className="amout1">30000</p>
+                <button
+                  onClick={() => {
+                    setamount("1000");
+                  }}
+                  className="btnprice"
+                >
+                  1000
+                </button>
+                <button
+                  onClick={() => {
+                    setamount("2000");
+                  }}
+                  className="btnprice"
+                >
+                  2000
+                </button>
+                <button
+                  onClick={() => {
+                    setamount("5000");
+                  }}
+                  className="btnprice"
+                >
+                  5000
+                </button>
               </div>
             </div>
             <div style={{ marginTop: "20px" }}>
-              <input type="submit" value="Make Payment" />
+              <button className="submitprice" type="submit">
+                Make Payment
+              </button>
             </div>
           </form>
         </div>

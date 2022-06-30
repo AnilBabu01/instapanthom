@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import {NavLink,Link} from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = () => {
@@ -19,30 +19,50 @@ const Navbar = () => {
         >
           
           <li>
-            <Link to="/" className={style.home}>
+            <NavLink  to="/"
+                className={({ isActive }) =>
+                isActive ? style.active : style.home
+              }
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about" className={style.about}>
+            <NavLink to="/about"
+             className={({ isActive }) =>
+             isActive ? style.active : style.about
+           }
+           >
               About us
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/faq" className={style.home}>
+            <NavLink to="/faq"
+             className={({ isActive }) =>
+             isActive ? style.active : style.about
+           }
+          >
               Faq
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/login" className={style.login}>
+            <NavLink to="/login"
+             className={({ isActive }) =>
+             isActive ? style.active : style.login
+           }
+          >
               Login
-            </Link>
+            </NavLink>
           </li>
           <li>
           
-            <Link to="/signup" className={style.singup}>
+            <NavLink to="/signup"
+             className={({ isActive }) =>
+             isActive ? style.active : style.singup
+           }
+            >
               Sign up
-            </Link>
+            </NavLink>
           </li>
         </ul>
           <i

@@ -42,10 +42,10 @@ const Signup = () => {
         wnumber: number,
         password: password,
       });
-      if (name && email && number && password && response) {
+      if (name && email && number && password && response.data.status===true) {
         setshowotpform(true);
       }
-      console.log(response.data);
+      console.log(response.data.status);
     } catch (e) {
       console.log("error", e);
     }

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import Profileoptions from "../Sidebar/Profile/Profileoptions";
 import Userdetails from "../Sidebar/Usedetails/Usredetails";
 import burder from "../../Images/Component_1.svg";
@@ -36,35 +36,38 @@ function Sidebar() {
         <div className={click ? "open1 " : "menu-div"}>
           <ul className="nav-menu" onClick={handclick}>
             <li className="nav-item">
-              <Link
-                activeClassName="active"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-nav-link" : "nav-link"
+                }
                 to="/dashboard/dashboard"
-                className="nav-link"
               >
                 <DashboardIcon />
                 <spna className="linkspan"> Dashboard</spna>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
-                activeClassName="active"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-nav-link" : "nav-link"
+                }
                 to="/dashboard/addacount"
-                className="nav-link"
               >
                 <PersonAddIcon />
                 <spna className="linkspan">Addacount </spna>
-              </Link>
+              </NavLink>
             </li>
 
             <li className="nav-item">
-              <Link
-                activeClassName="active"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-nav-link" : "nav-link"
+                }
                 to="/dashboard/placeorder"
-                className="nav-link"
               >
                 <CallMadeIcon />
                 <spna className="linkspan">Placseorder </spna>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

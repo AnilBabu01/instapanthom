@@ -32,6 +32,9 @@ const Editprofile = () => {
     <>
     <Sidebar/>
     <div className="editbgcolor">
+    <div className="restalign">
+          <p>Edit Your Profile</p>
+        </div>
     <div className='maindivedit'>
         <form
         className="formaligedit"
@@ -40,6 +43,7 @@ const Editprofile = () => {
         >
           <label className="label" htmlFor="mobilenumber">Mobile number</label>
           <input
+            disabled
             className="number editinput"
             type="text"
             id="mobilenumber"
