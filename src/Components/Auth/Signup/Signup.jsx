@@ -9,6 +9,7 @@ import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import Otp from "./Otp";
 import axios from "axios";
+import { toast } from "react-toastify";
 import "../Login/Login.css";
 import "./Signup.css";
 const Signup = () => {
@@ -26,6 +27,7 @@ const Signup = () => {
     const { name, email, number, password } = e.target;
     console.log("Registration data is ", name, email, number, password);
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    
   };
 
   const handleSubmit = async (e) => {
@@ -42,13 +44,18 @@ const Signup = () => {
         wnumber: number,
         password: password,
       });
-      if (name && email && number && password && response.data.status===true) {
-        setshowotpform(true);
-      }
+     
       console.log(response.data.status);
     } catch (e) {
       console.log("error", e);
+    
+     
     }
+    if (name && email && number && password) {
+      setshowotpform(true);
+      toast.success(" sent otp on number successfully ");
+    }
+   
   };
 
   useEffect(() => {
@@ -102,7 +109,7 @@ const Signup = () => {
             </div>
             <div className="formcontainer">
               <div className="mobileform lapform">
-                {showotpform && <Otp />}
+                {showotpform && <Otp number={credentials.number} />}
                 {!showotpform && (
                   <>
                     <form onSubmit={handleSubmit}>

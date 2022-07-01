@@ -7,11 +7,15 @@ import Footer from "../../Footer/Footer";
 import Common from "../Common";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import "../Signup/Signup.css";
 import "./Login.css";
 const Login1 = () => {
+  const nevigate = useNavigate();
   const [credentials, setCredentials] = useState({
-    name: "",
+    number: "",
     password: "",
   });
   const [formerror, setFormerror] = useState({});
@@ -25,8 +29,24 @@ const Login1 = () => {
     e.preventDefault();
     setFormerror(validate(credentials));
     setIssubmit(true);
-    const { name, password } = credentials;
-    console.log("Registration data is ", name, password);
+    const { number, password } = credentials;
+
+    
+    try {
+      const response = await axios.post("/api/register", {
+        wnumber:number,
+        password:password,
+      });
+      
+      console.log(response.data.status);
+    } catch (e) {
+      console.log("error", e);
+      toast.success(" you have login successfully ");
+      setTimeout(() => {
+        nevigate("/");
+      }, 1000);
+    }
+    console.log("Registration data is ", number, password);
   };
   useEffect(() => {
     console.log(formerror);
@@ -39,8 +59,8 @@ const Login1 = () => {
     console.log("validate data", values.name);
     const errors = {};
 
-    if (!values.name) {
-      errors.name = "Username is required";
+    if (!values.number) {
+      errors.number = "register number is required";
     }
 
     if (!values.password) {
@@ -72,21 +92,21 @@ const Login1 = () => {
             <div className="formcontainer">
               <div className="formdiv">
                 <form onSubmit={handleSubmit}>
-                  <div className="inputdiv" Htmlfor="name">
-                    <label>Your name</label>
+                  <div className="inputdiv" Htmlfor="number">
+                    <label>Your number</label>
                     <input
                       className={
-                        formerror.name && issubmit ? "input3" : "input"
+                        formerror.number && issubmit ? "input3" : "input"
                       }
                       type="text"
-                      name="name"
-                      value={credentials.name}
+                      name="number"
+                      value={credentials.number}
                       onChange={onChange}
-                      id="name"
-                      placeholder="Your instagram username "
+                      id="number"
+                      placeholder="Your instagram number "
                     />
                   </div>
-                  <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
+                  <p className="errorcolor">{issubmit ? formerror.number: ""}</p>
                   <div className="inputdiv">
                     <label htmlFor="password">Password</label>
                     <div style={{ position: "relative" }}>
