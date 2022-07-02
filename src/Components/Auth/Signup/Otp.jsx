@@ -6,13 +6,13 @@ import { toast } from "react-toastify";
 import "./Signup.css";
 const Otp = (props) => {
   const nevigate = useNavigate();
-  const [otp, setotp] = useState("")
+  const [otp, setotp] = useState("");
   const onChange = (e) => {
-   
-    setotp(e.target.value)
+    setotp(e.target.value);
   };
   const number = props.number;
   console.log("number from opt ", number);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("opt is ", otp);
@@ -21,31 +21,30 @@ const Otp = (props) => {
         wnumber: number,
         otp: otp,
       });
-      toast.success(" verify opt and register successfully ");
-      console.log(response.data.status);
-    } catch (e) {
-      console.log("error", e);
-      toast.success(" verify opt and register successfully ");
+      toast.success(" verify opt and register successfully ",{autoClose: 1000});
       setTimeout(() => {
         nevigate("/login");
       }, 2000);
+      console.log(response.data.status);
+    } catch (e) {
+      console.log("error", e);
+      toast.error("Internal server error",{autoClose: 1000});
+     
     }
     console.log("otp data is ", otp, number);
   };
 
-  const resendotp =async () => {
+  const resendotp = async () => {
     console.log("resend opt ");
     try {
       const response = await axios.post("/api/resend/%7Bmob_number%7D", {
         wnumber: number,
-        
-       
       });
-      toast.success("resend otp successfully");
+      toast.success("resend otp successfully",{autoClose: 1000});
       console.log(response.data.status);
     } catch (e) {
       console.log("error", e);
-      toast.error("Internal server error")
+      toast.error("Internal server error",{autoClose: 1000});
     }
     console.log("otp data is ", otp, number);
   };

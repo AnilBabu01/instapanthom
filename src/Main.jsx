@@ -17,6 +17,7 @@ import Editprofile from "./Components/Dashboard/EditProfile/Editprofile";
 import Resetpassword from "./Components/Dashboard/resetpassword/Resetpassword";
 import Addpayment from "./Components/Dashboard/AddPayment/Addpayment";
 import { ToastContainer} from "react-toastify";
+import Sidebar from "./Components/Dashboard/Sidebar/Sidebar";
 const Main = () => {
 const [opendashboard, setopendashboard] = useState(false);
 
@@ -42,6 +43,7 @@ const [opendashboard, setopendashboard] = useState(false);
           <Route path="/dashboard/track-order" element={<TrackOrder/>} />
           <Route path="/dashboard/reset-password" element={<Resetpassword />} />
           <Route path="/dashboard/add-payment" element={<Addpayment />} />
+         
         </Routes>
        </Router>
     </>

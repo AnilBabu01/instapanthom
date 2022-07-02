@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -12,6 +12,7 @@ import PaymentIcon from "@material-ui/icons/Payment";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Userdetails from "../Usedetails/Usredetails";
 import {useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Profileoptions.css";
 const StyledMenu = withStyles({
   paper: {
@@ -46,7 +47,7 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-export default function CustomizedMenus() {
+export default function CustomizedMenus({ setopendashboard }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -58,6 +59,13 @@ export default function CustomizedMenus() {
   };
 
   const navigate = useNavigate();
+
+  const logout =()=>{
+    localStorage.removeItem("token");
+    toast.success("you have logout successfully",{autoClose: 1000});
+   
+    navigate("/")
+  }
   return (
     <div>
       <svg
@@ -110,7 +118,7 @@ export default function CustomizedMenus() {
           </ListItemIcon>
           <ListItemText primary="Reset Password" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={logout}>
           <ListItemIcon>
             <ExitToAppIcon fontSize="small" />
           </ListItemIcon>

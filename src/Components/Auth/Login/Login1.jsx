@@ -31,20 +31,39 @@ const Login1 = () => {
     setIssubmit(true);
     const { number, password } = credentials;
 
-    
     try {
-      const response = await axios.post("/api/register", {
-        wnumber:number,
-        password:password,
+      const response = await axios.post("/api/login", {
+        wnumber: number,
+        password: password,
       });
-      
-      console.log(response.data.status);
+
+      if (response.data.user && response.data.status === true) {
+        toast.success(" you have login successfully ", {
+          autoClose: 1000,
+        });
+
+        setTimeout(() => {
+          nevigate("/");
+        }, 1000);
+        localStorage.setItem("token", response.data.token);
+      }
+
+      // Save the auth token and redirect
+
+      if (
+        response.data.msg == "Please Enter the Corect Passwords" &&
+        response.data.status === true
+      ) {
+        toast.error("Please Enter the Corect Password", {
+          autoClose: 1000,
+        });
+      }
+      console.log("from login", response.data);
     } catch (e) {
       console.log("error", e);
-      toast.success(" you have login successfully ");
-      setTimeout(() => {
-        nevigate("/");
-      }, 1000);
+      toast.error("Insternal server error", {
+        autoClose: 1000,
+      });
     }
     console.log("Registration data is ", number, password);
   };
@@ -106,34 +125,34 @@ const Login1 = () => {
                       placeholder="Your instagram number "
                     />
                   </div>
-                  <p className="errorcolor">{issubmit ? formerror.number: ""}</p>
+                  <p className="errorcolor">
+                    {issubmit ? formerror.number : ""}
+                  </p>
                   <div className="inputdiv">
                     <label htmlFor="password">Password</label>
                     <div style={{ position: "relative" }}>
-                    <input
-                      className={
-                        formerror.password && issubmit ? "input3" : "input"
-                      }
-                      type={showpassword ? "text" : "password"}
-                      value={credentials.password}
-                      onChange={onChange}
-                      name="password"
-                      id="password"
-                      placeholder="Password"
-                    />
-                     <li
-                            className="showpassworddsignup"
-                            onClick={() => setshowpassword(!showpassword)}
-                          >
-                            {showpassword ? (
-                              <VisibilityIcon />
-                            ) : (
-                              <VisibilityOffIcon />
-                            )}
-                          </li>
-
+                      <input
+                        className={
+                          formerror.password && issubmit ? "input3" : "input"
+                        }
+                        type={showpassword ? "text" : "password"}
+                        value={credentials.password}
+                        onChange={onChange}
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                      />
+                      <li
+                        className="showpassworddsignup"
+                        onClick={() => setshowpassword(!showpassword)}
+                      >
+                        {showpassword ? (
+                          <VisibilityIcon />
+                        ) : (
+                          <VisibilityOffIcon />
+                        )}
+                      </li>
                     </div>
-                    
                   </div>
                   <p className="errorcolor">
                     {issubmit ? formerror.password : ""}
@@ -149,14 +168,13 @@ const Login1 = () => {
                 <div className="loginbtn">
                   <Link to="/forgetpassword">Forget Your Password</Link>
                 </div>
-              
-                  <Typography className="gotAntherAuth" align="center">
-                    don't have an account?
-                    <Link style={{ textDecoration: "none" }} to="/signup">
-                      <span className="gotAntherAuthText">Please Signup</span>{" "}
-                    </Link>
-                  </Typography>
-               
+
+                <Typography className="gotAntherAuth" align="center">
+                  don't have an account?
+                  <Link style={{ textDecoration: "none" }} to="/signup">
+                    <span className="gotAntherAuthText">Please Signup</span>{" "}
+                  </Link>
+                </Typography>
               </div>
             </div>
           </div>

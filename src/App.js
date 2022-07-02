@@ -1,13 +1,12 @@
 import "./App.css";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import Main from "./Main";
 
 function App() {
   return (
     <>
-      <ToastContainer position="top-center" />
+  
       <Main />
     </>
   );

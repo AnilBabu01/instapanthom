@@ -45,16 +45,21 @@ const Signup = () => {
         password: password,
       });
      
-      console.log(response.data.status);
+      console.log(response.data);
+      if (name && email && number && password&&response.data.status===true) {
+        setshowotpform(true);
+        toast.success("SMS sent successfully",{autoClose: 1000});
+      }
+      if(response.data.status===false)
+      {
+        toast.error("Email or Mobile Number already exist ",{autoClose: 1000});
+      }
     } catch (e) {
       console.log("error", e);
-    
+      toast.error("Internal server ",{autoClose: 1000});
      
     }
-    if (name && email && number && password) {
-      setshowotpform(true);
-      toast.success(" sent otp on number successfully ");
-    }
+   
    
   };
 
