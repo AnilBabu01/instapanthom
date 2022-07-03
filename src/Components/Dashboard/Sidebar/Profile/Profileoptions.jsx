@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -12,7 +12,6 @@ import PaymentIcon from "@material-ui/icons/Payment";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Userdetails from "../Usedetails/Usredetails";
 import {useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import "./Profileoptions.css";
 const StyledMenu = withStyles({
   paper: {
@@ -47,7 +46,7 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-export default function CustomizedMenus({ setopendashboard }) {
+export default function CustomizedMenus({ setlogout}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -62,9 +61,14 @@ export default function CustomizedMenus({ setopendashboard }) {
 
   const logout =()=>{
     localStorage.removeItem("token");
-    toast.success("you have logout successfully",{autoClose: 1000});
    
-    navigate("/")
+    setlogout(true)
+    
+    setTimeout(() => {
+     
+      setlogout(false)
+      navigate("/")
+    }, 2000);
   }
   return (
     <div>

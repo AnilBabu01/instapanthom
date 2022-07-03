@@ -9,7 +9,7 @@ import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import Otp from "./Otp";
 import axios from "axios";
-import { toast } from "react-toastify";
+import Alert from "@mui/material/Alert";
 import "../Login/Login.css";
 import "./Signup.css";
 const Signup = () => {
@@ -23,11 +23,14 @@ const Signup = () => {
   const [issubmit, setIssubmit] = useState(false);
   const [showotpform, setshowotpform] = useState(false);
   const [showpassword, setshowpassword] = useState(false);
+  const [successful, setsuccessful] = useState(false);
+  const [userallready, setuserallready] = useState(false);
+  const success = "success";
+  const warning = "warning";
   const onChange = (e) => {
     const { name, email, number, password } = e.target;
     console.log("Registration data is ", name, email, number, password);
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
-    
   };
 
   const handleSubmit = async (e) => {
@@ -44,23 +47,32 @@ const Signup = () => {
         wnumber: number,
         password: password,
       });
-     
+
       console.log(response.data);
-      if (name && email && number && password&&response.data.status===true) {
-        setshowotpform(true);
-        toast.success("SMS sent successfully",{autoClose: 1000});
+      if (
+        name &&
+        email &&
+        number &&
+        password &&
+        response.data.status === true
+      ) {
+        setsuccessful(true);
+        setTimeout(() => {
+          setsuccessful(false);
+          setshowotpform(true);
+        }, 1500);
       }
-      if(response.data.status===false)
-      {
-        toast.error("Email or Mobile Number already exist ",{autoClose: 1000});
+      if (response.data.status === false) {
+        setuserallready(true);
+        setTimeout(() => {
+          setuserallready(false);
+        }, 1500);
       }
     } catch (e) {
       console.log("error", e);
-      toast.error("Internal server ",{autoClose: 1000});
-     
+
+      
     }
-   
-   
   };
 
   useEffect(() => {
@@ -118,6 +130,21 @@ const Signup = () => {
                 {!showotpform && (
                   <>
                     <form onSubmit={handleSubmit}>
+                      <div className="inputdiv">
+                        {successful || userallready ? (
+                          <Alert
+                            variant="filled"
+                            severity={successful ? success : warning}
+                          >
+                            {successful
+                              ? "SMS sent successfully"
+                              : "Email or Mobile Number already exist "}
+                          </Alert>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                     
                       <div className="inputdiv" Htmlfor="name">
                         <label>Your name</label>
                         <input

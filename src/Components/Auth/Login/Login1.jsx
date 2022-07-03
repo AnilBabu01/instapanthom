@@ -8,8 +8,8 @@ import Common from "../Common";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import axios from "axios";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 import "../Signup/Signup.css";
 import "./Login.css";
 const Login1 = () => {
@@ -21,6 +21,10 @@ const Login1 = () => {
   const [formerror, setFormerror] = useState({});
   const [issubmit, setIssubmit] = useState(false);
   const [showpassword, setshowpassword] = useState(false);
+  const [logged, setlogged] = useState(false);
+  const [lohinvalidcre, setlohinvalidcre] = useState(false);
+  const success = "success";
+  const warning = "warning";
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -38,13 +42,11 @@ const Login1 = () => {
       });
 
       if (response.data.user && response.data.status === true) {
-        toast.success(" you have login successfully ", {
-          autoClose: 1000,
-        });
-
+        setlogged(true);
         setTimeout(() => {
+          setlogged(false);
           nevigate("/");
-        }, 1000);
+        }, 1500);
         localStorage.setItem("token", response.data.token);
       }
 
@@ -54,16 +56,15 @@ const Login1 = () => {
         response.data.msg == "Please Enter the Corect Passwords" &&
         response.data.status === true
       ) {
-        toast.error("Please Enter the Corect Password", {
-          autoClose: 1000,
-        });
+        setTimeout(() => {
+          setlohinvalidcre(false);
+        }, 1000);
+        setlohinvalidcre(true);
       }
       console.log("from login", response.data);
     } catch (e) {
       console.log("error", e);
-      toast.error("Insternal server error", {
-        autoClose: 1000,
-      });
+     
     }
     console.log("Registration data is ", number, password);
   };
@@ -108,9 +109,25 @@ const Login1 = () => {
                 <h3>Login</h3>
               </div>
             </div>
+
             <div className="formcontainer">
               <div className="formdiv">
                 <form onSubmit={handleSubmit}>
+                  <div className="inputdiv">
+                    {logged || lohinvalidcre ? (
+                      <Alert
+                        variant="filled"
+                        severity={logged ? success : warning}
+                      >
+                        {logged
+                          ? "you have login successfully"
+                          : "Please Enter the Corect Passwords"}
+                      </Alert>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  
                   <div className="inputdiv" Htmlfor="number">
                     <label>Your number</label>
                     <input

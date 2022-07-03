@@ -16,15 +16,13 @@ import TrackOrder from "./Components/Dashboard/TrackOrder/TrackOrder";
 import Editprofile from "./Components/Dashboard/EditProfile/Editprofile";
 import Resetpassword from "./Components/Dashboard/resetpassword/Resetpassword";
 import Addpayment from "./Components/Dashboard/AddPayment/Addpayment";
-import { ToastContainer} from "react-toastify";
-import Sidebar from "./Components/Dashboard/Sidebar/Sidebar";
 const Main = () => {
 const [opendashboard, setopendashboard] = useState(false);
 
   return (
     <>
      <Router>
-     <ToastContainer position="top-center" />
+  
           {!opendashboard && <Navbar />}
         
         <Routes>

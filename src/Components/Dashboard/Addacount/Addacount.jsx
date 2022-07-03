@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import User from "./User";
 import axios from "axios";
-import { toast } from "react-toastify";
+import Alert from "@mui/material/Alert";
+
 import "./Addacount.css";
 
 const Addacount = () => {
@@ -13,6 +14,11 @@ const Addacount = () => {
     password: "",
   });
   const [users, setusers] = useState([]);
+  const [add, setadd] = useState(false);
+  const [allredy, setallredy] = useState(false);
+  const success = "success";
+  const warning = "warning";
+
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -21,27 +27,26 @@ const Addacount = () => {
     e.preventDefault();
 
     try {
-      
       const { name, password } = credentials;
 
       const res = await axios.post("/api/addaccount", {
         username: name,
         password: password,
       });
-     
-      if(res.data.status===true)
-      {
-        toast.success("Account add successfully", { autoClose: 1000 });
-      }
-      if(res.data.status===false)
-      {
-        toast.error("This insta id already exit in database", { autoClose: 1000 });
-      }
 
-    } catch (error) {
-      toast.error("internal server error", { autoClose: 1000 });
-    }
-   
+      if (res.data.status === true) {
+        setTimeout(() => {
+          setadd(false);
+        }, 1000);
+        setadd(true);
+      }
+      if (res.data.status === false) {
+        setTimeout(() => {
+          setallredy(false);
+        }, 1000);
+        setallredy(true);
+      }
+    } catch (error) {}
   };
 
   axios.defaults.headers.get["Authorization"] = `Bearer ${localStorage.getItem(
@@ -55,7 +60,6 @@ const Addacount = () => {
   const getuseraccount = async () => {
     const res = await axios.get("/api/addaccount");
     setusers(res.data.data);
-   
   };
 
   useEffect(() => {
@@ -67,6 +71,7 @@ const Addacount = () => {
       <Sidebar />
       <div className="mainpaccount">
         <div className="mainAddacount">
+         
           <div className="addacountlinltext">
             <Typography variant="h4" className="addtext">
               Please add your instagram account
@@ -75,7 +80,15 @@ const Addacount = () => {
               Don’t worry your account <br /> will be safe
             </Link>
           </div>
-
+          {add || allredy ? (
+            <Alert variant="filled" severity={add ? success : warning}>
+              {add
+                ? "Account add successfully"
+                : "This insta id already exit in database"}
+            </Alert>
+          ) : (
+            ""
+          )}
           <div>
             <form onSubmit={handleSubmit}>
               <div className="formdivaddacout">

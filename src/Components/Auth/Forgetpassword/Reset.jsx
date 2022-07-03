@@ -1,15 +1,13 @@
 import "./Reset.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect} from "react";
 import Typography from "@mui/material/Typography";
-import Alert from "../../Context/Alert";
 import { useNavigate } from "react-router-dom";
-
-
+import Alert from "@mui/material/Alert";
 const id = "anilb99";
+
 
 const Reset = () => {
   const nevigate = useNavigate();
-
   const [credentials, setCredentials] = useState({
     name: "",
   });
@@ -60,13 +58,11 @@ const Reset = () => {
               <Typography variant="h4" align="center">
                 Forget Password
               </Typography>
-              {showalert && (
-                <Alert
-                  alert={alert}
-                  type={"success"}
-                  msg={"We have e-mailed your password reset link"}
-                />
-              )}
+              {showalert && 
+               <Alert variant="filled" severity="info">
+              Reset password link sent on your main 
+             </Alert>
+              }
               <form onSubmit={handleSubmit}>
                 <div Htmlfor="name">
                   <input

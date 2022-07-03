@@ -6,11 +6,13 @@ import burder from "../../Images/Component_1.svg";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import CallMadeIcon from "@material-ui/icons/CallMade";
+import Alert from "@mui/material/Alert";
 import "./Sidebar.css";
 function Sidebar() {
   const [click, setclick] = useState(false);
   const ref = useRef(null);
-
+  const [logout, setlogout] = useState(false);
+  const success = "success";
   useEffect(() => {
     document.addEventListener("click", close);
     return () => document.addEventListener("click", close);
@@ -31,7 +33,7 @@ function Sidebar() {
           <Userdetails />
         </div>
         <div className="profilediv">
-          <Profileoptions />
+          <Profileoptions setlogout={setlogout} />
         </div>
         <div className={click ? "open1 " : "menu-div"}>
           <ul className="nav-menu" onClick={handclick}>
@@ -71,7 +73,16 @@ function Sidebar() {
             </li>
           </ul>
         </div>
+        
       </nav>
+      {logout ? (
+            <Alert variant="filled" severity={success}>
+              you have logout successfully
+             
+            </Alert>
+          ) : (
+            ""
+          )}
     </>
   );
 }
