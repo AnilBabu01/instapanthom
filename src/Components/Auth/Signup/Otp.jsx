@@ -3,6 +3,7 @@ import Btn from "../Forgetpassword/Btn";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Alert from "@mui/material/Alert";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import "./Signup.css";
 const Otp = (props) => {
   const nevigate = useNavigate();
@@ -11,8 +12,12 @@ const Otp = (props) => {
   const [resend, setresend] = useState(false);
   const [vererror, setvererror] = useState(false);
   const [resenderror, setresenderror] = useState(false);
+  const [showpropress, setshowpropress] = useState(false);
+  const [resendprogress, setresendprogress] = useState(false);
+  const [wrongotp, setwrongotp] = useState(false);
   const success = "success";
   const error = "error";
+  const warning = "warning";
   const onChange = (e) => {
     setotp(e.target.value);
   };
@@ -20,25 +25,59 @@ const Otp = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!otp) {
+      setshowpropress(false);
+    } else {
+      setshowpropress(true);
+    }
     try {
       const response = await axios.post("/api/verify", {
         wnumber: number,
         otp: otp,
       });
+
       if (otp) {
         setTimeout(() => {
           setverify(false);
-          nevigate("/login");
+
+          setshowpropress(false);
         }, 2000);
-        setverify(true);
+      }
+      if (response.data) {
+        setTimeout(() => {
+          setverify(false);
+
+          setshowpropress(false);
+        }, 1000);
       }
 
-      console.log(response.data);
+      if (
+        response.data.msg.message ===
+        "(Rows matched: 0  Changed: 0  Warnings: 0"
+      ) {
+        console.log("verify");
+        setTimeout(() => {
+          setwrongotp(false);
+        }, 1000);
+        setwrongotp(true);
+      }
+      if (
+        response.data.msg.message ===
+        "(Rows matched: 1  Changed: 1  Warnings: 0"
+      ) {
+        setTimeout(() => {
+          setverify(false);
+          nevigate("/login");
+        }, 1000);
+        setverify(true);
+      }
+      console.log("ver", response.data.msg.message);
     } catch (e) {
       console.log("error", e);
 
       setTimeout(() => {
         setresenderror(false);
+        setshowpropress(false);
       }, 1000);
       setresenderror(true);
     }
@@ -46,34 +85,41 @@ const Otp = (props) => {
   };
 
   const resendotp = async () => {
-    console.log("resend opt ");
+    console.log("resend opt ", number);
+    
     try {
-      const response = await axios.post("/api/resend/%7Bmob_number%7D", {
+      setresendprogress(true);
+      const response = await axios.get("/api/resend/%7Bmob_number%7D", {
         wnumber: number,
       });
-     console.log(response.data.status);
-      setTimeout(() => {
-        setresend(false);
-      }, 1000);
+     
+      console.log(response.data.status);
+      if (response) {
+        setresendprogress(false);
+        setTimeout(() => {
+          setresend(false);
+        }, 1500);
+      }
+
       setresend(true);
     } catch (e) {
-     
-      setvererror(true)
+      setresend(false);
+      setvererror(true);
       setTimeout(() => {
-        setvererror(false)
+        setvererror(false);
+        setresendprogress(false);
       }, 1000);
     }
-   
   };
   return (
     <>
       <form onSubmit={handleSubmit}>
         <div className="inputdiv">
-          {verify || resend ? (
-            <Alert variant="filled" severity={success}>
+          {verify || wrongotp ? (
+            <Alert variant="filled" severity={verify ? success : warning}>
               {verify
                 ? "verify opt and register successfully"
-                : "resend otp successfully"}
+                : "Please enter the correct otp"}
             </Alert>
           ) : (
             ""
@@ -83,6 +129,13 @@ const Otp = (props) => {
           {vererror || resenderror ? (
             <Alert variant="filled" severity={error}>
               Internal server error
+            </Alert>
+          ) : (
+            ""
+          )}
+          {resendprogress ? (
+            <Alert variant="filled" severity={success}>
+              message sent succsessfully
             </Alert>
           ) : (
             ""
@@ -101,12 +154,16 @@ const Otp = (props) => {
           ></input>
         </div>
         <div className="inputdiv">
-          <Btn value={"Verify & Register"} />
+          <Btn value={"Verify & Register"} showpropress={showpropress} />
         </div>
       </form>
       <div className="inputdiv">
         <button className="resenopt" onClick={resendotp}>
-          Resend OTP
+          {resendprogress ? (
+            <CircularProgress color="secondary" />
+          ) : (
+            " Resend OTP"
+          )}
         </button>
       </div>
     </>

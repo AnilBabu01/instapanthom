@@ -25,6 +25,7 @@ const Signup = () => {
   const [showpassword, setshowpassword] = useState(false);
   const [successful, setsuccessful] = useState(false);
   const [userallready, setuserallready] = useState(false);
+  const [showpropress, setshowpropress] = useState(false);
   const success = "success";
   const warning = "warning";
   const onChange = (e) => {
@@ -35,6 +36,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { name, number, email, password } = credentials;
@@ -56,22 +58,23 @@ const Signup = () => {
         password &&
         response.data.status === true
       ) {
+        setshowpropress(true);
         setsuccessful(true);
         setTimeout(() => {
           setsuccessful(false);
           setshowotpform(true);
+          setshowpropress(false);
         }, 1500);
       }
       if (response.data.status === false) {
         setuserallready(true);
+        setshowpropress(false);
         setTimeout(() => {
           setuserallready(false);
         }, 1500);
       }
     } catch (e) {
       console.log("error", e);
-
-      
     }
   };
 
@@ -144,7 +147,7 @@ const Signup = () => {
                           ""
                         )}
                       </div>
-                     
+
                       <div className="inputdiv" Htmlfor="name">
                         <label>Your name</label>
                         <input
@@ -221,7 +224,7 @@ const Signup = () => {
                       </div>
                       <p className="errorcolor">{formerror.password}</p>
                       <div className="inputdiv">
-                        <Btn value={"Next"} />
+                        <Btn value={"Next"} showpropress={showpropress} />
                       </div>
                     </form>
                     <Typography className="gotAntherAuth" align="center">

@@ -5,10 +5,10 @@ import Sidebar from "../Sidebar/Sidebar";
 import User from "./User";
 import axios from "axios";
 import Alert from "@mui/material/Alert";
-
+import { useNavigate } from "react-router-dom";
 import "./Addacount.css";
 
-const Addacount = () => {
+const Addacount = ({ setopendashboard }) => {
   const [credentials, setCredentials] = useState({
     name: "",
     password: "",
@@ -19,6 +19,22 @@ const Addacount = () => {
   const success = "success";
   const warning = "warning";
 
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  useEffect(() => {
+    setopendashboard(true);
+
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+    setopendashboard(true);
+    setopendashboard(false);
+  }, [!token, token]);
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -71,7 +87,6 @@ const Addacount = () => {
       <Sidebar />
       <div className="mainpaccount">
         <div className="mainAddacount">
-         
           <div className="addacountlinltext">
             <Typography variant="h4" className="addtext">
               Please add your instagram account

@@ -48,7 +48,7 @@ const StyledMenuItem = withStyles((theme) => ({
 
 export default function CustomizedMenus({ setlogout}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const navigate = useNavigate();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -57,7 +57,7 @@ export default function CustomizedMenus({ setlogout}) {
     setAnchorEl(null);
   };
 
-  const navigate = useNavigate();
+  
 
   const logout =()=>{
     localStorage.removeItem("token");
@@ -68,7 +68,7 @@ export default function CustomizedMenus({ setlogout}) {
      
       setlogout(false)
       navigate("/")
-    }, 2000);
+    }, 1000);
   }
   return (
     <div>
@@ -96,27 +96,27 @@ export default function CustomizedMenus({ setlogout}) {
           <Userdetails />
         </div>
 
-        <StyledMenuItem onClick={() => navigate("/dashboard/edit-profile")}>
+        <StyledMenuItem onClick={() => navigate("/edit-profile")}>
           <ListItemIcon>
             <EditIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Edit profile" />
         </StyledMenuItem>
-        <StyledMenuItem onClick={() => navigate("/dashboard/track-order")}>
+        <StyledMenuItem onClick={() => navigate("/track-order")}>
           <ListItemIcon>
             <TrackChangesIcon fontSize="small" />
           </ListItemIcon>
 
           <ListItemText primary="Track Order" />
         </StyledMenuItem>
-        <StyledMenuItem onClick={() => navigate("/dashboard/add-payment")}>
+        <StyledMenuItem onClick={() => navigate("/add-payment")}>
           <ListItemIcon>
             <PaymentIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Add Payment" />
         </StyledMenuItem>
         <Divider style={{ backgroundColor: "gray" }} />
-        <StyledMenuItem onClick={() => navigate("/dashboard/reset-password")}>
+        <StyledMenuItem onClick={() => navigate("/reset-password")}>
           <ListItemIcon>
             <InboxIcon fontSize="small" />
           </ListItemIcon>

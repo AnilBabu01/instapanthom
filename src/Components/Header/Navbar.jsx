@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./Navbar.module.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { useLocation } from 'react-router-dom'
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -9,7 +9,7 @@ const Navbar = () => {
   const location = useLocation();
   console.log(location.pathname);
  const token = localStorage.getItem("token");
- 
+
  console.log("toekn from nav",token)
    useEffect(() => {
      
@@ -24,20 +24,7 @@ const Navbar = () => {
           className={isMobile ? style.mobilelinks : style.navlinks}
           onClick={() => setisMobile(false)}
         >
-          {!localStorage.getItem("token") ? (
-            <></>
-          ) : (
-            <li>
-              <NavLink
-                to="/dashboard"
-                className={({ isActive }) =>
-                  isActive ? style.active : style.home
-                }
-              >
-                Dashbosrd
-              </NavLink>
-            </li>
-          )}
+          
 
           <li>
             <NavLink
@@ -69,7 +56,19 @@ const Navbar = () => {
               Faq
             </NavLink>
           </li>
-          <li>
+        
+           {localStorage.getItem("token")?(<li>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                isActive ? style.active : style.login
+              }
+            >
+              Dashboard
+            </NavLink>
+          </li>):
+           <>
+           <li>
             <NavLink
               to="/login"
               className={({ isActive }) =>
@@ -88,7 +87,18 @@ const Navbar = () => {
             >
               Sign up
             </NavLink>
+            
           </li>
+           
+           </>
+           
+           
+           
+           }
+            
+            
+          
+          
         </ul>
         <i
           style={{ marginRight: "20px" }}

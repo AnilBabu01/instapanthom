@@ -1,8 +1,25 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Sidebar from "../Sidebar/Sidebar";
+import { useNavigate } from "react-router-dom";
 import "./Addpayment.css";
-const Addpayment = () => {
-  const [pay, setpay] = useState({
+const Addpayment = ({setopendashboard}) => {
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  useEffect(() => {
+    setopendashboard(true);
+     
+    if(!localStorage.getItem("token"))
+    {
+      navigate("/")
+
+    }
+
+  }, []);
+
+  useEffect(() => {
+    setopendashboard(false);
+  }, [!token,token]);
+ const [pay, setpay] = useState({
     name: "",
     number: "",
   });

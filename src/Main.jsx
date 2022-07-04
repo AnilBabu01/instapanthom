@@ -10,7 +10,6 @@ import Verify from "./Components/Auth/Forgetpassword/Verify";
 import Maindashboard from "./Components/Dashboard/maindashboard/Maindashboard";
 import Addacount from './Components/Dashboard/Addacount/Addacount';
 import Placeorder from './Components/Dashboard/Placeorder/Placeorder';
-import Dashboard from './Components/Dashboard/dashboard/Dashboard';
 import About from './Components/About/About'
 import TrackOrder from "./Components/Dashboard/TrackOrder/TrackOrder";
 import Editprofile from "./Components/Dashboard/EditProfile/Editprofile";
@@ -34,15 +33,13 @@ const [opendashboard, setopendashboard] = useState(false);
           <Route path="/forgetpassword" element={<Reset/>} />
           <Route path="/verify" element={<Verify/>} />
           <Route path="/dashboard"  element={<Maindashboard setopendashboard={setopendashboard}/>} />
-          <Route path="dashboard/addacount" element={<Addacount/>} />
-          <Route path="dashboard/placeorder" element={<Placeorder />} />
-          <Route path="/dashboard/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/edit-profile" element={<Editprofile/>} />
-          <Route path="/dashboard/track-order" element={<TrackOrder/>} />
-          <Route path="/dashboard/reset-password" element={<Resetpassword />} />
-          <Route path="/dashboard/add-payment" element={<Addpayment />} />
-         
-        </Routes>
+          <Route path="/addacount" element={<Addacount setopendashboard={setopendashboard}/>}/> 
+          <Route path="/placeorder" element={<Placeorder setopendashboard={setopendashboard} />} />
+          <Route path="/edit-profile" element={<Editprofile setopendashboard={setopendashboard}/>} />
+          <Route path="/track-order" element={<TrackOrder setopendashboard={setopendashboard}/>} />
+          <Route path="/reset-password" element={<Resetpassword setopendashboard={setopendashboard} />} />
+          <Route path="/add-payment" element={<Addpayment setopendashboard={setopendashboard} />} />
+         </Routes>
        </Router>
     </>
   );

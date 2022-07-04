@@ -16,6 +16,7 @@
      height: 30px;
      border-radius: 4px;
      padding: 6px;
+     width: 100%;
     
 }
 .otpinput{
@@ -71,7 +72,7 @@
   }
 .mainfirst{
     display: flex;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 .leftpart{
     background-color: purple;

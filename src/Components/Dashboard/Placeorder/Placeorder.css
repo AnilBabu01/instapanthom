@@ -14,53 +14,54 @@
   border-bottom-right-radius: 12px;
   margin-right: 20px;
   border-top-left-radius: 12px;
-  height: 67px;
+  height: 45px;
   align-items: center;
 }
 
 .chooseplan {
-  margin-top: 34px;
-  margin-left: 90px;
+  margin-top: 25px;
+    margin-left: 80px;
 }
 .choosetext {
   background-color: #c8d6f5;
-  margin-left: 87px;
-  height: 61px;
-  display: flex;
-  align-items: center;
-  padding-left: 70px;
-  padding-right: 70px;
-  border-radius: 20px;
+    margin-left: 87px;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 20px;
+    height: 40px;
 }
 
 .imgorder {
-  width: 35px;
+  width: 25px;
   margin-right: 10px;
 }
 
 .imgplan {
+  width: 25px;
   margin-right: 4px;
 }
 .choosetext1 {
-  background-color: #c8d6f5;
-  margin-left: 50px;
-  height: 61px;
-  display: flex;
-  align-items: center;
-  padding-left: 81px;
-  padding-right: 80px;
-  border-radius: 20px;
+ background-color: #c8d6f5;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 20px;
+    height: 40px;
 }
 .textchoose {
   font-weight: 600 !important;
   height: 61px;
-  font-size: 25px !important;
+  font-size: 22px !important;
   font-weight: 400 !important;
 }
 
 .textchoose1 {
   font-weight: 400 !important;
-  font-size: 25px !important;
+  font-size: 22px !important;
   font-weight: 400 !important;
 }
 .orderdivselect {
@@ -94,7 +95,7 @@
 .select {
   border: none;
   width: 400px;
-  height: 40px;
+  height: 30px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   margin-left: 80px;
@@ -103,12 +104,12 @@
   border: none;
 }
 .feature {
-  font-size: 25px !important;
+  font-size: 22px !important;
   font-weight: 400 !important;
 }
 
 .imgtext {
-  font-size: 25px !important;
+  font-size: 22px !important;
   font-weight: 400 !important;
 }
 .orderbtn {
@@ -119,9 +120,9 @@
   color: white;
   border-radius: 10px;
   margin-left: 160px;
-  height: 74px;
-  width: 497px;
-  font-size: 25px;
+  height: 45px;
+ 
+  font-size: 20px;
 }
 
 .userlistmain {
@@ -143,17 +144,17 @@
 
 .dropdown .arrow {
   border-color: #999 transparent transparent;
-  border-style: solid;
-  border-width: 28px 41px 0;
-  content: " ";
-  display: block;
-  height: 0;
-  margin-top: 0.3rem;
-  position: absolute;
-  right: px;
-  top: 20px;
-  width: 0;
-  left: 480px;
+    border-style: solid;
+    border-width: 15px 20px 0;
+    content: " ";
+    display: block;
+    height: 0;
+    margin-top: 0.3rem;
+    position: absolute;
+    right: px;
+    top: 17px;
+    width: 0;
+    left: 350px;
 }
 
 .dropdown .arrow.open {
@@ -164,36 +165,36 @@
 
 .dropdown .selected-value input {
   line-height: 1.5;
-  font-size: 1rem;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  box-sizing: border-box;
-  cursor: default;
-  outline: none;
-  padding: 8px 52px 8px 10px;
-  transition: all 200ms ease;
-  width: 587px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  height: 84px;
-  font-size: 30px;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: default;
+    outline: none;
+    padding: 8px 52px 8px 10px;
+    transition: all 200ms ease;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 50px;
+    font-size: 25px;
+    width: 400px;
 }
 
 .dropdown .options {
   display: none;
   background-color: #fff;
   border: 1px solid #ccc;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
   box-sizing: border-box;
   margin-top: -1px;
-  max-height: 587px;
+  max-height: 487px;
   overflow-y: auto;
   position: absolute;
   top: 100%;
-  z-index: 1000;
+ 
   -webkit-overflow-scrolling: touch;
-  width: 587px;
+  width: 400px;
 }
 
 .dropdown .options.open {
@@ -205,10 +206,9 @@
   color: rgba(51, 51, 51, 0.8);
   cursor: pointer;
   display: block;
-  padding: 20px 20px;
+ 
   border-bottom: 1px solid gray;
-  height: 84px;
-  width: 566px;
+
   font-size: 30px;
 }
 
@@ -223,7 +223,7 @@
   margin-bottom: 5px !important;
 }
 .orderimgg {
-  width: 40px;
+  width: 30px;
   margin-right: 10px;
 }
 

@@ -23,6 +23,7 @@ const Login1 = () => {
   const [showpassword, setshowpassword] = useState(false);
   const [logged, setlogged] = useState(false);
   const [lohinvalidcre, setlohinvalidcre] = useState(false);
+  const [showpropress, setshowpropress] = useState(false)
   const success = "success";
   const warning = "warning";
   const onChange = (e) => {
@@ -31,20 +32,23 @@ const Login1 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { number, password } = credentials;
-
+   
     try {
       const response = await axios.post("/api/login", {
         wnumber: number,
         password: password,
       });
-
+        
       if (response.data.user && response.data.status === true) {
+        setshowpropress(true)
         setlogged(true);
         setTimeout(() => {
           setlogged(false);
+          setshowpropress(false)
           nevigate("/");
         }, 1500);
         localStorage.setItem("token", response.data.token);
@@ -58,6 +62,7 @@ const Login1 = () => {
       ) {
         setTimeout(() => {
           setlohinvalidcre(false);
+          setshowpropress(false)
         }, 1000);
         setlohinvalidcre(true);
       }
@@ -179,7 +184,8 @@ const Login1 = () => {
                     <p className="reminputtext">Remember me</p>
                   </div>
                   <div className="inputdiv">
-                    <Btn value={"Login"} />
+                 
+                    <Btn value={"Login"} showpropress={showpropress} />
                   </div>
                 </form>
                 <div className="loginbtn">

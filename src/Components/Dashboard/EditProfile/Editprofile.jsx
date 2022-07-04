@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate, } from "react-router-dom";
 import Sidebar from '../Sidebar/Sidebar'
 import './Editprofile.css'
@@ -8,9 +8,10 @@ const initialdata = {
     fullname: "",
     email: "",
   };
-const Editprofile = () => {
-    const [state, setstate] = useState(initialdata);
+const Editprofile = ({setopendashboard}) => {
+   
 
+  const [state, setstate] = useState(initialdata);
   const { mobilenumber, fullname, email } = state;
   const nevigate = useNavigate();
   const handlesubmit = (e) => {
@@ -28,6 +29,25 @@ const Editprofile = () => {
     const { name, value } = e.target;
     setstate({ ...state, [name]: value });
   };
+
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  useEffect(() => {
+    setopendashboard(true);
+     
+    if(!localStorage.getItem("token"))
+    {
+      navigate("/")
+
+    }
+
+  }, []);
+
+  useEffect(() => {
+    setopendashboard(false);
+  }, [!token,token]);
+
+
   return (
     <>
     <Sidebar/>

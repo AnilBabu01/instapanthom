@@ -42,7 +42,7 @@ function Sidebar() {
                 className={({ isActive }) =>
                   isActive ? "active-nav-link" : "nav-link"
                 }
-                to="/dashboard/dashboard"
+                to="/dashboard"
               >
                 <DashboardIcon />
                 <spna className="linkspan"> Dashboard</spna>
@@ -53,7 +53,7 @@ function Sidebar() {
                 className={({ isActive }) =>
                   isActive ? "active-nav-link" : "nav-link"
                 }
-                to="/dashboard/addacount"
+                to="/addacount"
               >
                 <PersonAddIcon />
                 <spna className="linkspan">Addacount </spna>
@@ -65,7 +65,7 @@ function Sidebar() {
                 className={({ isActive }) =>
                   isActive ? "active-nav-link" : "nav-link"
                 }
-                to="/dashboard/placeorder"
+                to="/placeorder"
               >
                 <CallMadeIcon />
                 <spna className="linkspan">Placseorder </spna>
