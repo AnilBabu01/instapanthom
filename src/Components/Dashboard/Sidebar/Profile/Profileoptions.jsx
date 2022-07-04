@@ -46,9 +46,9 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-export default function CustomizedMenus() {
+export default function CustomizedMenus({ setlogout}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const navigate = useNavigate();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -57,7 +57,19 @@ export default function CustomizedMenus() {
     setAnchorEl(null);
   };
 
-  const navigate = useNavigate();
+  
+
+  const logout =()=>{
+    localStorage.removeItem("token");
+   
+    setlogout(true)
+    
+    setTimeout(() => {
+     
+      setlogout(false)
+      navigate("/")
+    }, 1000);
+  }
   return (
     <div>
       <svg
@@ -84,33 +96,33 @@ export default function CustomizedMenus() {
           <Userdetails />
         </div>
 
-        <StyledMenuItem onClick={() => navigate("/dashboard/edit-profile")}>
+        <StyledMenuItem onClick={() => navigate("/edit-profile")}>
           <ListItemIcon>
             <EditIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Edit profile" />
         </StyledMenuItem>
-        <StyledMenuItem onClick={() => navigate("/dashboard/track-order")}>
+        <StyledMenuItem onClick={() => navigate("/track-order")}>
           <ListItemIcon>
             <TrackChangesIcon fontSize="small" />
           </ListItemIcon>
 
           <ListItemText primary="Track Order" />
         </StyledMenuItem>
-        <StyledMenuItem onClick={() => navigate("/dashboard/add-payment")}>
+        <StyledMenuItem onClick={() => navigate("/add-payment")}>
           <ListItemIcon>
             <PaymentIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Add Payment" />
         </StyledMenuItem>
         <Divider style={{ backgroundColor: "gray" }} />
-        <StyledMenuItem onClick={() => navigate("/dashboard/reset-password")}>
+        <StyledMenuItem onClick={() => navigate("/reset-password")}>
           <ListItemIcon>
             <InboxIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Reset Password" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={logout}>
           <ListItemIcon>
             <ExitToAppIcon fontSize="small" />
           </ListItemIcon>

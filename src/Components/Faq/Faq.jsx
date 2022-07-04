@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer'
 const Faq = () => {
   return (
     <>
-      <div style={{ textAlign: "center", marginBottom: "5%",paddingTop: "100px"}}>
+      <div style={{ textAlign: "center", marginBottom: "5%",paddingTop: "160px"}}>
         <Typography variant="h4">Frequently Asked Questions</Typography>
         <Typography
           style={{

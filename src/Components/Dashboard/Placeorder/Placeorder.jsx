@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect}from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Typography from "@mui/material/Typography";
 import UseraccountList from "./UseraccountList";
@@ -10,6 +10,7 @@ import originn from "../Dasgimages/originn.svg";
 import rupee from "../Dasgimages/rupee.svg";
 import dol from "../Dasgimages/dol.svg";
 import pay from "../Dasgimages/pay.svg";
+import {useNavigate } from "react-router-dom";
 import "./Placeorder.css";
 const Plan = (props) => {
   return (
@@ -34,7 +35,25 @@ const Feature = (props) => {
     </>
   );
 };
-const Placeorder = () => {
+const Placeorder = ({setopendashboard}) => {
+
+  
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  useEffect(() => {
+    setopendashboard(true);
+     
+    if(!localStorage.getItem("token"))
+    {
+      navigate("/")
+
+    }
+
+  }, []);
+
+  useEffect(() => {
+    setopendashboard(false);
+  }, [!token,token]);
   return (
     <>
       <Sidebar />

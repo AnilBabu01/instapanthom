@@ -1,16 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import Profileoptions from "../Sidebar/Profile/Profileoptions";
 import Userdetails from "../Sidebar/Usedetails/Usredetails";
 import burder from "../../Images/Component_1.svg";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import CallMadeIcon from "@material-ui/icons/CallMade";
+import Alert from "@mui/material/Alert";
 import "./Sidebar.css";
 function Sidebar() {
   const [click, setclick] = useState(false);
   const ref = useRef(null);
-
+  const [logout, setlogout] = useState(false);
+  const success = "success";
   useEffect(() => {
     document.addEventListener("click", close);
     return () => document.addEventListener("click", close);
@@ -31,44 +33,56 @@ function Sidebar() {
           <Userdetails />
         </div>
         <div className="profilediv">
-          <Profileoptions />
+          <Profileoptions setlogout={setlogout} />
         </div>
         <div className={click ? "open1 " : "menu-div"}>
           <ul className="nav-menu" onClick={handclick}>
             <li className="nav-item">
-              <Link
-                activeClassName="active"
-                to="/dashboard/dashboard"
-                className="nav-link"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-nav-link" : "nav-link"
+                }
+                to="/dashboard"
               >
                 <DashboardIcon />
                 <spna className="linkspan"> Dashboard</spna>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
-                activeClassName="active"
-                to="/dashboard/addacount"
-                className="nav-link"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-nav-link" : "nav-link"
+                }
+                to="/addacount"
               >
                 <PersonAddIcon />
                 <spna className="linkspan">Addacount </spna>
-              </Link>
+              </NavLink>
             </li>
 
             <li className="nav-item">
-              <Link
-                activeClassName="active"
-                to="/dashboard/placeorder"
-                className="nav-link"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-nav-link" : "nav-link"
+                }
+                to="/placeorder"
               >
                 <CallMadeIcon />
                 <spna className="linkspan">Placseorder </spna>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
+        
       </nav>
+      {logout ? (
+            <Alert variant="filled" severity={success}>
+              you have logout successfully
+             
+            </Alert>
+          ) : (
+            ""
+          )}
     </>
   );
 }

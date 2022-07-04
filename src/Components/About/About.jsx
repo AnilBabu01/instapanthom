@@ -3,7 +3,13 @@ import Footer from '../Footer/Footer'
 const About = () => {
   return (
     <>
-      <Footer/>
+         <div style={{paddingTop:"80px"}}>
+         <h1>About us</h1>
+         </div>
+        
+        <Footer/>
+        
+      
     </>
   )
 }

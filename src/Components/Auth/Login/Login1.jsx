@@ -7,26 +7,71 @@ import Footer from "../../Footer/Footer";
 import Common from "../Common";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 import "../Signup/Signup.css";
 import "./Login.css";
 const Login1 = () => {
+  const nevigate = useNavigate();
   const [credentials, setCredentials] = useState({
-    name: "",
+    number: "",
     password: "",
   });
   const [formerror, setFormerror] = useState({});
   const [issubmit, setIssubmit] = useState(false);
   const [showpassword, setshowpassword] = useState(false);
+  const [logged, setlogged] = useState(false);
+  const [lohinvalidcre, setlohinvalidcre] = useState(false);
+  const [showpropress, setshowpropress] = useState(false);
+  const success = "success";
+  const warning = "warning";
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setFormerror(validate(credentials));
     setIssubmit(true);
-    const { name, password } = credentials;
-    console.log("Registration data is ", name, password);
+    const { number, password } = credentials;
+    setshowpropress(true);
+    try {
+      const response = await axios.post("/api/login", {
+        wnumber: number,
+        password: password,
+      });
+
+      if (response.data.user && response.data.status === true) {
+        setshowpropress(false);
+        setlogged(true);
+        setTimeout(() => {
+          setlogged(false);
+
+          nevigate("/");
+        }, 1500);
+        localStorage.setItem("token", response.data.token);
+      }
+
+      // Save the auth token and redirect
+
+      if (
+        response.data.msg == "Please Enter the Corect Passwords" &&
+        response.data.status === true
+      ) {
+        setshowpropress(false);
+        setTimeout(() => {
+          setlohinvalidcre(false);
+         
+        }, 1000);
+        setlohinvalidcre(true);
+      }
+      console.log("from login", response.data);
+    } catch (e) {
+      console.log("error", e);
+    }
+    console.log("Registration data is ", number, password);
   };
   useEffect(() => {
     console.log(formerror);
@@ -39,8 +84,8 @@ const Login1 = () => {
     console.log("validate data", values.name);
     const errors = {};
 
-    if (!values.name) {
-      errors.name = "Username is required";
+    if (!values.number) {
+      errors.number = "register number is required";
     }
 
     if (!values.password) {
@@ -69,51 +114,67 @@ const Login1 = () => {
                 <h3>Login</h3>
               </div>
             </div>
+
             <div className="formcontainer">
               <div className="formdiv">
                 <form onSubmit={handleSubmit}>
-                  <div className="inputdiv" Htmlfor="name">
-                    <label>Your name</label>
+                  <div className="inputdiv">
+                    {logged || lohinvalidcre ? (
+                      <Alert
+                        variant="filled"
+                        severity={logged ? success : warning}
+                      >
+                        {logged
+                          ? "you have login successfully"
+                          : "Please Enter the Corect Passwords"}
+                      </Alert>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+
+                  <div className="inputdiv" Htmlfor="number">
+                    <label>Your number</label>
                     <input
                       className={
-                        formerror.name && issubmit ? "input3" : "input"
+                        formerror.number && issubmit ? "input3" : "input"
                       }
                       type="text"
-                      name="name"
-                      value={credentials.name}
+                      name="number"
+                      value={credentials.number}
                       onChange={onChange}
-                      id="name"
-                      placeholder="Your instagram username "
+                      id="number"
+                      placeholder="Your instagram number "
                     />
                   </div>
-                  <p className="errorcolor">{issubmit ? formerror.name : ""}</p>
+                  <p className="errorcolor">
+                    {issubmit ? formerror.number : ""}
+                  </p>
                   <div className="inputdiv">
                     <label htmlFor="password">Password</label>
                     <div style={{ position: "relative" }}>
-                    <input
-                      className={
-                        formerror.password && issubmit ? "input3" : "input"
-                      }
-                      type={showpassword ? "text" : "password"}
-                      value={credentials.password}
-                      onChange={onChange}
-                      name="password"
-                      id="password"
-                      placeholder="Password"
-                    />
-                     <li
-                            className="showpassworddsignup"
-                            onClick={() => setshowpassword(!showpassword)}
-                          >
-                            {showpassword ? (
-                              <VisibilityIcon />
-                            ) : (
-                              <VisibilityOffIcon />
-                            )}
-                          </li>
-
+                      <input
+                        className={
+                          formerror.password && issubmit ? "input3" : "input"
+                        }
+                        type={showpassword ? "text" : "password"}
+                        value={credentials.password}
+                        onChange={onChange}
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                      />
+                      <li
+                        className="showpassworddsignup"
+                        onClick={() => setshowpassword(!showpassword)}
+                      >
+                        {showpassword ? (
+                          <VisibilityIcon />
+                        ) : (
+                          <VisibilityOffIcon />
+                        )}
+                      </li>
                     </div>
-                    
                   </div>
                   <p className="errorcolor">
                     {issubmit ? formerror.password : ""}
@@ -123,20 +184,19 @@ const Login1 = () => {
                     <p className="reminputtext">Remember me</p>
                   </div>
                   <div className="inputdiv">
-                    <Btn value={"Login"} />
+                    <Btn value={"Login"} showpropress={showpropress} />
                   </div>
                 </form>
                 <div className="loginbtn">
                   <Link to="/forgetpassword">Forget Your Password</Link>
                 </div>
-              
-                  <Typography className="gotAntherAuth" align="center">
-                    don't have an account?
-                    <Link style={{ textDecoration: "none" }} to="/signup">
-                      <span className="gotAntherAuthText">Please Signup</span>{" "}
-                    </Link>
-                  </Typography>
-               
+
+                <Typography className="gotAntherAuth" align="center">
+                  don't have an account?
+                  <Link style={{ textDecoration: "none" }} to="/signup">
+                    <span className="gotAntherAuthText">Please Signup</span>{" "}
+                  </Link>
+                </Typography>
               </div>
             </div>
           </div>

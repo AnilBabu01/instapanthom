@@ -1,66 +1,120 @@
 import React, { useState, useEffect } from "react";
 import style from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = () => {
   const [isMobile, setisMobile] = useState(false);
+  const location = useLocation();
+  console.log(location.pathname);
+ const token = localStorage.getItem("token");
 
-  useEffect(() => {}, [isMobile]);
-
+ console.log("toekn from nav",token)
+   useEffect(() => {
+     
+  }, [isMobile,token]);
+ 
+  
   return (
     <>
       <nav className={style.navbar}>
-       {/* <h3 className={style.logo}><img src={logo} style={{width:"300px",height:"300px"}} alt='logo'></img></h3> */}
         <h3 className={style.logo}>Instaphantom</h3>
         <ul
           className={isMobile ? style.mobilelinks : style.navlinks}
           onClick={() => setisMobile(false)}
         >
           
+
           <li>
-            <Link to="/" className={style.home}>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? style.active : style.home
+              }
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about" className={style.about}>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? style.active : style.about
+              }
+            >
               About us
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/faq" className={style.home}>
+            <NavLink
+              to="/faq"
+              className={({ isActive }) =>
+                isActive ? style.active : style.about
+              }
+            >
               Faq
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link to="/login" className={style.login}>
+        
+           {localStorage.getItem("token")?(<li>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                isActive ? style.active : style.login
+              }
+            >
+              Dashboard
+            </NavLink>
+          </li>):
+           <>
+           <li>
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive ? style.active : style.login
+              }
+            >
               Login
-            </Link>
+            </NavLink>
           </li>
           <li>
-          
-            <Link to="/signup" className={style.singup}>
+            <NavLink
+              to="/signup"
+              className={({ isActive }) =>
+                isActive ? style.active : style.singup
+              }
+            >
               Sign up
-            </Link>
+            </NavLink>
+            
           </li>
+           
+           </>
+           
+           
+           
+           }
+            
+            
+          
+          
         </ul>
-          <i
+        <i
           style={{ marginRight: "20px" }}
-            onClick={() => setisMobile(!isMobile)}
-            className={style.mobileMenuIcon}
-          >
-            {isMobile ? (
-              <>
-                <CloseIcon style={{height: "40px"}} className={style.burger}/>
-              </>
-            ) : (
-              <>
-                <MenuIcon style={{height: "40px"}} className={style.burger} />
-              </>
-            )}
-          </i>
-       
+          onClick={() => setisMobile(!isMobile)}
+          className={style.mobileMenuIcon}
+        >
+          {isMobile ? (
+            <>
+              <CloseIcon style={{ height: "40px" }} className={style.burger} />
+            </>
+          ) : (
+            <>
+              <MenuIcon style={{ height: "40px" }} className={style.burger} />
+            </>
+          )}
+        </i>
       </nav>
     </>
   );

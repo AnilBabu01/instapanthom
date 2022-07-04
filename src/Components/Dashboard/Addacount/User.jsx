@@ -1,20 +1,17 @@
-import React from 'react'
-import DeleteIcon from '@material-ui/icons/Delete';
+import React from "react";
+import DeleteIcon from "@material-ui/icons/Delete";
 import Typography from "@mui/material/Typography";
 import "./Addacount.css";
-const User = () => {
+const User = ({ username }) => {
+ 
   return (
     <>
-       <div className="divuserdel">
-           
-            <Typography className='usertext' >
-             username  
-          </Typography>
-          <DeleteIcon />
-            </div>
-    
+      <div className="divuserdel">
+        <Typography className="usertext">{username}</Typography>
+        <DeleteIcon />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default User
+export default User;

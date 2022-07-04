@@ -9,6 +9,7 @@ import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import Otp from "./Otp";
 import axios from "axios";
+import Alert from "@mui/material/Alert";
 import "../Login/Login.css";
 import "./Signup.css";
 const Signup = () => {
@@ -22,6 +23,11 @@ const Signup = () => {
   const [issubmit, setIssubmit] = useState(false);
   const [showotpform, setshowotpform] = useState(false);
   const [showpassword, setshowpassword] = useState(false);
+  const [successful, setsuccessful] = useState(false);
+  const [userallready, setuserallready] = useState(false);
+  const [showpropress, setshowpropress] = useState(false);
+  const success = "success";
+  const warning = "warning";
   const onChange = (e) => {
     const { name, email, number, password } = e.target;
     console.log("Registration data is ", name, email, number, password);
@@ -30,11 +36,12 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { name, number, email, password } = credentials;
     console.log("Registration data is ", name, email, number, password);
-
+    setshowpropress(true);
     try {
       const response = await axios.post("/api/register", {
         name: name,
@@ -42,10 +49,30 @@ const Signup = () => {
         wnumber: number,
         password: password,
       });
-      if (name && email && number && password && response) {
-        setshowotpform(true);
-      }
+
       console.log(response.data);
+      if (
+        name &&
+        email &&
+        number &&
+        password &&
+        response.data.status === true
+      ) {
+        setshowpropress(false);
+        setsuccessful(true);
+        setTimeout(() => {
+          setsuccessful(false);
+          setshowotpform(true);
+         
+        }, 1500);
+      }
+      if (response.data.status === false) {
+        setuserallready(true);
+        setshowpropress(false);
+        setTimeout(() => {
+          setuserallready(false);
+        }, 1500);
+      }
     } catch (e) {
       console.log("error", e);
     }
@@ -102,10 +129,25 @@ const Signup = () => {
             </div>
             <div className="formcontainer">
               <div className="mobileform lapform">
-                {showotpform && <Otp />}
+                {showotpform && <Otp number={credentials.number} />}
                 {!showotpform && (
                   <>
                     <form onSubmit={handleSubmit}>
+                      <div className="inputdiv">
+                        {successful || userallready ? (
+                          <Alert
+                            variant="filled"
+                            severity={successful ? success : warning}
+                          >
+                            {successful
+                              ? "SMS sent successfully"
+                              : "Email or Mobile Number already exist "}
+                          </Alert>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+
                       <div className="inputdiv" Htmlfor="name">
                         <label>Your name</label>
                         <input
@@ -182,7 +224,7 @@ const Signup = () => {
                       </div>
                       <p className="errorcolor">{formerror.password}</p>
                       <div className="inputdiv">
-                        <Btn value={"Next"} />
+                        <Btn value={"Next"} showpropress={showpropress} />
                       </div>
                     </form>
                     <Typography className="gotAntherAuth" align="center">

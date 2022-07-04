@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "https://instaphantom.com",
+  "proxy": "https://v1.instaphantom.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

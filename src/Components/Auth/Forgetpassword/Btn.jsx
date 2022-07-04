@@ -1,11 +1,12 @@
 import React from "react";
+import CircularProgress from '@material-ui/core/CircularProgress'
 import "./Reset.css";
-const Btn = (props) => {
+const Btn = ({showpropress,value}) => {
   return (
     <>
       <button className="btn01" type="submit">
-        {props.value}
-      </button>
+        {showpropress?<CircularProgress color="secondary" />:value}
+       </button>
     </>
   );
 };
