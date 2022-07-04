@@ -41,7 +41,7 @@ const Signup = () => {
     setIssubmit(true);
     const { name, number, email, password } = credentials;
     console.log("Registration data is ", name, email, number, password);
-
+    setshowpropress(true);
     try {
       const response = await axios.post("/api/register", {
         name: name,
@@ -58,12 +58,12 @@ const Signup = () => {
         password &&
         response.data.status === true
       ) {
-        setshowpropress(true);
+        setshowpropress(false);
         setsuccessful(true);
         setTimeout(() => {
           setsuccessful(false);
           setshowotpform(true);
-          setshowpropress(false);
+         
         }, 1500);
       }
       if (response.data.status === false) {

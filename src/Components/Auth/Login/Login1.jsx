@@ -23,7 +23,7 @@ const Login1 = () => {
   const [showpassword, setshowpassword] = useState(false);
   const [logged, setlogged] = useState(false);
   const [lohinvalidcre, setlohinvalidcre] = useState(false);
-  const [showpropress, setshowpropress] = useState(false)
+  const [showpropress, setshowpropress] = useState(false);
   const success = "success";
   const warning = "warning";
   const onChange = (e) => {
@@ -32,23 +32,23 @@ const Login1 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { number, password } = credentials;
-   
+    setshowpropress(true);
     try {
       const response = await axios.post("/api/login", {
         wnumber: number,
         password: password,
       });
-        
+
       if (response.data.user && response.data.status === true) {
-        setshowpropress(true)
+        setshowpropress(false);
         setlogged(true);
         setTimeout(() => {
           setlogged(false);
-          setshowpropress(false)
+
           nevigate("/");
         }, 1500);
         localStorage.setItem("token", response.data.token);
@@ -60,16 +60,16 @@ const Login1 = () => {
         response.data.msg == "Please Enter the Corect Passwords" &&
         response.data.status === true
       ) {
+        setshowpropress(false);
         setTimeout(() => {
           setlohinvalidcre(false);
-          setshowpropress(false)
+         
         }, 1000);
         setlohinvalidcre(true);
       }
       console.log("from login", response.data);
     } catch (e) {
       console.log("error", e);
-     
     }
     console.log("Registration data is ", number, password);
   };
@@ -132,7 +132,7 @@ const Login1 = () => {
                       ""
                     )}
                   </div>
-                  
+
                   <div className="inputdiv" Htmlfor="number">
                     <label>Your number</label>
                     <input
@@ -184,7 +184,6 @@ const Login1 = () => {
                     <p className="reminputtext">Remember me</p>
                   </div>
                   <div className="inputdiv">
-                 
                     <Btn value={"Login"} showpropress={showpropress} />
                   </div>
                 </form>
