@@ -23,22 +23,22 @@ const Reset = () => {
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { name } = credentials;
-    console.log("reset data is ", name);
+  
   };
   useEffect(() => {
-    console.log(formerror);
+  
     if (Object.keys(formerror) && issubmit) {
-      console.log(formerror);
+     
     }
   }, [formerror]);
 
   const validate = (value) => {
-    console.log("validate data", value.name);
+   
     const errors = {};
     if (!value.name) {
       errors.name = "The instagram id field is required.";
     } else if (value.name !== id) {
-      console.log(id);
+     
       errors.name =
         "We cannot find a registered account with that Instagram username.";
     } else if (value.name === id) {

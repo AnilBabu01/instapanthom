@@ -45,7 +45,7 @@ const Addacount = ({ setopendashboard }) => {
     try {
       const { name, password } = credentials;
 
-      const res = await axios.post("/api/addaccount", {
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/addaccount`, {
         username: name,
         password: password,
       });
@@ -74,7 +74,7 @@ const Addacount = ({ setopendashboard }) => {
   )}`;
 
   const getuseraccount = async () => {
-    const res = await axios.get("/api/addaccount");
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/addaccount`);
     setusers(res.data.data);
   };
 

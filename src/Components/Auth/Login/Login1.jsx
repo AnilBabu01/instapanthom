@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import "../Signup/Signup.css";
 import "./Login.css";
+const url = "https://v1.instaphantom.com";
 const Login1 = () => {
   const nevigate = useNavigate();
   const [credentials, setCredentials] = useState({
@@ -38,10 +39,13 @@ const Login1 = () => {
     const { number, password } = credentials;
     setshowpropress(true);
     try {
-      const response = await axios.post("/api/login", {
-        wnumber: number,
-        password: password,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/api/login`,
+        {
+          wnumber: number,
+          password: password,
+        }
+      );
 
       if (response.data.user && response.data.status === true) {
         setshowpropress(false);
@@ -63,25 +67,19 @@ const Login1 = () => {
         setshowpropress(false);
         setTimeout(() => {
           setlohinvalidcre(false);
-         
         }, 1000);
         setlohinvalidcre(true);
       }
-      console.log("from login", response.data);
     } catch (e) {
       console.log("error", e);
     }
-    console.log("Registration data is ", number, password);
   };
   useEffect(() => {
-    console.log(formerror);
     if (Object.keys(formerror) && issubmit) {
-      console.log(formerror);
     }
   }, [formerror]);
 
   const validate = (values) => {
-    console.log("validate data", values.name);
     const errors = {};
 
     if (!values.number) {

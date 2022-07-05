@@ -30,7 +30,7 @@ const Signup = () => {
   const warning = "warning";
   const onChange = (e) => {
     const { name, email, number, password } = e.target;
-    console.log("Registration data is ", name, email, number, password);
+   
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
@@ -40,17 +40,17 @@ const Signup = () => {
     setFormerror(validate(credentials));
     setIssubmit(true);
     const { name, number, email, password } = credentials;
-    console.log("Registration data is ", name, email, number, password);
+  
     setshowpropress(true);
     try {
-      const response = await axios.post("/api/register", {
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/register`, {
         name: name,
         email: email,
         wnumber: number,
         password: password,
       });
 
-      console.log(response.data);
+    
       if (
         name &&
         email &&
@@ -79,14 +79,14 @@ const Signup = () => {
   };
 
   useEffect(() => {
-    console.log(formerror);
+    
     if (Object.keys(formerror) && issubmit) {
-      console.log(formerror);
+    
     }
   }, [formerror]);
 
   const validate = (values) => {
-    console.log("validate data", values.name);
+   
     const errors = {};
 
     if (!values.name) {

@@ -25,15 +25,13 @@ const Addpayment = ({setopendashboard}) => {
   });
   const [amount, setamount] = useState("");
   const onChange = (e) => {
-    const { amount } = e.target;
-    console.log("your enter this price ", amount);
     setpay({ ...pay, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, number } = pay;
-    console.log("this is pay data", name, number, amount);
+  
   };
   return (
     <>

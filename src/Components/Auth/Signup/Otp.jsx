@@ -31,10 +31,13 @@ const Otp = (props) => {
       setshowpropress(true);
     }
     try {
-      const response = await axios.post("/api/verify", {
-        wnumber: number,
-        otp: otp,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/api/verify`,
+        {
+          wnumber: number,
+          otp: otp,
+        }
+      );
 
       if (otp) {
         setTimeout(() => {
@@ -55,7 +58,6 @@ const Otp = (props) => {
         response.data.msg.message ===
         "(Rows matched: 0  Changed: 0  Warnings: 0"
       ) {
-        console.log("verify");
         setTimeout(() => {
           setwrongotp(false);
         }, 1000);
@@ -71,29 +73,25 @@ const Otp = (props) => {
         }, 1000);
         setverify(true);
       }
-      console.log("ver", response.data.msg.message);
     } catch (e) {
-      console.log("error", e);
-
       setTimeout(() => {
         setresenderror(false);
         setshowpropress(false);
       }, 1000);
       setresenderror(true);
     }
-    console.log("otp data is ", otp, number);
   };
 
   const resendotp = async () => {
-    console.log("resend opt ", number);
-    
     try {
       setresendprogress(true);
-      const response = await axios.get("/api/resend/%7Bmob_number%7D", {
-        wnumber: number,
-      });
-     
-      console.log(response.data.status);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/api/resend/%7Bmob_number%7D`,
+        {
+          wnumber: number,
+        }
+      );
+
       if (response) {
         setresendprogress(false);
         setTimeout(() => {
